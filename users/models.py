@@ -30,6 +30,7 @@ class BotUser(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
 
     def get_display_name(self) -> str:
+        """ get Bot user's full name (shorter) """
         display_name = self.first_name
         if self.last_name:
             display_name += f" {self.last_name}"

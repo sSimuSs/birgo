@@ -6,6 +6,7 @@ from users.models import BotUser
 
 
 def tg_pages(page_title_en: str):
+    """ decorator from telegram mini app page views """
     def decorator(view_func):
         def wrap(request, *args, **kwargs):
             kwargs['page_title'] = gettext_lazy(page_title_en)

@@ -13,13 +13,16 @@ class UserAdmin(DjangoUserAdmin):
 
 @admin.register(BotUser)
 class BotUserAdmin(admin.ModelAdmin):
-    list_display = ('id', 'get_display_name', 'username', 'allows_write_to_pm', 'status', 'has_left', 'date_created')
+    """ BotUser model admin class """
+    list_display = ('id', 'get_display_name', 'username', 'allows_write_to_pm',
+                    'status', 'has_left', 'date_created')
     list_filter = ('status', 'has_left', 'allows_write_to_pm', 'date_created')
     search_fields = ('id', 'first_name', 'last_name', 'username', 'telegram_id')
     actions = ('update_bot_user_data',)
 
     @admin.action(description='Update Telegram bot user data')
     def update_bot_user_data(self, request, queryset):
+        """ method for updating BotUser's data using Telegram API """
         bot = telebot.TeleBot(settings.BOT_TOKEN)
         for bu in queryset:
             bu: BotUser
@@ -40,5 +43,5 @@ class BotUserAdmin(admin.ModelAdmin):
                 bu.birthday = data.birthdate.__dict__ if data.birthdate else None
                 bu.bio = data.bio
                 bu.save()
-            except Exception as e:
+            except telebot.apihelper.ApiException as e:
                 messages.error(request, str(e))

@@ -138,4 +138,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'wishr/static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ENV = os.getenv("ENV", default="develop")
-

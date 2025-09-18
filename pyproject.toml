@@ -23,6 +23,7 @@ ignore-paths = [
 ]
 disable = [
     "C0114", # missing-module-docstring
+    "W0641", # possibly-unused-variable
 ]
 
 [build-system]
