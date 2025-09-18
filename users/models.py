@@ -3,10 +3,16 @@ from django.db import models
 
 
 class User(AbstractUser):
+    """
+    User model
+    """
     pass
 
 
 class BotUser(models.Model):
+    """
+    Telegram bot user model
+    """
     user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True)
     telegram_id = models.CharField(max_length=32)
     first_name = models.CharField(max_length=100)

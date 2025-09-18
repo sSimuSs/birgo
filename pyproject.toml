@@ -19,6 +19,9 @@ ignore-paths = [
     ".*/migrations/.*",  # Ignore all files within any 'migrations' directory
     ".*\\.pyi$",         # Ignore all stub files (.pyi)
 ]
+disable = [
+    "C0114", # missing-module-docstring
+]
 
 [build-system]
 requires = ["poetry-core"]
