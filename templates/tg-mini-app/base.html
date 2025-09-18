@@ -1,0 +1,31 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ page_description }}">
+    <link rel="stylesheet" href="{% static 'css/telegram.css' %}">
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <script>
+    const TelegramData = window.Telegram.WebApp;
+    TelegramData.setHeaderColor(TelegramData.themeParams.secondary_bg_color)
+    document.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add(TelegramData.colorScheme+"-app");
+        if (TelegramData.platform === "macos" || TelegramData.platform === "ios") {
+            document.body.classList.add("osx-theme");
+        }
+    });
+    </script>
+</head>
+<body class="osx-theme">
+    <div class="main_container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

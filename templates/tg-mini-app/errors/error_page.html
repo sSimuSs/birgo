@@ -1,0 +1,17 @@
+{% extends "tg-mini-app/base.html" %}
+{% block content %}
+<div class="app_page error_page">
+    <div>
+        <h3 class="mb_4px">{{ error_title }}</h3>
+        <div class="secondary_text">{{ error_description }}</div>
+    </div>
+</div>
+<script>
+{% if not hide_back_button %}
+    TelegramData.BackButton.onClick(function () {
+        window.location.href = '{% url "tg_home" %}';
+    });
+    TelegramData.BackButton.show();
+{% endif %}
+</script>
+{% endblock %}

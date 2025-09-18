@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from telegram.urls import urlpatterns as telegram_urlpatterns
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+] + telegram_urlpatterns

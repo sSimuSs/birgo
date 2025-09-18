@@ -28,3 +28,9 @@ class BotUser(models.Model):
     status = models.BooleanField(default=True)
     has_left = models.BooleanField(default=False)
     date_created = models.DateTimeField(auto_now_add=True)
+
+    def get_display_name(self) -> str:
+        display_name = self.first_name
+        if self.last_name:
+            display_name += f" {self.last_name}"
+        return display_name[:40]
