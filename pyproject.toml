@@ -14,6 +14,11 @@ psycopg2-binary = "^2.9.10"
 pytelegrambotapi = "^4.29.1"
 pylint-django = "^2.6.1"
 
+[tool.pylint]
+ignore-paths = [
+    ".*/migrations/.*",  # Ignore all files within any 'migrations' directory
+    ".*\\.pyi$",         # Ignore all stub files (.pyi)
+]
 
 [build-system]
 requires = ["poetry-core"]
