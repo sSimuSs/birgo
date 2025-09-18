@@ -32,6 +32,7 @@ DEBUG = os.getenv("DEBUG", default="False")
 
 ALLOWED_HOSTS = ["127.0.0.1", "wishr.uz"]
 
+CSRF_TRUSTED_ORIGINS = ["https://wishr.uz"]
 
 # Application definition
 
