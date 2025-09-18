@@ -1,0 +1,1 @@
+BOT_USER_DEFAULT_LANG = "ru"

@@ -30,7 +30,7 @@ def aut_error(request, *args, **kwargs):
     return render(request, "tg-mini-app/errors/error_page.html", locals() | kwargs)
 
 def validate_user(request):
-    """ Middleware view for handling Telegram's initData for Mini App """
+    """ Middleware view for handling Telegram's initData from Mini App """
     if request.GET.get("signature"):
         data = request.GET.copy()
         safe_data = data.urlencode()
@@ -40,7 +40,7 @@ def validate_user(request):
         except init_data_py.errors.errors.UnexpectedFormatError:
             return redirect("tg_auth_error")
 
-        if init_data.validate(bot_token=settings.BOT_TOKEN):
+        if init_data.validate(bot_token=settings.TELEGRAM_BOT_TOKEN):
             bot_user, __ = BotUser.objects.get_or_create(
                 telegram_id=init_data.user.id,
             )

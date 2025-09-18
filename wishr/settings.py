@@ -137,4 +137,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'wishr/static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+
 ENV = os.getenv("ENV", default="develop")

@@ -1,6 +1,9 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+from telegram.constants import BOT_USER_DEFAULT_LANG
+from wishr.constants import SUPPORTED_TEXT_LANGUAGES
+
 
 class User(AbstractUser):
     """
@@ -35,3 +38,10 @@ class BotUser(models.Model):
         if self.last_name:
             display_name += f" {self.last_name}"
         return display_name[:40]
+
+    def get_lang(self) -> str:
+        """ get Bot user's language code: ru|uz|en|... """
+        lang = BOT_USER_DEFAULT_LANG
+        if self.language_code in SUPPORTED_TEXT_LANGUAGES:
+            lang = self.language_code
+        return lang
