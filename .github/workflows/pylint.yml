@@ -27,4 +27,4 @@ jobs:
 #        pip install pylint_django[with-django]
     - name: Analysing the code with pylint
       run: |
-        pylint --load-plugins pylint_django --django-settings-module=wishr.settings $(git ls-files '*.py')
+        poetry run pylint --load-plugins pylint_django --django-settings-module=wishr.settings $(git ls-files '*.py')
