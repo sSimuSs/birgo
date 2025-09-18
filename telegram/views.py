@@ -23,10 +23,10 @@ def home(request, bot_user: BotUser, *args, **kwargs):
     print(bot_user)
     return render(request, "tg-mini-app/home.html", locals() | kwargs)
 
-@tg_pages("Error on validating auth data")
 def aut_error(request, *args, **kwargs):
     """ Error page view for 'Authentication Error' """
-    error_title = kwargs.pop('page_title', None)
+    page_title = _("Error on validating auth data")
+    error_title = page_title
     return render(request, "tg-mini-app/errors/error_page.html", locals() | kwargs)
 
 def validate_user(request):
