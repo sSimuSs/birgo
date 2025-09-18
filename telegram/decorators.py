@@ -15,7 +15,7 @@ def tg_pages(page_title_en: str):
             if settings.ENV != "develop":
                 user_data = request.session.get("init_data")
                 if user_data is None:
-                    return redirect("app_auth_error")
+                    return redirect("tg_auth_error")
                 user_id = user_data["bot_user_id"]
             bot_user: BotUser = get_object_or_404(BotUser, id=user_id)
             return view_func(request, bot_user, *args, **kwargs)
