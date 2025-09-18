@@ -6,7 +6,6 @@ class User(AbstractUser):
     """
     User model
     """
-    pass
 
 
 class BotUser(models.Model):

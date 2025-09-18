@@ -7,4 +7,3 @@ from users.models import User
 @admin.register(User)
 class UserAdmin(DjangoUserAdmin):
     """ User model admin class """
-    pass

@@ -16,6 +16,7 @@ pylint-django = "^2.6.1"
 
 [tool.pylint]
 ignore-paths = [
+    "manage.py",  # Ignore all files within any 'migrations' directory
     ".*/migrations/.*",  # Ignore all files within any 'migrations' directory
     ".*\\.pyi$",         # Ignore all stub files (.pyi)
 ]
