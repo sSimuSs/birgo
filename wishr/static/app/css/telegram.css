@@ -799,6 +799,10 @@ input[type="radio"]:disabled+label {
     margin-top: 0!important;
 }
 
+.mt_4px {
+    margin-top: 4px!important;
+}
+
 .mt_8px {
     margin-top: 8px!important;
 }
@@ -833,6 +837,10 @@ input[type="radio"]:disabled+label {
 
 .ms_4px {
     margin-left: 4px!important;
+}
+
+.ms_8px {
+    margin-left: 8px!important;
 }
 
 .me_16px {
@@ -983,12 +991,24 @@ input[type="radio"]:disabled+label {
     text-align: center!important;
 }
 
+.justify_items_left {
+    justify-items: left !important;
+}
+
 .text_left {
     text-align: left!important;
 }
 
 .text_right {
     text-align: right!important;
+}
+
+.position_relative {
+    position: relative!important;
+}
+
+.position_absolute {
+    position: absolute!important;
 }
 
 .black_color {
@@ -1070,6 +1090,10 @@ input[type="radio"]:disabled+label {
 
 .fs_18px {
     font-size: 18px!important;
+}
+
+.fw_600 {
+    font-weight: 600!important;
 }
 
 .br_0 {

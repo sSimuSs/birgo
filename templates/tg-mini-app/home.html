@@ -1,10 +1,20 @@
 {% extends "tg-mini-app/base.html" %}
+{% load static %}
 {% block content %}
 <div class="app_page text_center">
     <div class="rounded_sections_container">
         <div class="rounded_section d_block">
             <h4>Hello {{ bot_user.first_name }}!</h4>
             <h2>Welcome to Wishr!</h2>
+        </div>
+        <div class="rounded_section mt_12px p_4px justify_items_left">
+            <div style="background-image: url('{% static 'images/no-image.jpg' %}'); height: 100px; width: 25%; background-size: cover; border-radius: 16px; background-repeat: no-repeat; background-position: center">
+            </div>
+            <div class="ms_8px text_left position_relative" style="width: 75%">
+                <div class="mt_4px">Iphone 17 Pro Max 1TB</div>
+                <div class="muted_color fs_14px">Today</div>
+                <div class="fs_18px position_absolute" style="bottom: 4px">up to <span class="fw_600">15 000 000 UZS</span></div>
+            </div>
         </div>
     </div>
 </div>
