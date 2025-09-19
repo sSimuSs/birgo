@@ -1136,6 +1136,14 @@ input[type="radio"]:disabled+label {
 .d_block {
     display: block!important;
 }
+
+.two_line_ellipse {
+    display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
 /* Third party scripts */
 
 .switchy {
