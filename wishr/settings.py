@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     'users',
     'lots',
+    'offers',
 ]
 
 AUTH_USER_MODEL = 'users.User'

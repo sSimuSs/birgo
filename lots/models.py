@@ -50,7 +50,7 @@ class UserLot(models.Model):
 
     def offers_count(self) -> int:
         """ Method for getting number of offers for current lot """
-        return 0
+        return self.offer_set.filter(status=5).count()
 
     def natural_created_at(self) -> str:
         """ Method for getting natural creation date """
@@ -65,6 +65,9 @@ class UserLot(models.Model):
                 result = naturalday(created_at, "j N").lower()
         result += f" {str(created_at.strftime("%H:%M"))}"
         return result
+
+    def __str__(self):
+        return f"{self.title} #{self.id}"
 
 class UserLotGallery(models.Model):
     """ Lots' Gallery model """
