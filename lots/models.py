@@ -35,3 +35,18 @@ class UserLot(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def get_main_image_url(self) -> str:
+        """ Method for getting lot's main image path (without host) """
+        image_url = "/static/images/no-image.jpg"
+        main_gallery_image = self.userlotgallery_set.filter(main=True).last()
+        if main_gallery_image:
+            image_url = f"{main_gallery_image.image.url}"
+        return image_url
+
+
+class UserLotGallery(models.Model):
+    """ Lots' Gallery model """
+    lot = models.ForeignKey(UserLot, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="lots_images/")
+    main = models.BooleanField(default=False)

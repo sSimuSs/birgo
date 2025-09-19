@@ -5,6 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from init_data_py import InitData
 import init_data_py.errors
 
+from lots.models import UserLot
 from telegram.decorators import tg_pages
 from users.models import BotUser
 
@@ -20,7 +21,7 @@ def init(request):
 @tg_pages("Home")
 def home(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app home page view """
-    print(bot_user)
+    lots = UserLot.objects.filter(status=5)
     return render(request, "tg-mini-app/home.html", locals() | kwargs)
 
 def aut_error(request, *args, **kwargs):

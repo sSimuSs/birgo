@@ -1,13 +1,18 @@
 from django.contrib import admin
 
-from lots.models import UserLot, UserLotCategory, UserLotCategoryTranslation
+from lots.models import UserLot, UserLotCategory, UserLotCategoryTranslation, UserLotGallery
 
+
+class UserLotGalleryInline(admin.TabularInline):
+    model = UserLotGallery
+    extra = 0
 
 @admin.register(UserLot)
 class UserLotAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "title", "status", "created_at")
     search_fields = ("id", "slug", "title", "description", "user__first_name", "user__last_name")
     list_filter = ("status",)
+    inlines = (UserLotGalleryInline,)
 
 class UserLotCategoryTranslationInline(admin.TabularInline):
     model = UserLotCategoryTranslation
