@@ -1,12 +1,8 @@
-import locale
-
-import humanize.i18n
-import humanize
 from django.conf import settings
 from django.contrib.humanize.templatetags.humanize import naturalday
 from django.db import models
 from django.utils import timezone
-from django.utils.translation import get_language, activate
+from django.utils.translation import get_language
 
 from lots.constants import USER_LOT_STATUSES
 
