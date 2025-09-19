@@ -1,4 +1,5 @@
 {% extends "tg-mini-app/base.html" %}
+{% load tz %}
 {% load humanize %}
 {% load i18n %}
 {% load static %}
@@ -16,7 +17,7 @@
             <div class="ms_8px text_left position_relative" style="width: 75%">
                 <div class="mt_4px two_line_ellipse">{{ lot.title }}</div>
                 <div class="fs_14px mt_4px">
-                    <span class="muted_color">{{ lot.created_at }} •</span>
+                    <span class="muted_color">{{ lot.natural_created_at }} •</span>
                     {% if lot.offers_count > 0 %}
                     <span class="purple_color fw_600">
                         {% blocktrans count lot.offers_count as counter %}{{ counter }} offer{% plural %}{{ counter }} offers{% endblocktrans %}

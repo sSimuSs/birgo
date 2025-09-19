@@ -1,5 +1,12 @@
+import locale
+
+import humanize.i18n
+import humanize
 from django.conf import settings
+from django.contrib.humanize.templatetags.humanize import naturalday
 from django.db import models
+from django.utils import timezone
+from django.utils.translation import get_language, activate
 
 from lots.constants import USER_LOT_STATUSES
 
@@ -48,6 +55,20 @@ class UserLot(models.Model):
     def offers_count(self) -> int:
         """ Method for getting number of offers for current lot """
         return 0
+
+    def natural_created_at(self) -> str:
+        """ Method for getting natural creation date """
+        lang = get_language()
+        today = timezone.now().date()
+        created_at = timezone.make_naive(self.created_at)
+        result = naturalday(created_at)
+        if created_at.year == today.year:
+            if lang == "en":
+                result = naturalday(created_at, "N j")
+            else:
+                result = naturalday(created_at, "j N").lower()
+        result += f" {str(created_at.strftime("%H:%M"))}"
+        return result
 
 class UserLotGallery(models.Model):
     """ Lots' Gallery model """

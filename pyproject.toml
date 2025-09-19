@@ -15,6 +15,7 @@ pytelegrambotapi = "^4.29.1"
 pylint-django = "^2.6.1"
 init-data-py = "^0.2.6"
 pillow = "^11.3.0"
+humanize = "^4.13.0"
 
 [tool.pylint]
 ignore-paths = [
