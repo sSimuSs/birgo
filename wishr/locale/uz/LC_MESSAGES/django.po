@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-19 10:01+0500\n"
-"PO-Revision-Date: 2025-09-19 10:01+0500\n"
+"POT-Creation-Date: 2025-09-19 14:30+0500\n"
+"PO-Revision-Date: 2025-09-19 14:31+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -19,14 +19,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.7\n"
 
-#: telegram/views.py:16
+#: telegram/views.py:17
 msgid "Init page"
 msgstr "Kirish sahifasi"
 
-#: telegram/views.py:28
+#: telegram/views.py:29
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
-#: templates/tg-mini-app/home.html:9
+#: templates/tg-mini-app/home.html:10
 msgid "Welcome to Wishr!"
 msgstr "Wishrga xush kelibsiz!"
+
+#: templates/tg-mini-app/home.html:21
+msgid "UZS"
+msgstr "so'm"
+
+#: templates/tg-mini-app/home.html:23
+msgid "open to offers"
+msgstr "takliflarga ochiq"

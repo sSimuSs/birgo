@@ -32,6 +32,7 @@ class UserLot(models.Model):
     description = models.TextField(blank=True, null=True)
     category = models.ForeignKey(UserLotCategory, on_delete=models.SET_NULL, null=True)
     status = models.IntegerField(default=5, choices=USER_LOT_STATUSES)
+    max_price = models.FloatField(blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

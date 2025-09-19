@@ -9,7 +9,7 @@ class UserLotGalleryInline(admin.TabularInline):
 
 @admin.register(UserLot)
 class UserLotAdmin(admin.ModelAdmin):
-    list_display = ("id", "user", "title", "status", "created_at")
+    list_display = ("id", "user", "title", "max_price", "status", "created_at")
     search_fields = ("id", "slug", "title", "description", "user__first_name", "user__last_name")
     list_filter = ("status",)
     inlines = (UserLotGalleryInline,)

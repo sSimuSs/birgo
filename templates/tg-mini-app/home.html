@@ -1,4 +1,5 @@
 {% extends "tg-mini-app/base.html" %}
+{% load humanize %}
 {% load i18n %}
 {% load static %}
 {% block content %}
@@ -15,7 +16,13 @@
             <div class="ms_8px text_left position_relative" style="width: 75%">
                 <div class="mt_4px two_line_ellipse">{{ lot.title }}</div>
                 <div class="muted_color fs_14px mt_4px">{{ lot.created_at }}</div>
-                <div class="fs_18px position_absolute" style="bottom: 4px">up to <span class="fw_600">15 000 000 UZS</span></div>
+                <div class="fs_18px position_absolute" style="bottom: 4px">
+                    {% if lot.max_price %}
+                    up to <span class="fw_600">{{ lot.max_price|intcomma }} {% trans 'UZS' %}</span>
+                    {% else %}
+                    <span class="badge bg_gray black_color">{% trans 'open to offers' %}</span>
+                    {% endif %}
+                </div>
             </div>
         </div>
         {% endfor %}
