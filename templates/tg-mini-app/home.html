@@ -15,7 +15,18 @@
             </div>
             <div class="ms_8px text_left position_relative" style="width: 75%">
                 <div class="mt_4px two_line_ellipse">{{ lot.title }}</div>
-                <div class="muted_color fs_14px mt_4px">{{ lot.created_at }}</div>
+                <div class="fs_14px mt_4px">
+                    <span class="muted_color">{{ lot.created_at }} •</span>
+                    {% if lot.offers_count > 0 %}
+                    <span class="purple_color fw_600">
+                        {% blocktrans count lot.offers_count as counter %}{{ counter }} offer{% plural %}{{ counter }} offers{% endblocktrans %}
+                    </span>
+                    {% else %}
+                    <span class="muted_color fw_600">
+                        {% trans "no offers" %}
+                    </span>
+                    {% endif %}
+                </div>
                 <div class="fs_18px position_absolute" style="bottom: 4px">
                     {% if lot.max_price %}
                     {% blocktranslate with max_price=lot.max_price|floatformat|intcomma %}up to <span class="fw_600">{{ max_price }} UZS</span>{% endblocktranslate %}

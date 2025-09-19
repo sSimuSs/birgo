@@ -45,6 +45,9 @@ class UserLot(models.Model):
             image_url = f"{main_gallery_image.image.url}"
         return image_url
 
+    def offers_count(self) -> int:
+        """ Method for getting number of offers for current lot """
+        return 0
 
 class UserLotGallery(models.Model):
     """ Lots' Gallery model """

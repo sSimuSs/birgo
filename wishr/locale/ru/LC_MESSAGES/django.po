@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-19 14:36+0500\n"
-"PO-Revision-Date: 2025-09-19 14:37+0500\n"
+"POT-Creation-Date: 2025-09-19 17:08+0500\n"
+"PO-Revision-Date: 2025-09-19 17:08+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Init page"
 msgstr "Входная страница"
 
-#: telegram/views.py:29
+#: telegram/views.py:30
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
@@ -32,12 +32,24 @@ msgstr "Ошибка при проверке данных авторизации
 msgid "Welcome to Wishr!"
 msgstr "Добро пожаловать в Wishr!"
 
-#: templates/tg-mini-app/home.html:21
+#: templates/tg-mini-app/home.html:22
+#, python-format
+msgid "%(counter)s offer"
+msgid_plural "%(counter)s offers"
+msgstr[0] "%(counter)s предложение"
+msgstr[1] "%(counter)s предложения"
+msgstr[2] "%(counter)s предложений"
+
+#: templates/tg-mini-app/home.html:26
+msgid "no offers"
+msgstr "нет предложений"
+
+#: templates/tg-mini-app/home.html:32
 #, python-format
 msgid "up to <span class=\"fw_600\">%(max_price)s UZS</span>"
 msgstr "до <span class=\"fw_600\">%(max_price)s сум</span>"
 
-#: templates/tg-mini-app/home.html:23
+#: templates/tg-mini-app/home.html:34
 msgid "open to offers"
 msgstr "открыт для предложений"
 

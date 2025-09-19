@@ -763,6 +763,10 @@ input[type="radio"]:disabled+label {
     background-color: green!important;
 }
 
+.bg_lime {
+    background-color: #84CC16!important;
+}
+
 .bg_theme_main {
     background-color: var(--tg-theme-button_color, red);
 }
@@ -1065,6 +1069,14 @@ input[type="radio"]:disabled+label {
 
 .white_color {
     color: #FFF!important;
+}
+
+.lime_color {
+    color: #84CC16 !important;
+}
+
+.purple_color {
+    color: #7C3AED !important;
 }
 
 .danger_border {
