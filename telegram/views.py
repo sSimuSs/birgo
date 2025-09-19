@@ -21,7 +21,8 @@ def init(request):
 @tg_pages("Home")
 def home(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app home page view """
-    lots = UserLot.objects.filter(status=5)
+    lots = UserLot.objects.filter(status=5).order_by("-id")
+    print(bot_user)
     return render(request, "tg-mini-app/home.html", locals() | kwargs)
 
 def aut_error(request, *args, **kwargs):
