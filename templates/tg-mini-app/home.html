@@ -1,11 +1,12 @@
 {% extends "tg-mini-app/base.html" %}
+{% load i18n %}
 {% load static %}
 {% block content %}
 <div class="app_page text_center">
     <div class="rounded_sections_container">
         <div class="rounded_section d_block">
             <h4>Hello {{ bot_user.first_name }}!</h4>
-            <h2>Welcome to Wishr!</h2>
+            <h2>{% translate 'Welcome to Wishr!' %}</h2>
         </div>
         <div class="rounded_section mt_12px p_4px justify_items_left">
             <div style="background-image: url('{% static 'images/no-image.jpg' %}'); height: 100px; width: 25%; background-size: cover; border-radius: 16px; background-repeat: no-repeat; background-position: center">
