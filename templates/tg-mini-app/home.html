@@ -18,7 +18,7 @@
                 <div class="muted_color fs_14px mt_4px">{{ lot.created_at }}</div>
                 <div class="fs_18px position_absolute" style="bottom: 4px">
                     {% if lot.max_price %}
-                    up to <span class="fw_600">{{ lot.max_price|intcomma }} {% trans 'UZS' %}</span>
+                    {% blocktranslate with max_price=lot.max_price|floatformat|intcomma %}up to <span class="fw_600">{{ max_price }} UZS</span>{% endblocktranslate %}
                     {% else %}
                     <span class="badge bg_gray black_color">{% trans 'open to offers' %}</span>
                     {% endif %}
