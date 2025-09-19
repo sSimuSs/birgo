@@ -25,6 +25,11 @@ def home(request, bot_user: BotUser, *args, **kwargs):
     print(bot_user)
     return render(request, "tg-mini-app/home.html", locals() | kwargs)
 
+@tg_pages("User")
+def user_detail(request, bot_user: BotUser, *args, **kwargs):
+    kwargs["page_title"] += f": {bot_user.get_display_name()}"
+    return render(request, "tg-mini-app/user/detail.html", locals() | kwargs)
+
 def aut_error(request, *args, **kwargs):
     """ Error page view for 'Authentication Error' """
     page_title = _("Error on validating auth data")

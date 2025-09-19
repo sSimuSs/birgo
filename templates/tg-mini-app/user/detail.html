@@ -1,0 +1,36 @@
+{% extends "tg-mini-app/base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="app_page">
+    <div class="chat_detail_container">
+        <div class="chat_header">
+                <div>
+                    <div class="chat_photo">
+                        {% if bot_user.photo_url %}
+                        <img src="{{ bot_user.photo_url }}" alt="" width="90px">
+                        {% endif %}
+                    </div>
+                    <h3>{{ bot_user.get_display_name }}</h3>
+                </div>
+        </div>
+    </div>
+    <div class="tab_buttons bg_transparent justify_content_center">
+        <button type="button" {% if request.GET.section is None %}class="active"{% endif %} onclick="window.location='?'">
+            {% translate 'Wishlist' %}
+        </button>
+        <button type="button" {% if request.GET.section == "offers" %}class="active"{% endif %} onclick="window.location='?section=offers'">
+            {% translate 'Offers' %}
+        </button>
+    </div>
+</div>
+<script>
+TelegramData.BackButton.onClick(function () {
+    window.location.href = '{% url "tg_home" %}';
+});
+TelegramData.BackButton.show();
+
+if (TelegramData.MainButton) {
+    TelegramData.MainButton.hide();
+}
+</script>
+{% endblock %}

@@ -14,7 +14,7 @@
                 </svg>
                 <input type="text" name="search" class="br_12px" style="padding-left: 33px" value="{{ request.GET.search }}" placeholder="{% translate 'search' %}">
             </div>
-            <a href="#" class="d_flex">
+            <a href="{% url 'tg_user_detail' bot_user.id %}" class="d_flex">
                 <img src="{{ bot_user.photo_url }}" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
             </a>
         </div>

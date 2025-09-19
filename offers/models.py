@@ -4,6 +4,7 @@ from offers.constants import OFFER_STATUSES
 
 
 class Offer(models.Model):
+    """ User lots' offer model class """
     lot = models.ForeignKey("lots.UserLot", on_delete=models.CASCADE)
     user = models.ForeignKey("users.User", on_delete=models.CASCADE)
     price = models.FloatField()
