@@ -29,7 +29,7 @@ class UserLotCategoryTranslation(models.Model):
 
 class UserLot(models.Model):
     """ User's Lot model """
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey("users.User", on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100, unique=True)
     title = models.CharField(max_length=250)
     description = models.TextField(blank=True, null=True)

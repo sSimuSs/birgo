@@ -1,36 +1,52 @@
-{% extends "tg-mini-app/base.html" %}
+{% extends "tg-mini-app/user/user-detail-base.html" %}
+{% load humanize %}
 {% load i18n %}
-{% block content %}
-<div class="app_page">
-    <div class="chat_detail_container">
-        <div class="chat_header">
-                <div>
-                    <div class="chat_photo">
-                        {% if bot_user.photo_url %}
-                        <img src="{{ bot_user.photo_url }}" alt="" width="90px">
-                        {% endif %}
+{% block user_detail_content %}
+<div class="rounded_section rounded_section_with_label section_with_list br_0" style="min-height: calc(100vh - 270px)">
+    <ul>
+        {% for lot in lots %}
+            <li style="border-bottom: .5px solid var(--tg-theme-section-separator-color, rgb(0, 0, 0, 15%))">
+                <a href="#" style="align-items: normal" class="py_8px">
+                    <div class="d_flex px_8px" style="width: 100px; height: 100px;">
+                        <img src="{{ lot.get_main_image_url }}" alt="" >
                     </div>
-                    <h3>{{ bot_user.get_display_name }}</h3>
+                    <div>
+                        <div class="two_line_ellipse">{{ lot.title }}</div>
+                        <div class="fs_14px mt_4px">
+                            <span class="muted_color">{{ lot.natural_created_at }} •</span>
+                            {% if lot.offers_count > 0 %}
+                            <span class="purple_color fw_600">
+                                {% blocktrans count lot.offers_count as counter %}{{ counter }} offer{% plural %}{{ counter }} offers{% endblocktrans %}
+                            </span>
+                            {% else %}
+                            <span class="muted_color fw_600">
+                                {% trans "no offers" %}
+                            </span>
+                            {% endif %}
+                        </div>
+                        <div class="fs_18px position_absolute" style="bottom: 4px">
+                            {% if lot.max_price %}
+                            {% blocktranslate with max_price=lot.max_price|floatformat|intcomma %}up to <span class="fw_600">{{ max_price }} UZS</span>{% endblocktranslate %}
+                            {% else %}
+                            <span class="badge bg_gray black_color">{% trans 'open to offers' %}</span>
+                            {% endif %}
+                        </div>
+{#                            <div class="section_counter">#}
+{#                                <div>#}
+{#                                    {{ subscr.date_created }}#}
+{#                                    <div class="secondary_text">{{ subscr.date_created }}</div>#}
+{#                                </div>#}
+{#                            </div>#}
+                    </div>
+                </a>
+            </li>
+        {% empty %}
+            <li>
+                <div class="text_center muted_color" style="width: 100%; padding: 64px 0">
+                    {% translate "Nothing was found" %}
                 </div>
-        </div>
-    </div>
-    <div class="tab_buttons bg_transparent justify_content_center">
-        <button type="button" {% if request.GET.section is None %}class="active"{% endif %} onclick="window.location='?'">
-            {% translate 'Wishlist' %}
-        </button>
-        <button type="button" {% if request.GET.section == "offers" %}class="active"{% endif %} onclick="window.location='?section=offers'">
-            {% translate 'Offers' %}
-        </button>
-    </div>
+            </li>
+        {% endfor %}
+    </ul>
 </div>
-<script>
-TelegramData.BackButton.onClick(function () {
-    window.location.href = '{% url "tg_home" %}';
-});
-TelegramData.BackButton.show();
-
-if (TelegramData.MainButton) {
-    TelegramData.MainButton.hide();
-}
-</script>
 {% endblock %}
