@@ -20,7 +20,7 @@
         </div>
         </form>
         {% for lot in lots %}
-        <div class="rounded_section p_4px justify_items_left mt_16px">
+        <a href="{% url 'tg_lot_detail' lot.id %}" class="rounded_section p_4px justify_items_left mt_16px">
             <div style="background-image: url('{{ lot.get_main_image_url }}'); height: 100px; width: 25%; background-size: cover; border-radius: 16px; background-repeat: no-repeat; background-position: center">
             </div>
             <div class="ms_8px text_left position_relative" style="width: 75%">
@@ -45,7 +45,7 @@
                     {% endif %}
                 </div>
             </div>
-        </div>
+        </a>
         {% endfor %}
     </div>
 </div>

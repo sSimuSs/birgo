@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext_lazy as _
 
 from init_data_py import InitData
@@ -31,6 +31,13 @@ def user_detail(request, bot_user: BotUser, *args, **kwargs):
     kwargs["page_title"] += f": {bot_user.get_display_name()}"
     lots = bot_user.user.userlot_set.order_by("-id")
     return render(request, "tg-mini-app/user/detail.html", locals() | kwargs)
+
+@tg_pages("Wish")
+def lot_detail(request, bot_user: BotUser, *args, **kwargs):
+    """ Telegram Mini app user detail page view """
+    lot: UserLot = get_object_or_404(UserLot, pk=kwargs["pk"])
+    kwargs["page_title"] += f": {lot.title}"
+    return render(request, "tg-mini-app/lots/detail.html", locals() | kwargs)
 
 def aut_error(request, *args, **kwargs):
     """ Error page view for 'Authentication Error' """

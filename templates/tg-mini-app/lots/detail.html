@@ -1,0 +1,35 @@
+{% extends "tg-mini-app/base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="app_page">
+    <div class="rounded_sections_container">
+        <div class="rounded_section d_block justify_items_left">
+            <h3 class="mt_0 mb_8px">{{ lot.title }}</h3>
+            <div>
+                <span class="muted_color">{{ lot.natural_created_at }} •</span>
+                {% if lot.offers_count > 0 %}
+                <span class="purple_color fw_600">
+                    {% blocktrans count lot.offers_count as counter %}{{ counter }} offer{% plural %}{{ counter }} offers{% endblocktrans %}
+                </span>
+                {% else %}
+                <span class="muted_color fw_600">
+                    {% trans "no offers" %}
+                </span>
+                {% endif %}
+            </div>
+        </div>
+        <div class="list_section_label mt_16px">{% translate 'Description' %}</div>
+        <div class="rounded_section white_space_pre_line">{{ lot.description }}</div>
+    </div>
+</div>
+<script>
+TelegramData.BackButton.onClick(function () {
+    window.location.href = '{% url "tg_home" %}';
+});
+TelegramData.BackButton.show();
+
+if (TelegramData.MainButton) {
+    TelegramData.MainButton.hide();
+}
+</script>
+{% endblock %}

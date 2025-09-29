@@ -1207,3 +1207,7 @@ input[type="radio"]:disabled+label {
     fill: #fff
 }
 
+.white_space_pre_line {
+    white-space: pre-line!important;
+}
+
