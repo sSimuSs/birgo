@@ -807,6 +807,10 @@ input[type="radio"]:disabled+label {
     margin-top: 4px!important;
 }
 
+.mt_6px {
+    margin-top: 6px!important;
+}
+
 .mt_8px {
     margin-top: 8px!important;
 }
