@@ -13,8 +13,8 @@
 <div class="app_page">
     <div class="rounded_sections_container">
         <div class="rounded_section d_block justify_items_left">
-            <div class="mb_8px mt_6px">
-                <img src="{{ lot.get_main_image_url }}" alt="" class="w-100" style="border-radius: 16px; max-height: 350px">
+            <div class="mb_8px mt_6px w-100 text_center">
+                <img src="{{ lot.get_main_image_url }}" alt="" style="border-radius: 16px; max-height: 250px; max-width: 100%;">
             </div>
             <span class="one_line_ellipse fs_15px">{% blocktranslate with user=lot.user.first_name %}{{ user }} wishes to buy{% endblocktranslate %}:</span>
             <h3 class="mt_0 mb_8px">{{ lot.title }}</h3>
