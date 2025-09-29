@@ -16,6 +16,7 @@
             <div class="mb_8px mt_6px">
                 <img src="{{ lot.get_main_image_url }}" alt="" class="w-100" style="border-radius: 16px; max-height: 350px">
             </div>
+            <span class="one_line_ellipse fs_15px">{% blocktranslate with user=lot.user.first_name %}{{ user }} wishes to buy{% endblocktranslate %}:</span>
             <h3 class="mt_0 mb_8px">{{ lot.title }}</h3>
             <div>
                 <span class="muted_color">{{ lot.natural_created_at }} •</span>
