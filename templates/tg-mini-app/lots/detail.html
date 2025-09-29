@@ -29,7 +29,7 @@
         </div>
         {% if lot.description  %}
         <div class="list_section_label mt_16px">{% translate 'Description' %}</div>
-        <div class="rounded_section d_block">
+        <div class="rounded_section d_block justify_items_left">
             <div class="white_space_pre_line collapse" id="description">{{ lot.description }}</div>
             {% if lot.description|length > 210 %}
             <a role="button" class="collapse_link collapsed muted_color fs_14px" href="#description"
