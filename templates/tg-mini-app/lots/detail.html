@@ -18,8 +18,10 @@
                 {% endif %}
             </div>
         </div>
+        {% if lot.description  %}
         <div class="list_section_label mt_16px">{% translate 'Description' %}</div>
         <div class="rounded_section white_space_pre_line">{{ lot.description }}</div>
+        {% endif %}
     </div>
 </div>
 <script>
