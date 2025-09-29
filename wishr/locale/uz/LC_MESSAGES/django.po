@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-29 14:01+0500\n"
-"PO-Revision-Date: 2025-09-29 14:02+0500\n"
+"POT-Creation-Date: 2025-09-29 14:05+0500\n"
+"PO-Revision-Date: 2025-09-29 14:05+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -52,7 +52,7 @@ msgid "open to offers"
 msgstr "takliflarga ochiq"
 
 #: templates/tg-mini-app/home.html:58
-msgid "Create a wish"
+msgid "Create a Wish"
 msgstr "Istak yaratish"
 
 #: templates/tg-mini-app/user/detail.html:46
