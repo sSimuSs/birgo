@@ -51,5 +51,16 @@
 </div>
 <script>
  TelegramData.BackButton.hide();
+ if (TelegramData.MainButton) {
+     TelegramData.MainButton.enable();
+     TelegramData.MainButton.setParams({
+         "has_shine_effect": true,
+         "text": "{% translate "Create a wish" %}"
+     });
+     TelegramData.MainButton.onClick(function () {
+         alert("Soon...")
+     });
+     TelegramData.MainButton.show();
+ }
 </script>
 {% endblock %}

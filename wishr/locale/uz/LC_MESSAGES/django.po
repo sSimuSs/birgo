@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-20 00:41+0500\n"
-"PO-Revision-Date: 2025-09-20 00:42+0500\n"
+"POT-Creation-Date: 2025-09-29 14:01+0500\n"
+"PO-Revision-Date: 2025-09-29 14:02+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "Init page"
 msgstr "Kirish sahifasi"
 
-#: telegram/views.py:35
+#: telegram/views.py:37
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
@@ -31,31 +31,39 @@ msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 msgid "search"
 msgstr "qidirish"
 
-#: templates/tg-mini-app/home.html:32
+#: templates/tg-mini-app/home.html:32 templates/tg-mini-app/user/detail.html:19
 #, python-format
 msgid "%(counter)s offer"
 msgid_plural "%(counter)s offers"
 msgstr[0] "%(counter)sta taklif"
 msgstr[1] "%(counter)sta taklif"
 
-#: templates/tg-mini-app/home.html:36
+#: templates/tg-mini-app/home.html:36 templates/tg-mini-app/user/detail.html:23
 msgid "no offers"
 msgstr "takliflar yo'q"
 
-#: templates/tg-mini-app/home.html:42
+#: templates/tg-mini-app/home.html:42 templates/tg-mini-app/user/detail.html:29
 #, python-format
 msgid "up to <span class=\"fw_600\">%(max_price)s UZS</span>"
 msgstr "<span class=\"fw_600\">%(max_price)s so'm</span> gacha"
 
-#: templates/tg-mini-app/home.html:44
+#: templates/tg-mini-app/home.html:44 templates/tg-mini-app/user/detail.html:31
 msgid "open to offers"
 msgstr "takliflarga ochiq"
 
-#: templates/tg-mini-app/user/detail.html:19
+#: templates/tg-mini-app/home.html:58
+msgid "Create a wish"
+msgstr "Istak yaratish"
+
+#: templates/tg-mini-app/user/detail.html:46
+msgid "Nothing was found"
+msgstr "Hechnima topilmadi"
+
+#: templates/tg-mini-app/user/user-detail-base.html:20
 msgid "Wishlist"
 msgstr "Istaklar"
 
-#: templates/tg-mini-app/user/detail.html:22
+#: templates/tg-mini-app/user/user-detail-base.html:23
 msgid "Offers"
 msgstr "Takliflar"
 
