@@ -1,6 +1,15 @@
 {% extends "tg-mini-app/base.html" %}
 {% load i18n %}
 {% block content %}
+<style>
+.app_page a.collapse_link.collapsed::after {
+    content: '+ {% translate 'More' %}';
+}
+
+.app_page a.collapse_link:not(.collapsed)::after {
+    content: '- {% translate 'Less' %}';
+}
+</style>
 <div class="app_page">
     <div class="rounded_sections_container">
         <div class="rounded_section d_block justify_items_left">
@@ -20,7 +29,12 @@
         </div>
         {% if lot.description  %}
         <div class="list_section_label mt_16px">{% translate 'Description' %}</div>
-        <div class="rounded_section white_space_pre_line">{{ lot.description }}</div>
+        <div class="rounded_section d_block">
+            <div class="white_space_pre_line collapse" id="description">{{ lot.description }}</div>
+            <a role="button" class="collapse_link collapsed muted_color fs_14px" href="#description"
+               onclick="this.classList.toggle('collapsed');document.getElementById('description').classList.toggle('show');">
+            </a>
+        </div>
         {% endif %}
     </div>
 </div>

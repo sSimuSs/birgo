@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-29 14:05+0500\n"
-"PO-Revision-Date: 2025-09-29 14:05+0500\n"
+"POT-Creation-Date: 2025-09-29 14:49+0500\n"
+"PO-Revision-Date: 2025-09-29 14:49+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Init page"
 msgstr "Входная страница"
 
-#: telegram/views.py:37
+#: telegram/views.py:44
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
@@ -32,7 +32,8 @@ msgstr "Ошибка при проверке данных авторизации
 msgid "search"
 msgstr "поиск"
 
-#: templates/tg-mini-app/home.html:32 templates/tg-mini-app/user/detail.html:19
+#: templates/tg-mini-app/home.html:32 templates/tg-mini-app/lots/detail.html:21
+#: templates/tg-mini-app/user/detail.html:19
 #, python-format
 msgid "%(counter)s offer"
 msgid_plural "%(counter)s offers"
@@ -40,7 +41,8 @@ msgstr[0] "%(counter)s предложение"
 msgstr[1] "%(counter)s предложения"
 msgstr[2] "%(counter)s предложений"
 
-#: templates/tg-mini-app/home.html:36 templates/tg-mini-app/user/detail.html:23
+#: templates/tg-mini-app/home.html:36 templates/tg-mini-app/lots/detail.html:25
+#: templates/tg-mini-app/user/detail.html:23
 msgid "no offers"
 msgstr "нет предложений"
 
@@ -56,6 +58,18 @@ msgstr "открыт для предложений"
 #: templates/tg-mini-app/home.html:58
 msgid "Create a Wish"
 msgstr "Создать Хотелку"
+
+#: templates/tg-mini-app/lots/detail.html:6
+msgid "More"
+msgstr "Больше"
+
+#: templates/tg-mini-app/lots/detail.html:10
+msgid "Less"
+msgstr "Скрыть"
+
+#: templates/tg-mini-app/lots/detail.html:31
+msgid "Description"
+msgstr "Описание"
 
 #: templates/tg-mini-app/user/detail.html:46
 msgid "Nothing was found"
