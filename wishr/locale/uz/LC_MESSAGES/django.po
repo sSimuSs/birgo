@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-29 14:49+0500\n"
-"PO-Revision-Date: 2025-09-29 14:49+0500\n"
+"POT-Creation-Date: 2025-09-30 17:27+0500\n"
+"PO-Revision-Date: 2025-09-30 17:29+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -31,7 +31,8 @@ msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 msgid "search"
 msgstr "qidirish"
 
-#: templates/tg-mini-app/home.html:32 templates/tg-mini-app/lots/detail.html:21
+#: templates/tg-mini-app/home.html:32 templates/tg-mini-app/lots/detail.html:26
+#: templates/tg-mini-app/lots/detail.html:62
 #: templates/tg-mini-app/user/detail.html:19
 #, python-format
 msgid "%(counter)s offer"
@@ -39,17 +40,20 @@ msgid_plural "%(counter)s offers"
 msgstr[0] "%(counter)sta taklif"
 msgstr[1] "%(counter)sta taklif"
 
-#: templates/tg-mini-app/home.html:36 templates/tg-mini-app/lots/detail.html:25
+#: templates/tg-mini-app/home.html:36 templates/tg-mini-app/lots/detail.html:30
+#: templates/tg-mini-app/lots/detail.html:66
 #: templates/tg-mini-app/user/detail.html:23
 msgid "no offers"
 msgstr "takliflar yo'q"
 
-#: templates/tg-mini-app/home.html:42 templates/tg-mini-app/user/detail.html:29
+#: templates/tg-mini-app/home.html:42 templates/tg-mini-app/lots/detail.html:72
+#: templates/tg-mini-app/user/detail.html:29
 #, python-format
 msgid "up to <span class=\"fw_600\">%(max_price)s UZS</span>"
 msgstr "<span class=\"fw_600\">%(max_price)s so'm</span> gacha"
 
-#: templates/tg-mini-app/home.html:44 templates/tg-mini-app/user/detail.html:31
+#: templates/tg-mini-app/home.html:44 templates/tg-mini-app/lots/detail.html:74
+#: templates/tg-mini-app/user/detail.html:31
 msgid "open to offers"
 msgstr "takliflarga ochiq"
 
@@ -57,29 +61,40 @@ msgstr "takliflarga ochiq"
 msgid "Create a Wish"
 msgstr "Istak yaratish"
 
-#: templates/tg-mini-app/lots/detail.html:6
+#: templates/tg-mini-app/lots/detail.html:7
 msgid "More"
 msgstr "Ko'proq"
 
-#: templates/tg-mini-app/lots/detail.html:10
+#: templates/tg-mini-app/lots/detail.html:11
 msgid "Less"
 msgstr "Yopish"
 
-#: templates/tg-mini-app/lots/detail.html:31
+#: templates/tg-mini-app/lots/detail.html:20
+#, python-format
+msgid "%(user)s wishes to buy"
+msgstr "%(user)s sotib olishni istaydi"
+
+#: templates/tg-mini-app/lots/detail.html:36
 msgid "Description"
 msgstr "Tavsif"
 
+#: templates/tg-mini-app/lots/detail.html:48
+#: templates/tg-mini-app/user/user-detail-base.html:23
+msgid "Offers"
+msgstr "Takliflar"
+
+#: templates/tg-mini-app/lots/detail.html:83
 #: templates/tg-mini-app/user/detail.html:46
 msgid "Nothing was found"
 msgstr "Hechnima topilmadi"
 
+#: templates/tg-mini-app/lots/detail.html:100
+msgid "Make an Offer"
+msgstr "Taklif qilish"
+
 #: templates/tg-mini-app/user/user-detail-base.html:20
 msgid "Wishlist"
 msgstr "Istaklar"
-
-#: templates/tg-mini-app/user/user-detail-base.html:23
-msgid "Offers"
-msgstr "Takliflar"
 
 #~ msgid "Welcome to Wishr!"
 #~ msgstr "Wishrga xush kelibsiz!"
