@@ -37,6 +37,7 @@ def lot_detail(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app user detail page view """
     lot: UserLot = get_object_or_404(UserLot, pk=kwargs["pk"])
     kwargs["page_title"] += f": {lot.title}"
+    print(bot_user)
     return render(request, "tg-mini-app/lots/detail.html", locals() | kwargs)
 
 def aut_error(request, *args, **kwargs):
