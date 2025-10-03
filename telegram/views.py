@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from init_data_py import InitData
 import init_data_py.errors
 
-from lots.models import UserLot
+from lots.models import UserLot, UserLotCategory
 from telegram.decorators import tg_pages
 from users.models import BotUser
 
@@ -37,8 +37,16 @@ def lot_detail(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app user detail page view """
     lot: UserLot = get_object_or_404(UserLot, pk=kwargs["pk"])
     kwargs["page_title"] += f": {lot.title}"
-    print(bot_user)
+    lot_cats = lot.get_cats(bot_user.get_lang())
     return render(request, "tg-mini-app/lots/detail.html", locals() | kwargs)
+
+@tg_pages("Category")
+def cat_page(request, bot_user: BotUser, *args, **kwargs):
+    """ Telegram Mini app user detail page view """
+    category: UserLotCategory = get_object_or_404(UserLotCategory, slug=kwargs["slug"])
+    cat_name = category.get_name(bot_user.get_lang())
+    kwargs["page_title"] += f": {cat_name}"
+    return render(request, "tg-mini-app/cats/detail.html", locals() | kwargs)
 
 def aut_error(request, *args, **kwargs):
     """ Error page view for 'Authentication Error' """

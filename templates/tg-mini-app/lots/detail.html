@@ -31,6 +31,11 @@
                 </span>
                 {% endif %}
             </div>
+            <div class="mt_4px">
+                {% for cat in lot_cats %}
+                <a href="{% url 'tg_cat_page' cat.slug %}" class="badge badge-s link_color" style="text-decoration: none">/{{ cat.name }}</a>
+                {% endfor %}
+            </div>
         </div>
         {% if lot.description  %}
         <div class="list_section_label mt_16px">{% translate 'Description' %}</div>

@@ -16,6 +16,10 @@ class UserLotCategory(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def get_name(self, user_lang: str) -> str:
+        name = self.slug.capitalize()
+        return name
+
     def __str__(self):
         return self.slug
 
@@ -65,6 +69,16 @@ class UserLot(models.Model):
                 result = naturalday(created_at, "j N").lower()
         result += f" {str(created_at.strftime("%H:%M"))}"
         return result
+
+    def get_cats(self, user_lang: str) -> list[dict]:
+        """ Method for getting hashtags for current lot """
+        hashtags = []
+        if self.category:
+            hashtags.append({
+                "name": self.category.get_name(user_lang),
+                "slug": self.category.slug,
+            })
+        return hashtags
 
     def __str__(self):
         return f"{self.title} #{self.id}"

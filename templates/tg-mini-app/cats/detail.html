@@ -1,0 +1,20 @@
+{% extends "tg-mini-app/base.html" %}
+{% load humanize %}
+{% load i18n %}
+{% block content %}
+<div class="app_page">
+    <div class="rounded_sections_container">
+        <h1 class="mt_0">/{{ cat_name }}</h1>
+    </div>
+</div>
+<script>
+TelegramData.BackButton.onClick(function () {
+    window.location.href = '{% url "tg_home" %}';
+});
+TelegramData.BackButton.show();
+
+if (TelegramData.MainButton) {
+     TelegramData.MainButton.hide();
+}
+</script>
+{% endblock %}
