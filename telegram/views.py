@@ -39,6 +39,8 @@ def lot_detail(request, bot_user: BotUser, *args, **kwargs):
     lot: UserLot = get_object_or_404(UserLot, pk=kwargs["pk"])
     kwargs["page_title"] += f": {lot.title}"
     lot_cats = lot.get_cats(bot_user.get_lang())
+
+    lot_offers = lot.offer_set.order_by("-price")
     return render(request, "tg-mini-app/lots/detail.html", locals() | kwargs)
 
 @tg_pages("Category")
