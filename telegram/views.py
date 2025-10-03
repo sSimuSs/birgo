@@ -7,7 +7,8 @@ import init_data_py.errors
 
 from lots.models import UserLot, UserLotCategory
 from telegram.decorators import tg_pages
-from users.models import BotUser
+from users.models import BotUser, User
+
 
 def init(request):
     """
@@ -29,9 +30,16 @@ def home(request, bot_user: BotUser, *args, **kwargs):
 @tg_pages("User")
 def user_detail(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app user detail page view """
-    kwargs["page_title"] += f": {bot_user.get_display_name()}"
-    lots = bot_user.user.userlot_set.order_by("-id")
-    return render(request, "tg-mini-app/user/detail.html", locals() | kwargs)
+    user = get_object_or_404(User, id=kwargs['pk'])
+    kwargs["page_title"] += f": {user.botuser.get_display_name()}"
+
+    section = request.GET.get("section", "lots")
+    match section:
+        case "lots":
+            lots = user.userlot_set.order_by("-id")
+        case "offers":
+            offers = user.offer_set.order_by("-id")
+    return render(request, f"tg-mini-app/user/{section}.html", locals() | kwargs)
 
 @tg_pages("Wish")
 def lot_detail(request, bot_user: BotUser, *args, **kwargs):

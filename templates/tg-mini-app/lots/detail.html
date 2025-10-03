@@ -54,7 +54,7 @@
         <ul>
             {% for offer in lot_offers %}
                 <li>
-                    <a href="#">
+                    <a href="{% url 'tg_user_detail' offer.user_id %}">
                         <div class="list_item_icon">
                             {% if offer.user.botuser.photo_url %}
                                 <img src="{{ offer.user.botuser.photo_url }}" alt="" width="40">
@@ -64,7 +64,8 @@
                             <div>
                                 {{ offer.user.botuser.get_display_name }}<br>
                                 <span class="secondary_text">
-                                    {{ offer.natural_created_at }}
+                                    {{ offer.natural_created_at }} •
+                                    {% blocktrans count offer.get_total_user_offers_count as counter %}{{ counter }} offer{% plural %}{{ counter }} offers{% endblocktrans %}
                                 </span>
                             </div>
                             <div class="section_counter success_color">

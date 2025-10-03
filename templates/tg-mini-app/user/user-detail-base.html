@@ -7,11 +7,11 @@
         <div class="chat_header">
                 <div>
                     <div class="chat_photo">
-                        {% if bot_user.photo_url %}
-                        <img src="{{ bot_user.photo_url }}" alt="" width="90px">
+                        {% if user.botuser.photo_url %}
+                        <img src="{{ user.botuser.photo_url }}" alt="" width="90px">
                         {% endif %}
                     </div>
-                    <h3>{{ bot_user.get_display_name }}</h3>
+                    <h3>{{ user.botuser.get_display_name }}</h3>
                 </div>
         </div>
     </div>

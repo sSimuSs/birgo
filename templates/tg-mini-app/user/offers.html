@@ -1,0 +1,36 @@
+{% extends "tg-mini-app/user/user-detail-base.html" %}
+{% load humanize %}
+{% load i18n %}
+{% block user_detail_content %}
+<div class="rounded_section rounded_section_with_label section_with_list br_0" style="min-height: calc(100vh - 210px)">
+    <ul>
+        {% for offer in offers %}
+            <li style="border-bottom: .5px solid var(--tg-theme-section-separator-color, rgb(0, 0, 0, 15%))">
+                <a href="{% url 'tg_lot_detail' offer.lot_id %}" style="align-items: normal" class="py_8px">
+                    <div class="d_flex px_8px justify_content_center" style="width: 70px; height: 70px;">
+                        <img src="{{ offer.lot.get_main_image_url }}" alt="" >
+                    </div>
+                    <div>
+                        <div class="one_line_ellipse">{{ offer.lot.title }}</div>
+                        <div class="fs_14px mt_4px muted_color">
+                            <span>{{ offer.natural_created_at }} •</span>
+                            <span class="fw_600">
+                                {% blocktrans count offer.get_total_user_offers_count as counter %}{{ counter }} offer{% plural %}{{ counter }} offers{% endblocktrans %}
+                            </span>
+                        </div>
+                        <div class="success_color position_absolute" style="bottom: 6px">
+                            {{ offer.price|floatformat|intcomma }} {% trans "UZS" %}
+                        </div>
+                    </div>
+                </a>
+            </li>
+        {% empty %}
+            <li>
+                <div class="text_center muted_color" style="width: 100%; padding: 64px 0">
+                    {% translate "Nothing was found" %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

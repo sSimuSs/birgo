@@ -30,3 +30,8 @@ class Offer(models.Model):
                 result = naturalday(created_at, "j N").lower()
         result += f" {str(created_at.strftime("%H:%M"))}"
         return result
+
+    def get_total_user_offers_count(self) -> int:
+        """ Method for getting total number of user's offers for current lot """
+        user_offers_count = self.lot.offer_set.filter(user=self.user).count()
+        return user_offers_count
