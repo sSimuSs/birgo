@@ -1159,7 +1159,7 @@ input[type="radio"]:disabled+label {
 }
 
 .border_top {
-    border-top: 1px solid var(--tg-theme-section-separator-color, rgb(0, 0, 0, 15%));
+    border-top: .5px solid var(--tg-theme-section-separator-color, rgb(0, 0, 0, 15%));
 }
 
 .d_none {
