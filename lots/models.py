@@ -17,7 +17,10 @@ class UserLotCategory(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def get_name(self, user_lang: str) -> str:
-        """ Return the name of the category. If there is no the name text it will be returned the capitalized slug """
+        """
+        Return the name of the category.
+        If there is no the name text it will be returned the capitalized slug
+        """
         name = self.slug.capitalize()
         print(user_lang)
         return name
