@@ -28,4 +28,14 @@
         {% endblock %}
     </div>
 </body>
+<script>
+{% if back_btn_url %}
+    TelegramData.BackButton.onClick(function () {
+        window.location.href = '{{ back_btn_url }}';
+    });
+    TelegramData.BackButton.show();
+{% else %}
+    TelegramData.BackButton.hide();
+{% endif %}
+</script>
 </html>

@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.shortcuts import redirect, get_object_or_404
+from django.urls import reverse
 from django.utils.translation import gettext_lazy
 
 from users.models import BotUser
@@ -9,6 +10,8 @@ def tg_pages(page_title_en: str):
     """ decorator from telegram mini app page views """
     def decorator(view_func):
         def wrap(request, *args, **kwargs):
+            kwargs['back_button_url'] = reverse("tg_home")
+
             kwargs['page_title'] = gettext_lazy(page_title_en)
 
             user_id = 1

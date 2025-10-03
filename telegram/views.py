@@ -22,6 +22,7 @@ def init(request):
 def home(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app home page view """
     lots = UserLot.objects.filter(status=5).order_by("-id")
+    kwargs['back_button_url'] = None
     print(bot_user)
     return render(request, "tg-mini-app/home.html", locals() | kwargs)
 
