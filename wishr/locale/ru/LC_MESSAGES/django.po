@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-30 17:27+0500\n"
-"PO-Revision-Date: 2025-09-30 17:28+0500\n"
+"POT-Creation-Date: 2025-10-03 19:00+0500\n"
+"PO-Revision-Date: 2025-10-03 19:00+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -20,11 +20,11 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.7\n"
 
-#: telegram/views.py:17
+#: telegram/views.py:18
 msgid "Init page"
 msgstr "Входная страница"
 
-#: telegram/views.py:44
+#: telegram/views.py:64
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
@@ -33,8 +33,9 @@ msgid "search"
 msgstr "поиск"
 
 #: templates/tg-mini-app/home.html:32 templates/tg-mini-app/lots/detail.html:26
-#: templates/tg-mini-app/lots/detail.html:62
-#: templates/tg-mini-app/user/detail.html:19
+#: templates/tg-mini-app/lots/detail.html:67
+#: templates/tg-mini-app/user/lots.html:19
+#: templates/tg-mini-app/user/offers.html:18
 #, python-format
 msgid "%(counter)s offer"
 msgid_plural "%(counter)s offers"
@@ -43,23 +44,20 @@ msgstr[1] "%(counter)s предложения"
 msgstr[2] "%(counter)s предложений"
 
 #: templates/tg-mini-app/home.html:36 templates/tg-mini-app/lots/detail.html:30
-#: templates/tg-mini-app/lots/detail.html:66
-#: templates/tg-mini-app/user/detail.html:23
+#: templates/tg-mini-app/user/lots.html:23
 msgid "no offers"
 msgstr "нет предложений"
 
-#: templates/tg-mini-app/home.html:42 templates/tg-mini-app/lots/detail.html:72
-#: templates/tg-mini-app/user/detail.html:29
+#: templates/tg-mini-app/home.html:42 templates/tg-mini-app/user/lots.html:29
 #, python-format
 msgid "up to <span class=\"fw_600\">%(max_price)s UZS</span>"
 msgstr "до <span class=\"fw_600\">%(max_price)s сум</span>"
 
-#: templates/tg-mini-app/home.html:44 templates/tg-mini-app/lots/detail.html:74
-#: templates/tg-mini-app/user/detail.html:31
+#: templates/tg-mini-app/home.html:44 templates/tg-mini-app/user/lots.html:31
 msgid "open to offers"
 msgstr "открыт для предложений"
 
-#: templates/tg-mini-app/home.html:58
+#: templates/tg-mini-app/home.html:57
 msgid "Create a Wish"
 msgstr "Создать Хотелку"
 
@@ -76,21 +74,31 @@ msgstr "Скрыть"
 msgid "%(user)s wishes to buy"
 msgstr "%(user)s хочет купить"
 
-#: templates/tg-mini-app/lots/detail.html:36
+#: templates/tg-mini-app/lots/detail.html:41
 msgid "Description"
 msgstr "Описание"
 
-#: templates/tg-mini-app/lots/detail.html:48
+#: templates/tg-mini-app/lots/detail.html:53
 #: templates/tg-mini-app/user/user-detail-base.html:23
 msgid "Offers"
 msgstr "Предложений"
 
-#: templates/tg-mini-app/lots/detail.html:83
-#: templates/tg-mini-app/user/detail.html:46
+#: templates/tg-mini-app/lots/detail.html:81
+#: templates/tg-mini-app/user/lots.html:46
+#: templates/tg-mini-app/user/offers.html:30
 msgid "Nothing was found"
 msgstr "Ничего не найдено"
 
-#: templates/tg-mini-app/lots/detail.html:100
+#: templates/tg-mini-app/lots/detail.html:90
+msgid "Maximum offer price"
+msgstr "Макс. цена предложения"
+
+#: templates/tg-mini-app/lots/detail.html:90
+#: templates/tg-mini-app/user/offers.html:22
+msgid "UZS"
+msgstr "Сум"
+
+#: templates/tg-mini-app/lots/detail.html:98
 msgid "Make an Offer"
 msgstr "Сделать предложение"
 
@@ -100,6 +108,3 @@ msgstr "Хотелки"
 
 #~ msgid "Welcome to Wishr!"
 #~ msgstr "Добро пожаловать в Wishr!"
-
-#~ msgid "UZS"
-#~ msgstr "Сум"
