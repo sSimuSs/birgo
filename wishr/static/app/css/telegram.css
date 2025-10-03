@@ -795,8 +795,8 @@ input[type="radio"]:disabled+label {
     background-color: var(--tg-theme-secondary-bg-color, #EFEFF4)!important;
 }
 
-.bg_panel_color {
-    background-color: var(--tg-theme-header-bg-color, #EFEFF4)!important;
+.bg_bottom_panel_color {
+    background-color: var(--tg-theme-bottom-bar-bg-color, #EFEFF4)!important;
 }
 
 .m_0 {
@@ -1156,6 +1156,10 @@ input[type="radio"]:disabled+label {
 .bordered {
     border-radius: 16px;
     border: 1px solid var(--tg-theme-section-separator-color, rgb(0, 0, 0, 15%));
+}
+
+.border_top {
+    border-top: 1px solid var(--tg-theme-section-separator-color, rgb(0, 0, 0, 15%));
 }
 
 .d_none {
