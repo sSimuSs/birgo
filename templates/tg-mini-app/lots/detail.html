@@ -31,9 +31,9 @@
                 </span>
                 {% endif %}
             </div>
-            <div class="mt_4px">
+            <div class="mt_8px">
                 {% for cat in lot_cats %}
-                <a href="{% url 'tg_cat_page' cat.slug %}" class="badge badge-s link_color" style="text-decoration: none">/{{ cat.name }}</a>
+                <a href="{% url 'tg_cat_page' cat.slug %}" class="badge badge-s black_color" style="text-decoration: none">/{{ cat.name }}</a>
                 {% endfor %}
             </div>
         </div>
