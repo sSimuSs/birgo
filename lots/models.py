@@ -17,7 +17,9 @@ class UserLotCategory(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def get_name(self, user_lang: str) -> str:
+        """ Return the name of the category. If there is no the name text it will be returned the capitalized slug """
         name = self.slug.capitalize()
+        print(user_lang)
         return name
 
     def __str__(self):
@@ -71,7 +73,7 @@ class UserLot(models.Model):
         return result
 
     def get_cats(self, user_lang: str) -> list[dict]:
-        """ Method for getting hashtags for current lot """
+        """ Method for getting categories objects for current lot """
         hashtags = []
         if self.category:
             hashtags.append({
