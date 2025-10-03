@@ -795,6 +795,10 @@ input[type="radio"]:disabled+label {
     background-color: var(--tg-theme-secondary-bg-color, #EFEFF4)!important;
 }
 
+.bg_panel_color {
+    background-color: var(--tg-theme-header-bg-color, #EFEFF4)!important;
+}
+
 .m_0 {
     margin: 0!important;
 }
@@ -1026,6 +1030,10 @@ input[type="radio"]:disabled+label {
 
 .position_absolute {
     position: absolute!important;
+}
+
+.position_sticky {
+    position: sticky!important;
 }
 
 .black_color {
