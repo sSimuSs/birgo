@@ -27,15 +27,15 @@
         {% block content %}
         {% endblock %}
     </div>
+    <script>
+    {% if back_button_url %}
+        TelegramData.BackButton.onClick(function () {
+            window.location.href = '{{ back_button_url }}';
+        });
+        TelegramData.BackButton.show();
+    {% else %}
+        TelegramData.BackButton.hide();
+    {% endif %}
+    </script>
 </body>
-<script>
-{% if back_btn_url %}
-    TelegramData.BackButton.onClick(function () {
-        window.location.href = '{{ back_btn_url }}';
-    });
-    TelegramData.BackButton.show();
-{% else %}
-    TelegramData.BackButton.hide();
-{% endif %}
-</script>
 </html>
