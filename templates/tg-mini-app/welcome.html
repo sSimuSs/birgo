@@ -83,10 +83,10 @@
      TelegramData.MainButton.enable();
      TelegramData.MainButton.setParams({
          "has_shine_effect": true,
-         "text": "{% translate "Create a Wish" %}"
+         "text": "{% translate "Continue" %}"
      });
      TelegramData.MainButton.onClick(function () {
-         alert("Soon...")
+         window.location.href = '{% url "tg_home" %}';
      });
      TelegramData.MainButton.show();
  }

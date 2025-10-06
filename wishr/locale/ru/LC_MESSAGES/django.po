@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-06 17:58+0500\n"
-"PO-Revision-Date: 2025-10-06 18:09+0500\n"
+"POT-Creation-Date: 2025-10-06 18:31+0500\n"
+"PO-Revision-Date: 2025-10-06 18:31+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Init page"
 msgstr "Входная страница"
 
-#: telegram/views.py:73
+#: telegram/views.py:74
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
@@ -57,7 +57,7 @@ msgstr "до <span class=\"fw_600\">%(max_price)s сум</span>"
 msgid "open to offers"
 msgstr "открыт для предложений"
 
-#: templates/tg-mini-app/home.html:57 templates/tg-mini-app/welcome.html:86
+#: templates/tg-mini-app/home.html:57
 msgid "Create a Wish"
 msgstr "Создать Хотелку"
 
@@ -163,6 +163,10 @@ msgid ""
 msgstr ""
 "Опишите свой идеальный продукт или услугу - вы получите предложения, которые "
 "точно соответствуют вашим потребностям"
+
+#: templates/tg-mini-app/welcome.html:86
+msgid "Continue"
+msgstr "Продолжить"
 
 #~ msgid "Welcome to Wishr!"
 #~ msgstr "Добро пожаловать в Wishr!"

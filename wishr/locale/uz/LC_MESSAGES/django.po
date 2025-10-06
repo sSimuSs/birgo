@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-06 17:58+0500\n"
-"PO-Revision-Date: 2025-10-06 18:10+0500\n"
+"POT-Creation-Date: 2025-10-06 18:31+0500\n"
+"PO-Revision-Date: 2025-10-06 18:31+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "Init page"
 msgstr "Kirish sahifasi"
 
-#: telegram/views.py:73
+#: telegram/views.py:74
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
@@ -55,7 +55,7 @@ msgstr "<span class=\"fw_600\">%(max_price)s so'm</span> gacha"
 msgid "open to offers"
 msgstr "takliflarga ochiq"
 
-#: templates/tg-mini-app/home.html:57 templates/tg-mini-app/welcome.html:86
+#: templates/tg-mini-app/home.html:57
 msgid "Create a Wish"
 msgstr "Istak yaratish"
 
@@ -161,6 +161,10 @@ msgid ""
 msgstr ""
 "Mahsulot yoki xizmatni qanday xohlashingni yoz — shunga mos takliflarni "
 "olasan"
+
+#: templates/tg-mini-app/welcome.html:86
+msgid "Continue"
+msgstr "Davom ettirish"
 
 #~ msgid "Welcome to Wishr!"
 #~ msgstr "Wishrga xush kelibsiz!"
