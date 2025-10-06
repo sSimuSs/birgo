@@ -9,6 +9,7 @@ class User(AbstractUser):
     """
     User model
     """
+    is_welcomed = models.BooleanField(default=False)
 
 
 class BotUser(models.Model):

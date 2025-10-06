@@ -1,10 +1,8 @@
 from django.conf import settings
-from django.contrib.humanize.templatetags.humanize import naturalday
 from django.db import models
-from django.utils import timezone
-from django.utils.translation import get_language
 
 from lots.constants import USER_LOT_STATUSES
+from wishr.classes.models import BaseModelInterface
 
 
 class UserLotCategory(models.Model):
@@ -36,7 +34,7 @@ class UserLotCategoryTranslation(models.Model):
     lang = models.CharField(max_length=3, choices=settings.LANGUAGES)
 
 
-class UserLot(models.Model):
+class UserLot(models.Model, BaseModelInterface):
     """ User's Lot model """
     user = models.ForeignKey("users.User", on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100, unique=True)
@@ -60,20 +58,6 @@ class UserLot(models.Model):
     def offers_count(self) -> int:
         """ Method for getting number of offers for current lot """
         return self.offer_set.filter(status=5).count()
-
-    def natural_created_at(self) -> str:
-        """ Method for getting natural creation date """
-        lang = get_language()
-        today = timezone.now().date()
-        created_at = timezone.make_naive(self.created_at)
-        result = naturalday(created_at)
-        if created_at.year == today.year:
-            if lang == "en":
-                result = naturalday(created_at, "N j")
-            else:
-                result = naturalday(created_at, "j N").lower()
-        result += f" {str(created_at.strftime("%H:%M"))}"
-        return result
 
     def get_cats(self, user_lang: str) -> list[dict]:
         """ Method for getting categories objects for current lot """

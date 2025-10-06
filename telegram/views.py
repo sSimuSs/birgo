@@ -24,7 +24,8 @@ def home(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app home page view """
     lots = UserLot.objects.filter(status=5).order_by("-id")
     kwargs['back_button_url'] = None
-    print(bot_user)
+    if not bot_user.user.is_welcomed:
+        return redirect("tg_welcome")
     return render(request, "tg-mini-app/home.html", locals() | kwargs)
 
 @tg_pages("User")
@@ -39,6 +40,7 @@ def user_detail(request, bot_user: BotUser, *args, **kwargs):
             lots = user.userlot_set.order_by("-id")
         case "offers":
             offers = user.offer_set.order_by("-id")
+    print(bot_user)
     return render(request, f"tg-mini-app/user/{section}.html", locals() | kwargs)
 
 @tg_pages("Wish")
@@ -58,6 +60,14 @@ def cat_page(request, bot_user: BotUser, *args, **kwargs):
     cat_name = category.get_name(bot_user.get_lang())
     kwargs["page_title"] += f": {cat_name}"
     return render(request, "tg-mini-app/cats/detail.html", locals() | kwargs)
+
+@tg_pages("Welcome to Wishr!")
+def welcome(request, bot_user: BotUser, *args, **kwargs):
+    """ Telegram Mini app Welcome page view """
+    kwargs['back_button_url'] = None
+    bot_user.user.is_welcomed = True
+    bot_user.user.save()
+    return render(request, "tg-mini-app/welcome.html", locals() | kwargs)
 
 def aut_error(request, *args, **kwargs):
     """ Error page view for 'Authentication Error' """
