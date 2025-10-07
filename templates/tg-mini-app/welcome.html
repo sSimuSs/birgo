@@ -6,17 +6,12 @@
 {% block content %}
 <div class="app_page">
     <div class="rounded_sections_container">
-        <div class="rounded_section d_block text_center py_32px">
+        <div class="d_block text_center py_32px">
             <img src="{% static 'images/logo/full.png' %}" alt="" style="height: 40px;" />
-            <div>{% trans "Post your wish. Get real offers." %}</div>
+            <div class="fs_14px mt_8px">{% trans "Post your wish. Get real offers." %}</div>
         </div>
 
-        <div class="list_section_label mt_16px">{% translate 'What is it?' %}</div>
-        <div class="rounded_section rounded_section_with_label">
-            {% trans "Wishr is a reverse marketplace. Here, everything starts not with a product — but with your wish. Describe what you need, and sellers will offer their prices and terms." %}
-        </div>
-
-        <div class="list_section_label mt_16px">{% translate 'Benefits' %}</div>
+        <div class="list_section_label">{% translate 'Benefits' %}</div>
         <div class="rounded_section rounded_section_with_label section_with_list">
             <ul>
                 <li>
@@ -75,6 +70,11 @@
                     </div>
                 </li>
             </ul>
+        </div>
+
+        <div class="list_section_label mt_16px">{% translate 'What is it?' %}</div>
+        <div class="rounded_section rounded_section_with_label fs_15px">
+            {% trans "Wishr is a reverse marketplace. Here, everything starts not with a product — but with your wish. Describe what you need, and sellers will offer their prices and terms." %}
         </div>
     </div>
 </div>
