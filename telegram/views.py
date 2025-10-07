@@ -87,7 +87,7 @@ def validate_user(request):
             return redirect("tg_auth_error")
 
         if init_data.validate(bot_token=settings.TELEGRAM_BOT_TOKEN):
-            bot_user, __ = BotUser.objects.get_or_create(
+            bot_user, is_new_user = BotUser.objects.get_or_create(
                 telegram_id=init_data.user.id,
             )
             bot_user.first_name = init_data.user.first_name
@@ -102,6 +102,20 @@ def validate_user(request):
                 bot_user.allows_write_to_pm = init_data.user.allows_write_to_pm
             bot_user.photo_url = init_data.user.photo_url
             bot_user.save()
+
+            if is_new_user:
+                username = f"user{init_data.user.id}"
+                if init_data.user.username:
+                    username = init_data.user.username
+
+                user = User.objects.create(
+                    first_name=init_data.user.first_name,
+                    last_name=init_data.user.last_name,
+                    username=username,
+                )
+                bot_user.user = user
+                bot_user.save()
+
             data = init_data.to_dict()
             data["bot_user_id"] = bot_user.id
             request.session["init_data"] = data
