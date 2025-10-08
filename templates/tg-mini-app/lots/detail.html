@@ -107,7 +107,7 @@ if (TelegramData.MainButton) {
          "text": "{% translate "Edit" %}"
      });
      TelegramData.MainButton.onClick(function () {
-         alert("Soon...")
+         window.location.href = '{% url "tg_lot_edit" lot.id %}';
      });
     {% endif %}
      TelegramData.MainButton.show();
