@@ -110,8 +110,8 @@ if (TelegramData.MainButton) {
          "text": "{% translate "Make an Offer" %}"
      });
      TelegramData.MainButton.onClick(function () {
-         bottom_sheet_el.classList.remove('show-modal');
          bottom_sheet_el.classList.remove('d_none');
+         bottom_sheet_el.classList.add('show-modal');
      });
     {% else %}
      TelegramData.MainButton.setParams({
@@ -130,7 +130,7 @@ if (TelegramData.MainButton) {
 let bottom_sheet_close_btn = document.getElementById('close_bottom_sheet');
 
 bottom_sheet_close_btn.addEventListener('click', (e) => {
-    bottom_sheet_el.classList.add('show-modal');
+    bottom_sheet_el.classList.remove('show-modal');
     bottom_sheet_el.classList.add('d_none');
 })
 </script>
