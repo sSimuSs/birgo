@@ -85,14 +85,6 @@
         </ul>
     </div>
 </div>
-<div class="bottom-sheet-wrapper d_none">
-  <div class="backdrop"></div>
-  <div class="bottom-sheet">
-    <div class="close center" id="close_bottom_sheet">
-      <span></span>
-    </div>
-  </div>
-</div>
 {% if lot.max_price %}
 <div class="position_sticky bg_bottom_panel_color p_4px text_center fs_14px border_top" style="bottom: 0;">
     {% trans "Maximum offer price" %}: {{ lot.max_price|floatformat|intcomma }} {% trans "UZS" %}
@@ -110,8 +102,7 @@ if (TelegramData.MainButton) {
          "text": "{% translate "Make an Offer" %}"
      });
      TelegramData.MainButton.onClick(function () {
-         bottom_sheet_el.classList.remove('d_none');
-         bottom_sheet_el.classList.add('show-modal');
+         alert("Soon...")
      });
     {% else %}
      TelegramData.MainButton.setParams({
@@ -126,12 +117,5 @@ if (TelegramData.MainButton) {
     {% endif %}
      TelegramData.MainButton.show();
 }
-
-let bottom_sheet_close_btn = document.getElementById('close_bottom_sheet');
-
-bottom_sheet_close_btn.addEventListener('click', (e) => {
-    bottom_sheet_el.classList.remove('show-modal');
-    bottom_sheet_el.classList.add('d_none');
-})
 </script>
 {% endblock %}
