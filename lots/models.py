@@ -40,7 +40,7 @@ class UserLot(models.Model, BaseModelInterface):
     slug = models.SlugField(max_length=100, unique=True)
     title = models.CharField(max_length=250)
     description = models.TextField(blank=True, null=True)
-    category = models.ForeignKey(UserLotCategory, on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey(UserLotCategory, on_delete=models.SET_NULL, null=True, blank=True)
     status = models.IntegerField(default=5, choices=USER_LOT_STATUSES)
     max_price = models.FloatField(blank=True, null=True)
 

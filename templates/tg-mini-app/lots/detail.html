@@ -49,7 +49,7 @@
         </div>
         {% endif %}
     </div>
-    <div class="rounded_section rounded_section_with_label section_with_list br_0" style="min-height: calc(100vh - 475px)">
+    <div class="rounded_section rounded_section_with_label section_with_list br_0" style="min-height: calc(100vh - 475px {% if not lot.description %}+ 80px{% endif %})">
         <div class="list_section_label">{% trans "Offers" %}</div>
         <ul>
             {% for offer in lot_offers %}
