@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-08 15:33+0500\n"
-"PO-Revision-Date: 2025-10-08 15:33+0500\n"
+"PO-Revision-Date: 2025-10-08 15:36+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -63,7 +63,7 @@ msgstr "Создать Хотелку"
 
 #: templates/tg-mini-app/lots/create.html:47
 msgid "New wish"
-msgstr "Новая Хотелки"
+msgstr "Новая Хотелка"
 
 #: templates/tg-mini-app/lots/create.html:53
 msgid "Title"
