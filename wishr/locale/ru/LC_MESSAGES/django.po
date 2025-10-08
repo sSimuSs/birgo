@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-06 18:31+0500\n"
-"PO-Revision-Date: 2025-10-06 18:31+0500\n"
+"POT-Creation-Date: 2025-10-08 15:10+0500\n"
+"PO-Revision-Date: 2025-10-08 15:11+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -20,11 +20,11 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.7\n"
 
-#: telegram/views.py:18
+#: telegram/views.py:20
 msgid "Init page"
 msgstr "Входная страница"
 
-#: telegram/views.py:74
+#: telegram/views.py:98
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
@@ -61,6 +61,53 @@ msgstr "открыт для предложений"
 msgid "Create a Wish"
 msgstr "Создать Хотелку"
 
+#: templates/tg-mini-app/lots/create.html:47
+msgid "New wish"
+msgstr "Новая Хотелки"
+
+#: templates/tg-mini-app/lots/create.html:53
+msgid "Title"
+msgstr "Название"
+
+#: templates/tg-mini-app/lots/create.html:56
+#: templates/tg-mini-app/lots/detail.html:41
+msgid "Description"
+msgstr "Описание"
+
+#: templates/tg-mini-app/lots/create.html:56
+msgid "optional"
+msgstr "необязательно"
+
+#: templates/tg-mini-app/lots/create.html:58
+msgid "Image"
+msgstr "Изображение"
+
+#: templates/tg-mini-app/lots/create.html:62
+msgid "Delete"
+msgstr "Удалить"
+
+#: templates/tg-mini-app/lots/create.html:67
+msgid "Upload image"
+msgstr "Загрузить изображение"
+
+#: templates/tg-mini-app/lots/create.html:71
+msgid "Max offer price"
+msgstr "Макс. цена предложения"
+
+#: templates/tg-mini-app/lots/create.html:71
+#: templates/tg-mini-app/lots/detail.html:90
+#: templates/tg-mini-app/user/offers.html:22
+msgid "UZS"
+msgstr "сум"
+
+#: templates/tg-mini-app/lots/create.html:84
+msgid "Create"
+msgstr "Создать"
+
+#: templates/tg-mini-app/lots/create.html:92
+msgid "Required fields are not filled in"
+msgstr "Обязательные для заполнения поля не заполнены"
+
 #: templates/tg-mini-app/lots/detail.html:7
 msgid "More"
 msgstr "Больше"
@@ -73,10 +120,6 @@ msgstr "Скрыть"
 #, python-format
 msgid "%(user)s wishes to buy"
 msgstr "%(user)s хочет купить"
-
-#: templates/tg-mini-app/lots/detail.html:41
-msgid "Description"
-msgstr "Описание"
 
 #: templates/tg-mini-app/lots/detail.html:53
 #: templates/tg-mini-app/user/user-detail-base.html:23
@@ -93,11 +136,6 @@ msgstr "Ничего не найдено"
 msgid "Maximum offer price"
 msgstr "Макс. цена предложения"
 
-#: templates/tg-mini-app/lots/detail.html:90
-#: templates/tg-mini-app/user/offers.html:22
-msgid "UZS"
-msgstr "Сум"
-
 #: templates/tg-mini-app/lots/detail.html:98
 msgid "Make an Offer"
 msgstr "Сделать предложение"
@@ -111,10 +149,50 @@ msgid "Post your wish. Get real offers."
 msgstr "Разместите хотелку. Получайте реальные предложения."
 
 #: templates/tg-mini-app/welcome.html:14
+msgid "Benefits"
+msgstr "Преимущества"
+
+#: templates/tg-mini-app/welcome.html:33
+msgid "Save your time"
+msgstr "Экономия времени"
+
+#: templates/tg-mini-app/welcome.html:35
+msgid ""
+"Stop searching across dozens of stores — just post your wish and let sellers "
+"find you"
+msgstr ""
+"Хватит искать по десяткам магазинов - просто опубликуйте свое желание, и "
+"пусть продавцы сами найдут вас"
+
+#: templates/tg-mini-app/welcome.html:49
+msgid "Get better deals"
+msgstr "Выгодные предложения"
+
+#: templates/tg-mini-app/welcome.html:51
+msgid ""
+"Compare real offers from multiple sellers and choose the best price or "
+"quality"
+msgstr ""
+"Сравните реальные предложения от нескольких продавцов и выберите лучшее по "
+"цене или качеству"
+
+#: templates/tg-mini-app/welcome.html:65
+msgid "Find exactly what you need"
+msgstr "Удобный поиск нужного"
+
+#: templates/tg-mini-app/welcome.html:67
+msgid ""
+"Describe your ideal product or service — you’ll get offers that match your "
+"exact needs"
+msgstr ""
+"Опишите свой идеальный продукт или услугу - вы получите предложения, которые "
+"точно соответствуют вашим потребностям"
+
+#: templates/tg-mini-app/welcome.html:75
 msgid "What is it?"
 msgstr "Что это такое?"
 
-#: templates/tg-mini-app/welcome.html:16
+#: templates/tg-mini-app/welcome.html:77
 msgid ""
 "Wishr is a reverse marketplace. Here, everything starts not with a product — "
 "but with your wish. Describe what you need, and sellers will offer their "
@@ -123,46 +201,6 @@ msgstr ""
 "Wishr — это доска объявлений наоборот. Здесь всё начинается не с товара, а с "
 "вашего желания. Опишите, что вам нужно — и продавцы сами предложат цену и "
 "условия."
-
-#: templates/tg-mini-app/welcome.html:19
-msgid "Benefits"
-msgstr "Преимущества"
-
-#: templates/tg-mini-app/welcome.html:38
-msgid "Save your time"
-msgstr "Экономия времени"
-
-#: templates/tg-mini-app/welcome.html:40
-msgid ""
-"Stop searching across dozens of stores — just post your wish and let sellers "
-"find you"
-msgstr ""
-"Хватит искать по десяткам магазинов - просто опубликуйте свое желание, и "
-"пусть продавцы сами найдут вас"
-
-#: templates/tg-mini-app/welcome.html:54
-msgid "Get better deals"
-msgstr "Выгодные предложения"
-
-#: templates/tg-mini-app/welcome.html:56
-msgid ""
-"Compare real offers from multiple sellers and choose the best price or "
-"quality"
-msgstr ""
-"Сравните реальные предложения от нескольких продавцов и выберите лучшее по "
-"цене или качеству"
-
-#: templates/tg-mini-app/welcome.html:70
-msgid "Find exactly what you need"
-msgstr "Удобный поиск нужного"
-
-#: templates/tg-mini-app/welcome.html:72
-msgid ""
-"Describe your ideal product or service — you’ll get offers that match your "
-"exact needs"
-msgstr ""
-"Опишите свой идеальный продукт или услугу - вы получите предложения, которые "
-"точно соответствуют вашим потребностям"
 
 #: templates/tg-mini-app/welcome.html:86
 msgid "Continue"

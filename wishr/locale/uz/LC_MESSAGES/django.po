@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-06 18:31+0500\n"
-"PO-Revision-Date: 2025-10-06 18:31+0500\n"
+"POT-Creation-Date: 2025-10-08 15:10+0500\n"
+"PO-Revision-Date: 2025-10-08 15:11+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.7\n"
 
-#: telegram/views.py:18
+#: telegram/views.py:20
 msgid "Init page"
 msgstr "Kirish sahifasi"
 
-#: telegram/views.py:74
+#: telegram/views.py:98
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
@@ -59,6 +59,53 @@ msgstr "takliflarga ochiq"
 msgid "Create a Wish"
 msgstr "Istak yaratish"
 
+#: templates/tg-mini-app/lots/create.html:47
+msgid "New wish"
+msgstr "Yangi Istak"
+
+#: templates/tg-mini-app/lots/create.html:53
+msgid "Title"
+msgstr "Nomlanishi"
+
+#: templates/tg-mini-app/lots/create.html:56
+#: templates/tg-mini-app/lots/detail.html:41
+msgid "Description"
+msgstr "Tavsif"
+
+#: templates/tg-mini-app/lots/create.html:56
+msgid "optional"
+msgstr "majburiy emas"
+
+#: templates/tg-mini-app/lots/create.html:58
+msgid "Image"
+msgstr "Rasm"
+
+#: templates/tg-mini-app/lots/create.html:62
+msgid "Delete"
+msgstr "O`chirish"
+
+#: templates/tg-mini-app/lots/create.html:67
+msgid "Upload image"
+msgstr "Rasmni yuklash"
+
+#: templates/tg-mini-app/lots/create.html:71
+msgid "Max offer price"
+msgstr "Maksimal taklif narxi"
+
+#: templates/tg-mini-app/lots/create.html:71
+#: templates/tg-mini-app/lots/detail.html:90
+#: templates/tg-mini-app/user/offers.html:22
+msgid "UZS"
+msgstr "so'm"
+
+#: templates/tg-mini-app/lots/create.html:84
+msgid "Create"
+msgstr "Yaratish"
+
+#: templates/tg-mini-app/lots/create.html:92
+msgid "Required fields are not filled in"
+msgstr "Majburiy maydonlar to`ldirilmagan"
+
 #: templates/tg-mini-app/lots/detail.html:7
 msgid "More"
 msgstr "Ko'proq"
@@ -71,10 +118,6 @@ msgstr "Yopish"
 #, python-format
 msgid "%(user)s wishes to buy"
 msgstr "%(user)s sotib olishni istaydi"
-
-#: templates/tg-mini-app/lots/detail.html:41
-msgid "Description"
-msgstr "Tavsif"
 
 #: templates/tg-mini-app/lots/detail.html:53
 #: templates/tg-mini-app/user/user-detail-base.html:23
@@ -91,11 +134,6 @@ msgstr "Hechnima topilmadi"
 msgid "Maximum offer price"
 msgstr "Maksimal taklif narxi"
 
-#: templates/tg-mini-app/lots/detail.html:90
-#: templates/tg-mini-app/user/offers.html:22
-msgid "UZS"
-msgstr "so'm"
-
 #: templates/tg-mini-app/lots/detail.html:98
 msgid "Make an Offer"
 msgstr "Taklif qilish"
@@ -109,10 +147,50 @@ msgid "Post your wish. Get real offers."
 msgstr "Istagingizni yozing. Haqiqiy takliflarni oling."
 
 #: templates/tg-mini-app/welcome.html:14
+msgid "Benefits"
+msgstr "Ustunliklar"
+
+#: templates/tg-mini-app/welcome.html:33
+msgid "Save your time"
+msgstr "Vaqtni tejash"
+
+#: templates/tg-mini-app/welcome.html:35
+msgid ""
+"Stop searching across dozens of stores — just post your wish and let sellers "
+"find you"
+msgstr ""
+"O‘nlab do‘konlarda qidirishga hojat yo‘q — istagingni yoz va sotuvchilar "
+"o‘zlari seni topsin"
+
+#: templates/tg-mini-app/welcome.html:49
+msgid "Get better deals"
+msgstr "Yaxshi narxlar"
+
+#: templates/tg-mini-app/welcome.html:51
+msgid ""
+"Compare real offers from multiple sellers and choose the best price or "
+"quality"
+msgstr ""
+"Bir nechta sotuvchilarning haqiqiy takliflarini solishtir va eng "
+"foydaliligini tanla"
+
+#: templates/tg-mini-app/welcome.html:65
+msgid "Find exactly what you need"
+msgstr "Oson qidiruv"
+
+#: templates/tg-mini-app/welcome.html:67
+msgid ""
+"Describe your ideal product or service — you’ll get offers that match your "
+"exact needs"
+msgstr ""
+"Mahsulot yoki xizmatni qanday xohlashingni yoz — shunga mos takliflarni "
+"olasan"
+
+#: templates/tg-mini-app/welcome.html:75
 msgid "What is it?"
 msgstr "Bu nima o'zi?"
 
-#: templates/tg-mini-app/welcome.html:16
+#: templates/tg-mini-app/welcome.html:77
 msgid ""
 "Wishr is a reverse marketplace. Here, everything starts not with a product — "
 "but with your wish. Describe what you need, and sellers will offer their "
@@ -121,46 +199,6 @@ msgstr ""
 "Wishr — bu e'lonlar taxtasining yangi turi. Bu yerda hammasi mahsulotdan "
 "emas, sizga kerakli narsalardan boshlanadi. O‘zingiz xohlagan narsani yozing "
 "— va sotuvchilar taklif yuborishadi."
-
-#: templates/tg-mini-app/welcome.html:19
-msgid "Benefits"
-msgstr "Ustunliklar"
-
-#: templates/tg-mini-app/welcome.html:38
-msgid "Save your time"
-msgstr "Vaqtni tejash"
-
-#: templates/tg-mini-app/welcome.html:40
-msgid ""
-"Stop searching across dozens of stores — just post your wish and let sellers "
-"find you"
-msgstr ""
-"O‘nlab do‘konlarda qidirishga hojat yo‘q — istagingni yoz va sotuvchilar "
-"o‘zlari seni topsin"
-
-#: templates/tg-mini-app/welcome.html:54
-msgid "Get better deals"
-msgstr "Yaxshi narxlar"
-
-#: templates/tg-mini-app/welcome.html:56
-msgid ""
-"Compare real offers from multiple sellers and choose the best price or "
-"quality"
-msgstr ""
-"Bir nechta sotuvchilarning haqiqiy takliflarini solishtir va eng "
-"foydaliligini tanla"
-
-#: templates/tg-mini-app/welcome.html:70
-msgid "Find exactly what you need"
-msgstr "Oson qidiruv"
-
-#: templates/tg-mini-app/welcome.html:72
-msgid ""
-"Describe your ideal product or service — you’ll get offers that match your "
-"exact needs"
-msgstr ""
-"Mahsulot yoki xizmatni qanday xohlashingni yoz — shunga mos takliflarni "
-"olasan"
 
 #: templates/tg-mini-app/welcome.html:86
 msgid "Continue"

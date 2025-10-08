@@ -5,9 +5,11 @@ from django.utils.translation import gettext_lazy as _
 from init_data_py import InitData
 import init_data_py.errors
 
+from lots.forms import UserLotForm, LotGalleryForm
 from lots.models import UserLot, UserLotCategory
 from telegram.decorators import tg_pages
 from users.models import BotUser, User
+from wishr.functions import slugify, get_random_integer
 
 
 def init(request):
@@ -52,6 +54,28 @@ def lot_detail(request, bot_user: BotUser, *args, **kwargs):
 
     lot_offers = lot.offer_set.order_by("-price")
     return render(request, "tg-mini-app/lots/detail.html", locals() | kwargs)
+
+@tg_pages("Create a new lot")
+def lot_create(request, bot_user: BotUser, *args, **kwargs):
+    """ Telegram Mini app creation a new lot page view """
+    if request.method == "POST":
+        data = request.POST.copy()
+        form = UserLotForm(data=data)
+        if form.is_valid():
+            form.instance.user_id = bot_user.user_id
+            form.instance.slug = f"{slugify(form.instance.title)}{get_random_integer(4)}"
+            lot = form.save()
+            if request.FILES:
+                gallery_form = LotGalleryForm(request.POST, request.FILES)
+                if gallery_form.is_valid():
+                    gallery_form.instance.lot_id = lot.id
+                    gallery_form.instance.main = True
+                    image = gallery_form.save()
+            return redirect("tg_home")
+        else:
+            errors = form.errors.as_data()
+
+    return render(request, "tg-mini-app/lots/create.html", locals() | kwargs)
 
 @tg_pages("Category")
 def cat_page(request, bot_user: BotUser, *args, **kwargs):

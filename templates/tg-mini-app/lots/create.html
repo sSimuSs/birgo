@@ -1,0 +1,118 @@
+{% extends "tg-mini-app/base.html" %}
+{% load humanize %}
+{% load i18n %}
+{% block content %}
+<style>
+  #fileUpload {
+    display: none;
+  }
+  .ss-image-input-box {
+    width: 100%;
+    {#padding-top: 20px;#}
+  }
+
+  .image-preview {
+    width: 100%;
+    {#padding: 15px;#}
+    box-sizing: border-box;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    flex-direction: column;
+    height: 0;
+  }
+  .image-preview img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+  }
+
+  .image-preview {
+    opacity: 1;
+    height: 290px;
+  }
+  .image-preview.animate-image button {
+    padding: 10px 15px;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    border:none;
+
+  }
+</style>
+<div class="app_page pb_0px">
+    <div class="page_header">
+        <h2>{% translate 'New wish' %}</h2>
+    </div>
+    <div class="rounded_sections_container">
+        <form action="" method="post" id="new_wish_form" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="input_block mb_8px">
+                <input type="text" name="title" placeholder="{% translate 'Title' %}" required maxlength="100">
+            </div>
+            <div class="input_block mb_16px">
+                <textarea name="description" placeholder="{% translate 'Description' %} ({% translate 'optional' %})" rows="5" maxlength="320"></textarea>
+            </div>
+            <label class="list_section_label" for="min_amount_input">{% translate 'Image' %}</label>
+            <div class="rounded_section mb_16px ss-image-upload-container d_block">
+              <div class="image-preview d_none">
+                <img id="output" src="" alt=""/>
+                <span class="delImage">{% trans "Delete" %}</span>
+              </div>
+              <div class="ss-image-input-box">
+                <label for="fileUpload">
+                    <input name="image" id="fileUpload" onchange="loadFile(event)" type="file" accept="image/png, image/jpeg"/>
+                    <span class="button button-primary m_0 py_12px">{% trans "Upload image" %}</span>
+                </label>
+              </div>
+            </div>
+            <label class="list_section_label" for="max_price">{% translate 'Max offer price' %} ({% trans "UZS" %})</label>
+            <div class="input_block mt_8px">
+                <input type="number" name="max_price" id="max_price">
+            </div>
+            <input type="submit" hidden />
+        </form>
+    </div>
+</div>
+<script>
+if (TelegramData.MainButton) {
+     TelegramData.MainButton.enable();
+     TelegramData.MainButton.setParams({
+         "has_shine_effect": false,
+         "text": "{% translate "Create" %}"
+     });
+     TelegramData.MainButton.onClick(function () {
+         let form = document.getElementById("new_wish_form");
+         if (form.checkValidity()) {
+            form.submit();
+         } else {
+             TelegramData.HapticFeedback.notificationOccurred("error");
+             TelegramData.showAlert("{% translate "Required fields are not filled in" %}");
+         }
+     });
+     TelegramData.MainButton.show();
+}
+
+let image_preview = document.querySelector(".image-preview")
+let image_preview_classes = image_preview.classList
+var loadFile = function (event) {
+    var reader = new FileReader();
+    reader.onload = function () {
+        var output = document.getElementById("output");
+        output.src = reader.result;
+      image_preview_classes.remove("d_none");
+      image_preview_classes.add("animate-image");
+    };
+
+    reader.readAsDataURL(event.target.files[0]);
+};
+document.querySelector(".delImage").addEventListener("click", function () {
+    output.src = "";
+    document.getElementById('fileUpload').value = "";
+    image_preview_classes.add("d_none");
+    image_preview_classes.remove("animate-image");
+});
+</script>
+{% endblock %}

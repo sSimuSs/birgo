@@ -57,7 +57,7 @@
          "text": "{% translate "Create a Wish" %}"
      });
      TelegramData.MainButton.onClick(function () {
-         alert("Soon...")
+         window.location.href = '{% url "tg_lot_create" %}';
      });
      TelegramData.MainButton.show();
  }
