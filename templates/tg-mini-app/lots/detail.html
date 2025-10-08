@@ -93,6 +93,7 @@
 <script>
 if (TelegramData.MainButton) {
      TelegramData.MainButton.enable();
+     {% if lot.user != bot_user.user %}
      TelegramData.MainButton.setParams({
          "has_shine_effect": false,
          "text": "{% translate "Make an Offer" %}"
@@ -100,6 +101,15 @@ if (TelegramData.MainButton) {
      TelegramData.MainButton.onClick(function () {
          alert("Soon...")
      });
+    {% else %}
+     TelegramData.MainButton.setParams({
+         "has_shine_effect": false,
+         "text": "{% translate "Edit" %}"
+     });
+     TelegramData.MainButton.onClick(function () {
+         alert("Soon...")
+     });
+    {% endif %}
      TelegramData.MainButton.show();
 }
 </script>
