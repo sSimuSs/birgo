@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-08 15:33+0500\n"
-"PO-Revision-Date: 2025-10-08 15:34+0500\n"
+"POT-Creation-Date: 2025-10-08 17:06+0500\n"
+"PO-Revision-Date: 2025-10-08 17:07+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "Init page"
 msgstr "Kirish sahifasi"
 
-#: telegram/views.py:98
+#: telegram/views.py:126
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
@@ -55,50 +55,59 @@ msgstr "<span class=\"fw_600\">%(max_price)s so'm</span> gacha"
 msgid "open to offers"
 msgstr "takliflarga ochiq"
 
-#: templates/tg-mini-app/home.html:57
+#: templates/tg-mini-app/home.html:58
 msgid "Create a Wish"
 msgstr "Istak yaratish"
 
 #: templates/tg-mini-app/lots/create.html:47
-msgid "New wish"
-msgstr "Yangi Istak"
+msgid "What do you want to buy?"
+msgstr "Siz nima sotib olmoqchisiz?"
 
 #: templates/tg-mini-app/lots/create.html:53
+#: templates/tg-mini-app/lots/edit.html:53
 msgid "Title"
 msgstr "Nomlanishi"
 
 #: templates/tg-mini-app/lots/create.html:56
 #: templates/tg-mini-app/lots/detail.html:41
+#: templates/tg-mini-app/lots/edit.html:56
 msgid "Description"
 msgstr "Tavsif"
 
 #: templates/tg-mini-app/lots/create.html:56
+#: templates/tg-mini-app/lots/edit.html:56
 msgid "optional"
 msgstr "majburiy emas"
 
 #: templates/tg-mini-app/lots/create.html:58
+#: templates/tg-mini-app/lots/edit.html:58
 msgid "Image"
 msgstr "Rasm"
 
 #: templates/tg-mini-app/lots/create.html:62
+#: templates/tg-mini-app/lots/edit.html:62
 msgid "Delete"
 msgstr "O`chirish"
 
 #: templates/tg-mini-app/lots/create.html:67
+#: templates/tg-mini-app/lots/edit.html:67
 msgid "Upload image"
 msgstr "Rasmni yuklash"
 
 #: templates/tg-mini-app/lots/create.html:71
+#: templates/tg-mini-app/lots/edit.html:71
 msgid "Max offer price"
 msgstr "Maksimal taklif narxi"
 
 #: templates/tg-mini-app/lots/create.html:71
 #: templates/tg-mini-app/lots/detail.html:90
+#: templates/tg-mini-app/lots/edit.html:71
 #: templates/tg-mini-app/user/offers.html:22
 msgid "UZS"
 msgstr "so'm"
 
 #: templates/tg-mini-app/lots/create.html:75
+#: templates/tg-mini-app/lots/edit.html:75
 msgid "You will not receive offers above this amount"
 msgstr "Siz ushbu miqdordan yuqori taklifni olmaysiz"
 
@@ -107,6 +116,7 @@ msgid "Create"
 msgstr "Yaratish"
 
 #: templates/tg-mini-app/lots/create.html:93
+#: templates/tg-mini-app/lots/edit.html:94
 msgid "Required fields are not filled in"
 msgstr "Majburiy maydonlar to`ldirilmagan"
 
@@ -138,13 +148,21 @@ msgstr "Hechnima topilmadi"
 msgid "Maximum offer price"
 msgstr "Maksimal taklif narxi"
 
-#: templates/tg-mini-app/lots/detail.html:99
+#: templates/tg-mini-app/lots/detail.html:100
 msgid "Make an Offer"
 msgstr "Taklif qilish"
 
-#: templates/tg-mini-app/lots/detail.html:107
+#: templates/tg-mini-app/lots/detail.html:110
 msgid "Edit"
 msgstr "Tahrirlash"
+
+#: templates/tg-mini-app/lots/edit.html:47
+msgid "Edit wish"
+msgstr "Istakni tahrirlash"
+
+#: templates/tg-mini-app/lots/edit.html:86
+msgid "Save"
+msgstr "Saqlash"
 
 #: templates/tg-mini-app/user/user-detail-base.html:20
 msgid "Wishlist"
@@ -211,6 +229,9 @@ msgstr ""
 #: templates/tg-mini-app/welcome.html:86
 msgid "Continue"
 msgstr "Davom ettirish"
+
+#~ msgid "New wish"
+#~ msgstr "Yangi Istak"
 
 #~ msgid "Welcome to Wishr!"
 #~ msgstr "Wishrga xush kelibsiz!"

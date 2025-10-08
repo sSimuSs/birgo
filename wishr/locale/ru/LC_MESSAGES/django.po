@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-08 15:33+0500\n"
-"PO-Revision-Date: 2025-10-08 15:36+0500\n"
+"POT-Creation-Date: 2025-10-08 17:06+0500\n"
+"PO-Revision-Date: 2025-10-08 17:07+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Init page"
 msgstr "Входная страница"
 
-#: telegram/views.py:98
+#: telegram/views.py:126
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
@@ -57,50 +57,59 @@ msgstr "до <span class=\"fw_600\">%(max_price)s сум</span>"
 msgid "open to offers"
 msgstr "открыт для предложений"
 
-#: templates/tg-mini-app/home.html:57
+#: templates/tg-mini-app/home.html:58
 msgid "Create a Wish"
 msgstr "Создать Хотелку"
 
 #: templates/tg-mini-app/lots/create.html:47
-msgid "New wish"
-msgstr "Новая Хотелка"
+msgid "What do you want to buy?"
+msgstr "Что вы хотите купить?"
 
 #: templates/tg-mini-app/lots/create.html:53
+#: templates/tg-mini-app/lots/edit.html:53
 msgid "Title"
 msgstr "Название"
 
 #: templates/tg-mini-app/lots/create.html:56
 #: templates/tg-mini-app/lots/detail.html:41
+#: templates/tg-mini-app/lots/edit.html:56
 msgid "Description"
 msgstr "Описание"
 
 #: templates/tg-mini-app/lots/create.html:56
+#: templates/tg-mini-app/lots/edit.html:56
 msgid "optional"
 msgstr "необязательно"
 
 #: templates/tg-mini-app/lots/create.html:58
+#: templates/tg-mini-app/lots/edit.html:58
 msgid "Image"
 msgstr "Изображение"
 
 #: templates/tg-mini-app/lots/create.html:62
+#: templates/tg-mini-app/lots/edit.html:62
 msgid "Delete"
 msgstr "Удалить"
 
 #: templates/tg-mini-app/lots/create.html:67
+#: templates/tg-mini-app/lots/edit.html:67
 msgid "Upload image"
 msgstr "Загрузить изображение"
 
 #: templates/tg-mini-app/lots/create.html:71
+#: templates/tg-mini-app/lots/edit.html:71
 msgid "Max offer price"
 msgstr "Макс. цена предложения"
 
 #: templates/tg-mini-app/lots/create.html:71
 #: templates/tg-mini-app/lots/detail.html:90
+#: templates/tg-mini-app/lots/edit.html:71
 #: templates/tg-mini-app/user/offers.html:22
 msgid "UZS"
 msgstr "сум"
 
 #: templates/tg-mini-app/lots/create.html:75
+#: templates/tg-mini-app/lots/edit.html:75
 msgid "You will not receive offers above this amount"
 msgstr "Вы не получите предложение на сумму, превышающую эту сумму"
 
@@ -109,6 +118,7 @@ msgid "Create"
 msgstr "Создать"
 
 #: templates/tg-mini-app/lots/create.html:93
+#: templates/tg-mini-app/lots/edit.html:94
 msgid "Required fields are not filled in"
 msgstr "Обязательные для заполнения поля не заполнены"
 
@@ -140,13 +150,21 @@ msgstr "Ничего не найдено"
 msgid "Maximum offer price"
 msgstr "Макс. цена предложения"
 
-#: templates/tg-mini-app/lots/detail.html:99
+#: templates/tg-mini-app/lots/detail.html:100
 msgid "Make an Offer"
 msgstr "Сделать предложение"
 
-#: templates/tg-mini-app/lots/detail.html:107
+#: templates/tg-mini-app/lots/detail.html:110
 msgid "Edit"
 msgstr "Редактировать"
+
+#: templates/tg-mini-app/lots/edit.html:47
+msgid "Edit wish"
+msgstr "Редактировать Хотелку"
+
+#: templates/tg-mini-app/lots/edit.html:86
+msgid "Save"
+msgstr "Сохранить"
 
 #: templates/tg-mini-app/user/user-detail-base.html:20
 msgid "Wishlist"
@@ -213,6 +231,9 @@ msgstr ""
 #: templates/tg-mini-app/welcome.html:86
 msgid "Continue"
 msgstr "Продолжить"
+
+#~ msgid "New wish"
+#~ msgstr "Новая Хотелка"
 
 #~ msgid "Welcome to Wishr!"
 #~ msgstr "Добро пожаловать в Wishr!"
