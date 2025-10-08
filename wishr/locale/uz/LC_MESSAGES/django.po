@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-08 15:10+0500\n"
-"PO-Revision-Date: 2025-10-08 15:11+0500\n"
+"POT-Creation-Date: 2025-10-08 15:33+0500\n"
+"PO-Revision-Date: 2025-10-08 15:34+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -98,11 +98,15 @@ msgstr "Maksimal taklif narxi"
 msgid "UZS"
 msgstr "so'm"
 
-#: templates/tg-mini-app/lots/create.html:84
+#: templates/tg-mini-app/lots/create.html:75
+msgid "You will not receive offers above this amount"
+msgstr "Siz ushbu miqdordan yuqori taklifni olmaysiz"
+
+#: templates/tg-mini-app/lots/create.html:85
 msgid "Create"
 msgstr "Yaratish"
 
-#: templates/tg-mini-app/lots/create.html:92
+#: templates/tg-mini-app/lots/create.html:93
 msgid "Required fields are not filled in"
 msgstr "Majburiy maydonlar to`ldirilmagan"
 
@@ -134,9 +138,13 @@ msgstr "Hechnima topilmadi"
 msgid "Maximum offer price"
 msgstr "Maksimal taklif narxi"
 
-#: templates/tg-mini-app/lots/detail.html:98
+#: templates/tg-mini-app/lots/detail.html:99
 msgid "Make an Offer"
 msgstr "Taklif qilish"
+
+#: templates/tg-mini-app/lots/detail.html:107
+msgid "Edit"
+msgstr "Tahrirlash"
 
 #: templates/tg-mini-app/user/user-detail-base.html:20
 msgid "Wishlist"

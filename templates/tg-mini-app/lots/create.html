@@ -56,7 +56,7 @@
                 <textarea name="description" placeholder="{% translate 'Description' %} ({% translate 'optional' %})" rows="5" maxlength="320"></textarea>
             </div>
             <label class="list_section_label" for="min_amount_input">{% translate 'Image' %}</label>
-            <div class="rounded_section mb_16px ss-image-upload-container d_block">
+            <div class="rounded_section mt_8px mb_16px ss-image-upload-container d_block ">
               <div class="image-preview d_none">
                 <img id="output" src="" alt=""/>
                 <span class="delImage">{% trans "Delete" %}</span>
@@ -69,9 +69,10 @@
               </div>
             </div>
             <label class="list_section_label" for="max_price">{% translate 'Max offer price' %} ({% trans "UZS" %})</label>
-            <div class="input_block mt_8px">
+            <div class="input_block mt_8px mb_8px">
                 <input type="number" name="max_price" id="max_price">
             </div>
+            <div class="input_help_text">{% trans "You will not receive offers above this amount" %}</div>
             <input type="submit" hidden />
         </form>
     </div>
