@@ -87,7 +87,7 @@
 </div>
 {% if lot.max_price %}
 <div class="position_sticky bg_bottom_panel_color p_4px text_center fs_14px border_top" style="bottom: 0;">
-    {% trans "Maximum offer price" %}: {{ lot.max_price|floatformat|intcomma }} {% trans "UZS" %}
+    {% trans "Maximum offer price" %}: <b>{{ lot.max_price|floatformat|intcomma }} {% trans "UZS" %}</b>
 </div>
 {% endif %}
 <script>
