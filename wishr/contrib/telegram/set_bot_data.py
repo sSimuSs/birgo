@@ -5,49 +5,43 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-bot = telebot.TeleBot(os.getenv("BOT_TOKEN"))
+bot = telebot.TeleBot(os.getenv("TELEGRAM_BOT_TOKEN"))
 bot.set_my_description(
 """
-Monifi - mualliflarga obunalar, donatlar va raqamli mahsulotlarni sotish orqali o‘z kontentidan daromad topishga yordam beradi.
-
-Obuna yarating, noyob raqamli mahsulotlar ishlab chiqaring, xayriya to‘lovlarini (donat) ulang. Uzcard, Humo, Visa va Mastercard orqali to‘lovlarni qabul qiling va barqaror daromadga ega bo‘ling.
-
-Monifi’ga qo‘shiling va o‘z ijodingizdan pul ishlashni boshlang!
+Wishr — bu e'lonlar taxtasining yangi turi. 
+Bu yerda hammasi mahsulotdan emas, sizga kerakli narsalardan boshlanadi. 
+O‘zingiz xohlagan narsani yozing — va sotuvchilar taklif yuborishadi.
 """,
     "uz"
 )
 
 bot.set_my_description(
 """
-Monifi - помогает авторам зарабатывать на своём контенте через подписки, донаты и продажу цифровых продуктов.
-
-Создавайте подписку, уникальные цифровые продукты, подключайте донаты, принимайте платежи через Uzcard, Humo, Visa и Mastercard и получайте стабильный доход.
-
-Присоединяйтесь к Monifi и начните зарабатывать на своем креативе!
+Wishr — это доска объявлений наоборот. 
+Здесь всё начинается не с товара, а с вашего желания. 
+Опишите, что вам нужно — и продавцы сами предложат цену и условия.
 """,
     "ru"
 )
 
 bot.set_my_description(
 """
-Monifi helps creators earn from their content through subscriptions, donations, and digital product sales.
-
-Create subscriptions, offer unique digital products, enable donations, accept payments via Uzcard, Humo, Visa, and Mastercard, and generate a steady income.
-
-Join Monifi and start monetizing your creativity!
+Wishr is a reverse marketplace. 
+Here, everything starts not with a product — but with your wish. 
+Describe what you need, and sellers will offer their prices and terms.
 """
 )
 
 bot.set_my_short_description(
-    "Obuna va raqamli mahsulotlar savdosi orqali kontentdan ko’proq daromad qiling!\n\nAloqa uchun: @monifi_support",
+    "Istagingizni yozing. Haqiqiy takliflarni oling",
     "uz"
 )
 
 bot.set_my_short_description(
-    "Зарабатывайте больше на контенте через продажи подписки и цифровых продукции!\n\nДля связи: @monifi_support",
+    "Разместите хотелку. Получайте реальные предложения",
     "ru"
 )
 
 bot.set_my_short_description(
-    "Earn more from your content through subscription and digital sales!\n\nFor contact: @monifi_support"
+    "Post your wish. Get real offers"
 )
