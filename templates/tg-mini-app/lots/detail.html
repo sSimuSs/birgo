@@ -96,6 +96,7 @@ if (TelegramData.MainButton) {
      {% if lot.user != bot_user.user %}
      TelegramData.MainButton.setParams({
          "has_shine_effect": false,
+         "color": "#7C3AED",
          "text": "{% translate "Make an Offer" %}"
      });
      TelegramData.MainButton.onClick(function () {
