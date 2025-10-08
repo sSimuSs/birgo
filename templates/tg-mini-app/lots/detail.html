@@ -104,6 +104,8 @@ if (TelegramData.MainButton) {
     {% else %}
      TelegramData.MainButton.setParams({
          "has_shine_effect": false,
+         "color": "#ffffff",
+         "text_color": "var(--tg-theme-text-color)",
          "text": "{% translate "Edit" %}"
      });
      TelegramData.MainButton.onClick(function () {
