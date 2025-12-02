@@ -5,8 +5,6 @@ from django.utils.translation import gettext_lazy as _
 from init_data_py import InitData
 import init_data_py.errors
 
-from lots.forms import UserLotForm, LotGalleryForm
-from lots.models import UserLot, UserLotCategory
 from telegram.decorators import tg_pages
 from users.models import BotUser, User
 from birgo.functions import slugify, get_random_integer
@@ -24,7 +22,7 @@ def init(request):
 @tg_pages("Home")
 def home(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app home page view """
-    lots = UserLot.objects.filter(status=5).order_by("-id")
+
     kwargs['back_button_url'] = None
     if not bot_user.user.is_welcomed:
         return redirect("tg_welcome")

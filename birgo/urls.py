@@ -22,5 +22,5 @@ from django.urls import path
 from telegram.urls import urlpatterns as telegram_urlpatterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('badmin/', admin.site.urls),
 ] + telegram_urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

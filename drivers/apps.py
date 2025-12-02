@@ -1,7 +1,6 @@
 from django.apps import AppConfig
 
 
-class OffersConfig(AppConfig):
-    """ offers app configuration """
+class DriversConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'offers'
+    name = 'drivers'

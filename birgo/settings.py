@@ -46,8 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     'users',
-    'lots',
-    'offers',
+    'trips',
+    'drivers',
+    'system'
 ]
 
 AUTH_USER_MODEL = 'users.User'

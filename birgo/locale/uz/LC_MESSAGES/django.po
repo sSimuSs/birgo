@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-08 17:06+0500\n"
-"PO-Revision-Date: 2025-10-08 17:07+0500\n"
+"POT-Creation-Date: 2025-12-02 17:50+0500\n"
+"PO-Revision-Date: 2025-12-02 17:54+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
-#: telegram/views.py:20
+#: telegram/views.py:18
 msgid "Init page"
 msgstr "Kirish sahifasi"
 
-#: telegram/views.py:126
+#: telegram/views.py:124
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
@@ -148,11 +148,11 @@ msgstr "Hechnima topilmadi"
 msgid "Maximum offer price"
 msgstr "Maksimal taklif narxi"
 
-#: templates/tg-mini-app/lots/detail.html:100
+#: templates/tg-mini-app/lots/detail.html:102
 msgid "Make an Offer"
 msgstr "Taklif qilish"
 
-#: templates/tg-mini-app/lots/detail.html:110
+#: templates/tg-mini-app/lots/detail.html:112
 msgid "Edit"
 msgstr "Tahrirlash"
 
@@ -169,48 +169,8 @@ msgid "Wishlist"
 msgstr "Istaklar"
 
 #: templates/tg-mini-app/welcome.html:11
-msgid "Post your wish. Get real offers."
-msgstr "Istagingizni yozing. Haqiqiy takliflarni oling."
-
-#: templates/tg-mini-app/welcome.html:14
-msgid "Benefits"
-msgstr "Ustunliklar"
-
-#: templates/tg-mini-app/welcome.html:33
-msgid "Save your time"
-msgstr "Vaqtni tejash"
-
-#: templates/tg-mini-app/welcome.html:35
-msgid ""
-"Stop searching across dozens of stores — just post your wish and let sellers "
-"find you"
-msgstr ""
-"O‘nlab do‘konlarda qidirishga hojat yo‘q — istagingni yoz va sotuvchilar "
-"o‘zlari seni topsin"
-
-#: templates/tg-mini-app/welcome.html:49
-msgid "Get better deals"
-msgstr "Yaxshi narxlar"
-
-#: templates/tg-mini-app/welcome.html:51
-msgid ""
-"Compare real offers from multiple sellers and choose the best price or "
-"quality"
-msgstr ""
-"Bir nechta sotuvchilarning haqiqiy takliflarini solishtir va eng "
-"foydaliligini tanla"
-
-#: templates/tg-mini-app/welcome.html:65
-msgid "Find exactly what you need"
-msgstr "Oson qidiruv"
-
-#: templates/tg-mini-app/welcome.html:67
-msgid ""
-"Describe your ideal product or service — you’ll get offers that match your "
-"exact needs"
-msgstr ""
-"Mahsulot yoki xizmatni qanday xohlashingni yoz — shunga mos takliflarni "
-"olasan"
+msgid "From your city to your destination"
+msgstr "Sizning shahringizdan manzilingizga"
 
 #: templates/tg-mini-app/welcome.html:75
 msgid "What is it?"
@@ -218,17 +178,66 @@ msgstr "Bu nima o'zi?"
 
 #: templates/tg-mini-app/welcome.html:77
 msgid ""
-"Wishr is a reverse marketplace. Here, everything starts not with a product — "
-"but with your wish. Describe what you need, and sellers will offer their "
-"prices and terms."
+"<b>BirGo is the easiest way to find intercity rides.</b><br>We connect "
+"passengers and drivers instantly, without Telegram groups, endless messages, "
+"or phone calls. See available drivers, free seats, prices, and departure "
+"time — all in one place. <br>BirGo makes the Angren–Tashkent route faster, "
+"simpler, and more reliable for everyone."
 msgstr ""
-"Wishr — bu e'lonlar taxtasining yangi turi. Bu yerda hammasi mahsulotdan "
-"emas, sizga kerakli narsalardan boshlanadi. O‘zingiz xohlagan narsani yozing "
-"— va sotuvchilar taklif yuborishadi."
+"<b>BirGo — shaharlararo sayohatlarni topishning eng oson yo‘li.</b><br>Biz "
+"yo‘lovchilar va haydovchilarni darhol bog‘laymiz, Telegram guruhlari, "
+"cheksiz xabarlar yoki qo‘ng‘iroqlarsiz. Mavjud haydovchilarni, bo‘sh "
+"o‘rinlarni, narxlarni va jo‘nash vaqtini bir joyda ko‘ring.<br>BirGo Angren–"
+"Toshkent yo‘nalishini hamma uchun tezroq, sodda va ishonchli qiladi."
 
 #: templates/tg-mini-app/welcome.html:86
 msgid "Continue"
 msgstr "Davom ettirish"
+
+#~ msgid "Post your wish. Get real offers."
+#~ msgstr "Istagingizni yozing. Haqiqiy takliflarni oling."
+
+#~ msgid "Benefits"
+#~ msgstr "Ustunliklar"
+
+#~ msgid "Save your time"
+#~ msgstr "Vaqtni tejash"
+
+#~ msgid ""
+#~ "Stop searching across dozens of stores — just post your wish and let "
+#~ "sellers find you"
+#~ msgstr ""
+#~ "O‘nlab do‘konlarda qidirishga hojat yo‘q — istagingni yoz va sotuvchilar "
+#~ "o‘zlari seni topsin"
+
+#~ msgid "Get better deals"
+#~ msgstr "Yaxshi narxlar"
+
+#~ msgid ""
+#~ "Compare real offers from multiple sellers and choose the best price or "
+#~ "quality"
+#~ msgstr ""
+#~ "Bir nechta sotuvchilarning haqiqiy takliflarini solishtir va eng "
+#~ "foydaliligini tanla"
+
+#~ msgid "Find exactly what you need"
+#~ msgstr "Oson qidiruv"
+
+#~ msgid ""
+#~ "Describe your ideal product or service — you’ll get offers that match "
+#~ "your exact needs"
+#~ msgstr ""
+#~ "Mahsulot yoki xizmatni qanday xohlashingni yoz — shunga mos takliflarni "
+#~ "olasan"
+
+#~ msgid ""
+#~ "Wishr is a reverse marketplace. Here, everything starts not with a "
+#~ "product — but with your wish. Describe what you need, and sellers will "
+#~ "offer their prices and terms."
+#~ msgstr ""
+#~ "Wishr — bu e'lonlar taxtasining yangi turi. Bu yerda hammasi mahsulotdan "
+#~ "emas, sizga kerakli narsalardan boshlanadi. O‘zingiz xohlagan narsani "
+#~ "yozing — va sotuvchilar taklif yuborishadi."
 
 #~ msgid "New wish"
 #~ msgstr "Yangi Istak"

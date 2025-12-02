@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-08 17:06+0500\n"
-"PO-Revision-Date: 2025-10-08 17:07+0500\n"
+"POT-Creation-Date: 2025-12-02 17:50+0500\n"
+"PO-Revision-Date: 2025-12-02 17:53+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
-#: telegram/views.py:20
+#: telegram/views.py:18
 msgid "Init page"
 msgstr "Входная страница"
 
-#: telegram/views.py:126
+#: telegram/views.py:124
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
@@ -150,11 +150,11 @@ msgstr "Ничего не найдено"
 msgid "Maximum offer price"
 msgstr "Макс. цена предложения"
 
-#: templates/tg-mini-app/lots/detail.html:100
+#: templates/tg-mini-app/lots/detail.html:102
 msgid "Make an Offer"
 msgstr "Сделать предложение"
 
-#: templates/tg-mini-app/lots/detail.html:110
+#: templates/tg-mini-app/lots/detail.html:112
 msgid "Edit"
 msgstr "Редактировать"
 
@@ -171,48 +171,8 @@ msgid "Wishlist"
 msgstr "Хотелки"
 
 #: templates/tg-mini-app/welcome.html:11
-msgid "Post your wish. Get real offers."
-msgstr "Разместите хотелку. Получайте реальные предложения."
-
-#: templates/tg-mini-app/welcome.html:14
-msgid "Benefits"
-msgstr "Преимущества"
-
-#: templates/tg-mini-app/welcome.html:33
-msgid "Save your time"
-msgstr "Экономия времени"
-
-#: templates/tg-mini-app/welcome.html:35
-msgid ""
-"Stop searching across dozens of stores — just post your wish and let sellers "
-"find you"
-msgstr ""
-"Хватит искать по десяткам магазинов - просто опубликуйте свое желание, и "
-"пусть продавцы сами найдут вас"
-
-#: templates/tg-mini-app/welcome.html:49
-msgid "Get better deals"
-msgstr "Выгодные предложения"
-
-#: templates/tg-mini-app/welcome.html:51
-msgid ""
-"Compare real offers from multiple sellers and choose the best price or "
-"quality"
-msgstr ""
-"Сравните реальные предложения от нескольких продавцов и выберите лучшее по "
-"цене или качеству"
-
-#: templates/tg-mini-app/welcome.html:65
-msgid "Find exactly what you need"
-msgstr "Удобный поиск нужного"
-
-#: templates/tg-mini-app/welcome.html:67
-msgid ""
-"Describe your ideal product or service — you’ll get offers that match your "
-"exact needs"
-msgstr ""
-"Опишите свой идеальный продукт или услугу - вы получите предложения, которые "
-"точно соответствуют вашим потребностям"
+msgid "From your city to your destination"
+msgstr "Из вашего города в пункт назначения"
 
 #: templates/tg-mini-app/welcome.html:75
 msgid "What is it?"
@@ -220,17 +180,66 @@ msgstr "Что это такое?"
 
 #: templates/tg-mini-app/welcome.html:77
 msgid ""
-"Wishr is a reverse marketplace. Here, everything starts not with a product — "
-"but with your wish. Describe what you need, and sellers will offer their "
-"prices and terms."
+"<b>BirGo is the easiest way to find intercity rides.</b><br>We connect "
+"passengers and drivers instantly, without Telegram groups, endless messages, "
+"or phone calls. See available drivers, free seats, prices, and departure "
+"time — all in one place. <br>BirGo makes the Angren–Tashkent route faster, "
+"simpler, and more reliable for everyone."
 msgstr ""
-"Wishr — это доска объявлений наоборот. Здесь всё начинается не с товара, а с "
-"вашего желания. Опишите, что вам нужно — и продавцы сами предложат цену и "
-"условия."
+"<b>BirGo — это самый простой способ найти поездки между городами.</b><br>Мы "
+"мгновенно соединяем пассажиров и водителей, без Telegram-групп, бесконечных "
+"сообщений или звонков. Смотрите доступных водителей, свободные места, цены и "
+"время отправления — всё в одном месте.<br>BirGo делает маршрут Ангрен–"
+"Ташкент быстрее, проще и надёжнее для всех."
 
 #: templates/tg-mini-app/welcome.html:86
 msgid "Continue"
 msgstr "Продолжить"
+
+#~ msgid "Post your wish. Get real offers."
+#~ msgstr "Разместите хотелку. Получайте реальные предложения."
+
+#~ msgid "Benefits"
+#~ msgstr "Преимущества"
+
+#~ msgid "Save your time"
+#~ msgstr "Экономия времени"
+
+#~ msgid ""
+#~ "Stop searching across dozens of stores — just post your wish and let "
+#~ "sellers find you"
+#~ msgstr ""
+#~ "Хватит искать по десяткам магазинов - просто опубликуйте свое желание, и "
+#~ "пусть продавцы сами найдут вас"
+
+#~ msgid "Get better deals"
+#~ msgstr "Выгодные предложения"
+
+#~ msgid ""
+#~ "Compare real offers from multiple sellers and choose the best price or "
+#~ "quality"
+#~ msgstr ""
+#~ "Сравните реальные предложения от нескольких продавцов и выберите лучшее "
+#~ "по цене или качеству"
+
+#~ msgid "Find exactly what you need"
+#~ msgstr "Удобный поиск нужного"
+
+#~ msgid ""
+#~ "Describe your ideal product or service — you’ll get offers that match "
+#~ "your exact needs"
+#~ msgstr ""
+#~ "Опишите свой идеальный продукт или услугу - вы получите предложения, "
+#~ "которые точно соответствуют вашим потребностям"
+
+#~ msgid ""
+#~ "Wishr is a reverse marketplace. Here, everything starts not with a "
+#~ "product — but with your wish. Describe what you need, and sellers will "
+#~ "offer their prices and terms."
+#~ msgstr ""
+#~ "Wishr — это доска объявлений наоборот. Здесь всё начинается не с товара, "
+#~ "а с вашего желания. Опишите, что вам нужно — и продавцы сами предложат "
+#~ "цену и условия."
 
 #~ msgid "New wish"
 #~ msgstr "Новая Хотелка"
