@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "wishr"
+name = "birgo"
 version = "0.1.0"
 description = ""
 authors = ["Sirojiddin Mustafayev <sirojiddinmustafayev@gmail.com>"]

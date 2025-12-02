@@ -9,7 +9,7 @@ from lots.forms import UserLotForm, LotGalleryForm
 from lots.models import UserLot, UserLotCategory
 from telegram.decorators import tg_pages
 from users.models import BotUser, User
-from wishr.functions import slugify, get_random_integer
+from birgo.functions import slugify, get_random_integer
 
 
 def init(request):

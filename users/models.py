@@ -2,7 +2,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 from telegram.constants import BOT_USER_DEFAULT_LANG
-from wishr.constants import SUPPORTED_TEXT_LANGUAGES
+from birgo.constants import SUPPORTED_TEXT_LANGUAGES
 
 
 class User(AbstractUser):

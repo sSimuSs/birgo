@@ -2,7 +2,7 @@ from django.conf import settings
 from django.db import models
 
 from lots.constants import USER_LOT_STATUSES
-from wishr.classes.models import BaseModelInterface
+from birgo.classes.models import BaseModelInterface
 
 
 class UserLotCategory(models.Model):

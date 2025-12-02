@@ -1,7 +1,7 @@
 from django.db import models
 
 from offers.constants import OFFER_STATUSES
-from wishr.classes.models import BaseModelInterface
+from birgo.classes.models import BaseModelInterface
 
 
 class Offer(models.Model, BaseModelInterface):
