@@ -5,5 +5,6 @@ from drivers.models import Driver
 
 @admin.register(Driver)
 class DriverAdmin(admin.ModelAdmin):
+    """ Driver model admin class """
     list_display = ("id", "user")
     search_fields = ("id",)

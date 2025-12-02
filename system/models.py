@@ -2,6 +2,7 @@ from django.db import models
 
 
 class CarManufacturer(models.Model):
+    """ Car manufacturer model """
     name = models.CharField(max_length=255)
 
     def __str__(self):
@@ -9,6 +10,7 @@ class CarManufacturer(models.Model):
 
 
 class CarModel(models.Model):
+    """ CarModel model """
     name = models.CharField(max_length=50)
     manufacturer = models.ForeignKey(CarManufacturer, on_delete=models.CASCADE)
     seating_capacity = models.IntegerField(default=4)
