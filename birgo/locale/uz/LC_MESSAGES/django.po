@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-02 17:50+0500\n"
-"PO-Revision-Date: 2025-12-02 17:54+0500\n"
+"POT-Creation-Date: 2025-12-03 01:27+0500\n"
+"PO-Revision-Date: 2025-12-03 01:32+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -19,154 +19,142 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.8\n"
 
-#: telegram/views.py:18
+#: drivers/models.py:12
+msgid "Offline"
+msgstr "Liniyadan tashqari"
+
+#: drivers/models.py:12
+msgid "Available"
+msgstr "Liniyada"
+
+#: drivers/models.py:12
+msgid "Pending"
+msgstr "Buyurtmani qabul qilmoqda"
+
+#: drivers/models.py:13
+msgid "Collecting passengers"
+msgstr "Yo‘lovchilar yig‘ilmoqda"
+
+#: drivers/models.py:13
+msgid "Driving to pickup"
+msgstr "Yo‘lovchiga ketmoqda"
+
+#: drivers/models.py:13
+msgid "Passenger onboard"
+msgstr "Yo‘lovchi mashinada"
+
+#: drivers/models.py:14
+msgid "En route"
+msgstr "Manzilga ketmoqda"
+
+#: drivers/models.py:14
+msgid "Completed"
+msgstr "Safar yakunlandi"
+
+#: drivers/models.py:14
+msgid "Cancelled"
+msgstr "Bekor qilindi"
+
+#: telegram/views.py:17
 msgid "Init page"
 msgstr "Kirish sahifasi"
 
-#: telegram/views.py:124
+#: telegram/views.py:80
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
-#: templates/tg-mini-app/home.html:15
-msgid "search"
-msgstr "qidirish"
+#: templates/tg-mini-app/home.html:12
+msgid "Hello"
+msgstr "Salom"
 
-#: templates/tg-mini-app/home.html:32 templates/tg-mini-app/lots/detail.html:26
-#: templates/tg-mini-app/lots/detail.html:67
-#: templates/tg-mini-app/user/lots.html:19
-#: templates/tg-mini-app/user/offers.html:18
+#: templates/tg-mini-app/home.html:13
+msgid "Where do you want to go?"
+msgstr "Qayerga bormoqchisiz?"
+
+#: templates/tg-mini-app/home.html:30 templates/tg-mini-app/user/trips.html:18
 #, python-format
 msgid "%(counter)s offer"
 msgid_plural "%(counter)s offers"
 msgstr[0] "%(counter)sta taklif"
 msgstr[1] "%(counter)sta taklif"
 
-#: templates/tg-mini-app/home.html:36 templates/tg-mini-app/lots/detail.html:30
-#: templates/tg-mini-app/user/lots.html:23
+#: templates/tg-mini-app/home.html:34
 msgid "no offers"
 msgstr "takliflar yo'q"
 
-#: templates/tg-mini-app/home.html:42 templates/tg-mini-app/user/lots.html:29
+#: templates/tg-mini-app/home.html:40
 #, python-format
 msgid "up to <span class=\"fw_600\">%(max_price)s UZS</span>"
 msgstr "<span class=\"fw_600\">%(max_price)s so'm</span> gacha"
 
-#: templates/tg-mini-app/home.html:44 templates/tg-mini-app/user/lots.html:31
+#: templates/tg-mini-app/home.html:42
 msgid "open to offers"
 msgstr "takliflarga ochiq"
 
-#: templates/tg-mini-app/home.html:58
+#: templates/tg-mini-app/home.html:56
 msgid "Create a Wish"
 msgstr "Istak yaratish"
 
-#: templates/tg-mini-app/lots/create.html:47
+#: templates/tg-mini-app/trips/create.html:47
 msgid "What do you want to buy?"
 msgstr "Siz nima sotib olmoqchisiz?"
 
-#: templates/tg-mini-app/lots/create.html:53
-#: templates/tg-mini-app/lots/edit.html:53
+#: templates/tg-mini-app/trips/create.html:53
 msgid "Title"
 msgstr "Nomlanishi"
 
-#: templates/tg-mini-app/lots/create.html:56
-#: templates/tg-mini-app/lots/detail.html:41
-#: templates/tg-mini-app/lots/edit.html:56
+#: templates/tg-mini-app/trips/create.html:56
 msgid "Description"
 msgstr "Tavsif"
 
-#: templates/tg-mini-app/lots/create.html:56
-#: templates/tg-mini-app/lots/edit.html:56
+#: templates/tg-mini-app/trips/create.html:56
 msgid "optional"
 msgstr "majburiy emas"
 
-#: templates/tg-mini-app/lots/create.html:58
-#: templates/tg-mini-app/lots/edit.html:58
+#: templates/tg-mini-app/trips/create.html:58
 msgid "Image"
 msgstr "Rasm"
 
-#: templates/tg-mini-app/lots/create.html:62
-#: templates/tg-mini-app/lots/edit.html:62
+#: templates/tg-mini-app/trips/create.html:62
 msgid "Delete"
 msgstr "O`chirish"
 
-#: templates/tg-mini-app/lots/create.html:67
-#: templates/tg-mini-app/lots/edit.html:67
+#: templates/tg-mini-app/trips/create.html:67
 msgid "Upload image"
 msgstr "Rasmni yuklash"
 
-#: templates/tg-mini-app/lots/create.html:71
-#: templates/tg-mini-app/lots/edit.html:71
+#: templates/tg-mini-app/trips/create.html:71
 msgid "Max offer price"
 msgstr "Maksimal taklif narxi"
 
-#: templates/tg-mini-app/lots/create.html:71
-#: templates/tg-mini-app/lots/detail.html:90
-#: templates/tg-mini-app/lots/edit.html:71
-#: templates/tg-mini-app/user/offers.html:22
+#: templates/tg-mini-app/trips/create.html:71
+#: templates/tg-mini-app/user/trips.html:22
 msgid "UZS"
 msgstr "so'm"
 
-#: templates/tg-mini-app/lots/create.html:75
-#: templates/tg-mini-app/lots/edit.html:75
+#: templates/tg-mini-app/trips/create.html:75
 msgid "You will not receive offers above this amount"
 msgstr "Siz ushbu miqdordan yuqori taklifni olmaysiz"
 
-#: templates/tg-mini-app/lots/create.html:85
+#: templates/tg-mini-app/trips/create.html:85
 msgid "Create"
 msgstr "Yaratish"
 
-#: templates/tg-mini-app/lots/create.html:93
-#: templates/tg-mini-app/lots/edit.html:94
+#: templates/tg-mini-app/trips/create.html:93
 msgid "Required fields are not filled in"
 msgstr "Majburiy maydonlar to`ldirilmagan"
 
-#: templates/tg-mini-app/lots/detail.html:7
-msgid "More"
-msgstr "Ko'proq"
-
-#: templates/tg-mini-app/lots/detail.html:11
-msgid "Less"
-msgstr "Yopish"
-
-#: templates/tg-mini-app/lots/detail.html:20
-#, python-format
-msgid "%(user)s wishes to buy"
-msgstr "%(user)s sotib olishni istaydi"
-
-#: templates/tg-mini-app/lots/detail.html:53
-#: templates/tg-mini-app/user/user-detail-base.html:23
-msgid "Offers"
-msgstr "Takliflar"
-
-#: templates/tg-mini-app/lots/detail.html:81
-#: templates/tg-mini-app/user/lots.html:46
-#: templates/tg-mini-app/user/offers.html:30
+#: templates/tg-mini-app/user/trips.html:30
 msgid "Nothing was found"
 msgstr "Hechnima topilmadi"
 
-#: templates/tg-mini-app/lots/detail.html:90
-msgid "Maximum offer price"
-msgstr "Maksimal taklif narxi"
-
-#: templates/tg-mini-app/lots/detail.html:102
-msgid "Make an Offer"
-msgstr "Taklif qilish"
-
-#: templates/tg-mini-app/lots/detail.html:112
-msgid "Edit"
-msgstr "Tahrirlash"
-
-#: templates/tg-mini-app/lots/edit.html:47
-msgid "Edit wish"
-msgstr "Istakni tahrirlash"
-
-#: templates/tg-mini-app/lots/edit.html:86
-msgid "Save"
-msgstr "Saqlash"
-
 #: templates/tg-mini-app/user/user-detail-base.html:20
-msgid "Wishlist"
-msgstr "Istaklar"
+msgid "Details"
+msgstr "Tafsilotlar"
+
+#: templates/tg-mini-app/user/user-detail-base.html:23
+msgid "Trips"
+msgstr "Safarlar"
 
 #: templates/tg-mini-app/welcome.html:11
 msgid "From your city to your destination"
@@ -193,6 +181,40 @@ msgstr ""
 #: templates/tg-mini-app/welcome.html:86
 msgid "Continue"
 msgstr "Davom ettirish"
+
+#~ msgid "search"
+#~ msgstr "qidirish"
+
+#~ msgid "More"
+#~ msgstr "Ko'proq"
+
+#~ msgid "Less"
+#~ msgstr "Yopish"
+
+#, python-format
+#~ msgid "%(user)s wishes to buy"
+#~ msgstr "%(user)s sotib olishni istaydi"
+
+#~ msgid "Offers"
+#~ msgstr "Takliflar"
+
+#~ msgid "Maximum offer price"
+#~ msgstr "Maksimal taklif narxi"
+
+#~ msgid "Make an Offer"
+#~ msgstr "Taklif qilish"
+
+#~ msgid "Edit"
+#~ msgstr "Tahrirlash"
+
+#~ msgid "Edit wish"
+#~ msgstr "Istakni tahrirlash"
+
+#~ msgid "Save"
+#~ msgstr "Saqlash"
+
+#~ msgid "Wishlist"
+#~ msgstr "Istaklar"
 
 #~ msgid "Post your wish. Get real offers."
 #~ msgstr "Istagingizni yozing. Haqiqiy takliflarni oling."

@@ -8,9 +8,14 @@ from users.models import User
 
 class Driver(models.Model, BaseModelInterface):
     """ Driver model """
+    DRIVER_STATUS_CHOICES = (
+        (0, _("Offline")), (1, _("Available")), (2, _("Pending")),
+        (3, _("Collecting passengers")), (4, _("Driving to pickup")), (5, _("Passenger onboard")),
+        (6, _("En route")), (7, _("Completed")), (8, _("Cancelled")),
+    )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     driver_licence_number = models.CharField(max_length=9, blank=True, null=True)
-    status = models.IntegerField(default=0, choices=((0, _("Not available")), (1, _("Available"))))
+    status = models.IntegerField(default=0, choices=DRIVER_STATUS_CHOICES)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

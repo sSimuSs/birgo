@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-02 17:50+0500\n"
-"PO-Revision-Date: 2025-12-02 17:53+0500\n"
+"POT-Creation-Date: 2025-12-03 01:27+0500\n"
+"PO-Revision-Date: 2025-12-03 01:34+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -20,22 +20,59 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.8\n"
 
-#: telegram/views.py:18
+#: drivers/models.py:12
+msgid "Offline"
+msgstr "Вне линии"
+
+#: drivers/models.py:12
+msgid "Available"
+msgstr "На линии"
+
+#: drivers/models.py:12
+msgid "Pending"
+msgstr "Принимает заказ"
+
+#: drivers/models.py:13
+msgid "Collecting passengers"
+msgstr "Поездка собирается"
+
+#: drivers/models.py:13
+msgid "Driving to pickup"
+msgstr "В пути к пассажиру"
+
+#: drivers/models.py:13
+msgid "Passenger onboard"
+msgstr "Пассажир в машине"
+
+#: drivers/models.py:14
+msgid "En route"
+msgstr "В пути к точке Б"
+
+#: drivers/models.py:14
+msgid "Completed"
+msgstr "Поездка завершена"
+
+#: drivers/models.py:14
+msgid "Cancelled"
+msgstr "Отмена поездки"
+
+#: telegram/views.py:17
 msgid "Init page"
 msgstr "Входная страница"
 
-#: telegram/views.py:124
+#: telegram/views.py:80
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
-#: templates/tg-mini-app/home.html:15
-msgid "search"
-msgstr "поиск"
+#: templates/tg-mini-app/home.html:12
+msgid "Hello"
+msgstr "Привет"
 
-#: templates/tg-mini-app/home.html:32 templates/tg-mini-app/lots/detail.html:26
-#: templates/tg-mini-app/lots/detail.html:67
-#: templates/tg-mini-app/user/lots.html:19
-#: templates/tg-mini-app/user/offers.html:18
+#: templates/tg-mini-app/home.html:13
+msgid "Where do you want to go?"
+msgstr "Куда вы хотите поехать?"
+
+#: templates/tg-mini-app/home.html:30 templates/tg-mini-app/user/trips.html:18
 #, python-format
 msgid "%(counter)s offer"
 msgid_plural "%(counter)s offers"
@@ -43,132 +80,83 @@ msgstr[0] "%(counter)s предложение"
 msgstr[1] "%(counter)s предложения"
 msgstr[2] "%(counter)s предложений"
 
-#: templates/tg-mini-app/home.html:36 templates/tg-mini-app/lots/detail.html:30
-#: templates/tg-mini-app/user/lots.html:23
+#: templates/tg-mini-app/home.html:34
 msgid "no offers"
 msgstr "нет предложений"
 
-#: templates/tg-mini-app/home.html:42 templates/tg-mini-app/user/lots.html:29
+#: templates/tg-mini-app/home.html:40
 #, python-format
 msgid "up to <span class=\"fw_600\">%(max_price)s UZS</span>"
 msgstr "до <span class=\"fw_600\">%(max_price)s сум</span>"
 
-#: templates/tg-mini-app/home.html:44 templates/tg-mini-app/user/lots.html:31
+#: templates/tg-mini-app/home.html:42
 msgid "open to offers"
 msgstr "открыт для предложений"
 
-#: templates/tg-mini-app/home.html:58
+#: templates/tg-mini-app/home.html:56
 msgid "Create a Wish"
 msgstr "Создать Хотелку"
 
-#: templates/tg-mini-app/lots/create.html:47
+#: templates/tg-mini-app/trips/create.html:47
 msgid "What do you want to buy?"
 msgstr "Что вы хотите купить?"
 
-#: templates/tg-mini-app/lots/create.html:53
-#: templates/tg-mini-app/lots/edit.html:53
+#: templates/tg-mini-app/trips/create.html:53
 msgid "Title"
 msgstr "Название"
 
-#: templates/tg-mini-app/lots/create.html:56
-#: templates/tg-mini-app/lots/detail.html:41
-#: templates/tg-mini-app/lots/edit.html:56
+#: templates/tg-mini-app/trips/create.html:56
 msgid "Description"
 msgstr "Описание"
 
-#: templates/tg-mini-app/lots/create.html:56
-#: templates/tg-mini-app/lots/edit.html:56
+#: templates/tg-mini-app/trips/create.html:56
 msgid "optional"
 msgstr "необязательно"
 
-#: templates/tg-mini-app/lots/create.html:58
-#: templates/tg-mini-app/lots/edit.html:58
+#: templates/tg-mini-app/trips/create.html:58
 msgid "Image"
 msgstr "Изображение"
 
-#: templates/tg-mini-app/lots/create.html:62
-#: templates/tg-mini-app/lots/edit.html:62
+#: templates/tg-mini-app/trips/create.html:62
 msgid "Delete"
 msgstr "Удалить"
 
-#: templates/tg-mini-app/lots/create.html:67
-#: templates/tg-mini-app/lots/edit.html:67
+#: templates/tg-mini-app/trips/create.html:67
 msgid "Upload image"
 msgstr "Загрузить изображение"
 
-#: templates/tg-mini-app/lots/create.html:71
-#: templates/tg-mini-app/lots/edit.html:71
+#: templates/tg-mini-app/trips/create.html:71
 msgid "Max offer price"
 msgstr "Макс. цена предложения"
 
-#: templates/tg-mini-app/lots/create.html:71
-#: templates/tg-mini-app/lots/detail.html:90
-#: templates/tg-mini-app/lots/edit.html:71
-#: templates/tg-mini-app/user/offers.html:22
+#: templates/tg-mini-app/trips/create.html:71
+#: templates/tg-mini-app/user/trips.html:22
 msgid "UZS"
 msgstr "сум"
 
-#: templates/tg-mini-app/lots/create.html:75
-#: templates/tg-mini-app/lots/edit.html:75
+#: templates/tg-mini-app/trips/create.html:75
 msgid "You will not receive offers above this amount"
 msgstr "Вы не получите предложение на сумму, превышающую эту сумму"
 
-#: templates/tg-mini-app/lots/create.html:85
+#: templates/tg-mini-app/trips/create.html:85
 msgid "Create"
 msgstr "Создать"
 
-#: templates/tg-mini-app/lots/create.html:93
-#: templates/tg-mini-app/lots/edit.html:94
+#: templates/tg-mini-app/trips/create.html:93
 msgid "Required fields are not filled in"
 msgstr "Обязательные для заполнения поля не заполнены"
 
-#: templates/tg-mini-app/lots/detail.html:7
-msgid "More"
-msgstr "Больше"
-
-#: templates/tg-mini-app/lots/detail.html:11
-msgid "Less"
-msgstr "Скрыть"
-
-#: templates/tg-mini-app/lots/detail.html:20
-#, python-format
-msgid "%(user)s wishes to buy"
-msgstr "%(user)s хочет купить"
-
-#: templates/tg-mini-app/lots/detail.html:53
-#: templates/tg-mini-app/user/user-detail-base.html:23
-msgid "Offers"
-msgstr "Предложений"
-
-#: templates/tg-mini-app/lots/detail.html:81
-#: templates/tg-mini-app/user/lots.html:46
-#: templates/tg-mini-app/user/offers.html:30
+#: templates/tg-mini-app/user/trips.html:30
 msgid "Nothing was found"
 msgstr "Ничего не найдено"
 
-#: templates/tg-mini-app/lots/detail.html:90
-msgid "Maximum offer price"
-msgstr "Макс. цена предложения"
-
-#: templates/tg-mini-app/lots/detail.html:102
-msgid "Make an Offer"
-msgstr "Сделать предложение"
-
-#: templates/tg-mini-app/lots/detail.html:112
-msgid "Edit"
-msgstr "Редактировать"
-
-#: templates/tg-mini-app/lots/edit.html:47
-msgid "Edit wish"
-msgstr "Редактировать Хотелку"
-
-#: templates/tg-mini-app/lots/edit.html:86
-msgid "Save"
-msgstr "Сохранить"
-
 #: templates/tg-mini-app/user/user-detail-base.html:20
-msgid "Wishlist"
-msgstr "Хотелки"
+msgid "Details"
+msgstr "Детали"
+
+#: templates/tg-mini-app/user/user-detail-base.html:23
+msgid "Trips"
+msgstr "Поездки"
 
 #: templates/tg-mini-app/welcome.html:11
 msgid "From your city to your destination"
@@ -195,6 +183,40 @@ msgstr ""
 #: templates/tg-mini-app/welcome.html:86
 msgid "Continue"
 msgstr "Продолжить"
+
+#~ msgid "search"
+#~ msgstr "поиск"
+
+#~ msgid "More"
+#~ msgstr "Больше"
+
+#~ msgid "Less"
+#~ msgstr "Скрыть"
+
+#, python-format
+#~ msgid "%(user)s wishes to buy"
+#~ msgstr "%(user)s хочет купить"
+
+#~ msgid "Offers"
+#~ msgstr "Предложений"
+
+#~ msgid "Maximum offer price"
+#~ msgstr "Макс. цена предложения"
+
+#~ msgid "Make an Offer"
+#~ msgstr "Сделать предложение"
+
+#~ msgid "Edit"
+#~ msgstr "Редактировать"
+
+#~ msgid "Edit wish"
+#~ msgstr "Редактировать Хотелку"
+
+#~ msgid "Save"
+#~ msgstr "Сохранить"
+
+#~ msgid "Wishlist"
+#~ msgstr "Хотелки"
 
 #~ msgid "Post your wish. Get real offers."
 #~ msgstr "Разместите хотелку. Получайте реальные предложения."
