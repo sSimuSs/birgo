@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from birgo.classes.models import BaseModelInterface
 from system.models import CarModel
@@ -9,6 +10,7 @@ class Driver(models.Model, BaseModelInterface):
     """ Driver model """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     driver_licence_number = models.CharField(max_length=9, blank=True, null=True)
+    status = models.IntegerField(default=0, choices=((0, _("Not available")), (1, _("Available"))))
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

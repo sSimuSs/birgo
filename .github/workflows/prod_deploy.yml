@@ -19,5 +19,5 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
-        script:           
-          sh /home/wishr/deploy.sh
+        script:
+          sh /home/birgo/deploy.sh
