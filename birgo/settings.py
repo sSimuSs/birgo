@@ -30,9 +30,9 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", default="False")
 
-ALLOWED_HOSTS = ["127.0.0.1", "birgo.uz"]
+ALLOWED_HOSTS = ["127.0.0.1", "birgo.uz", "b.wishr.uz"]
 
-CSRF_TRUSTED_ORIGINS = ["https://birgo.uz"]
+CSRF_TRUSTED_ORIGINS = ["https://birgo.uz", "https://b.wishr.uz"]
 
 # Application definition
 
