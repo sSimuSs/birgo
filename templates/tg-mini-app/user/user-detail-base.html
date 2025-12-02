@@ -17,10 +17,10 @@
     </div>
     <div class="tab_buttons bg_transparent justify_content_center">
         <button type="button" {% if request.GET.section is None %}class="active"{% endif %} onclick="window.location='?'">
-            {% translate 'Wishlist' %}
+            {% translate 'Details' %}
         </button>
-        <button type="button" {% if request.GET.section == "offers" %}class="active"{% endif %} onclick="window.location='?section=offers'">
-            {% translate 'Offers' %}
+        <button type="button" {% if request.GET.section == "trips" %}class="active"{% endif %} onclick="window.location='?section=trips'">
+            {% translate 'Trips' %}
         </button>
     </div>
     {% block user_detail_content %}

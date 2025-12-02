@@ -12,6 +12,9 @@ class Driver(models.Model, BaseModelInterface):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __dir__(self):
+        return self.user
+
 
 class Car(models.Model, BaseModelInterface):
     driver = models.ForeignKey(Driver, on_delete=models.CASCADE)

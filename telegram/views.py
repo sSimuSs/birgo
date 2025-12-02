@@ -34,24 +34,14 @@ def user_detail(request, bot_user: BotUser, *args, **kwargs):
     user = get_object_or_404(User, id=kwargs['pk'])
     kwargs["page_title"] += f": {user.botuser.get_display_name()}"
 
-    section = request.GET.get("section", "lots")
-    match section:
-        case "lots":
-            lots = user.userlot_set.order_by("-id")
-        case "offers":
-            offers = user.offer_set.order_by("-id")
-    print(bot_user)
+    section = request.GET.get("section", "details")
+    # match section:
+    #     case "lots":
+    #         lots = user.userlot_set.order_by("-id")
+    #     case "offers":
+    #         offers = user.offer_set.order_by("-id")
     return render(request, f"tg-mini-app/user/{section}.html", locals() | kwargs)
 
-@tg_pages("Wish")
-def lot_detail(request, bot_user: BotUser, *args, **kwargs):
-    """ Telegram Mini app user detail page view """
-    lot: UserLot = get_object_or_404(UserLot, pk=kwargs["pk"])
-    kwargs["page_title"] += f": {lot.title}"
-    lot_cats = lot.get_cats(bot_user.get_lang())
-
-    lot_offers = lot.offer_set.order_by("-price")
-    return render(request, "tg-mini-app/lots/detail.html", locals() | kwargs)
 
 @tg_pages("Create a new lot")
 def lot_create(request, bot_user: BotUser, *args, **kwargs):
@@ -75,41 +65,6 @@ def lot_create(request, bot_user: BotUser, *args, **kwargs):
 
     return render(request, "tg-mini-app/lots/create.html", locals() | kwargs)
 
-@tg_pages("Editing a lot")
-def lot_edit(request, bot_user: BotUser, *args, **kwargs):
-    """ Telegram Mini app editing a lot page view """
-    lot: UserLot = get_object_or_404(UserLot, pk=kwargs["pk"])
-    kwargs["page_title"] += f": {lot.title}"
-
-    if request.method == "POST":
-        data = request.POST.copy()
-        clear_image = data.pop("clear_image")[0] == "1"
-        form = UserLotForm(instance=lot, data=data)
-        if form.is_valid():
-            lot = form.save()
-            if request.FILES:
-                gallery_form = LotGalleryForm(request.POST, request.FILES)
-                if gallery_form.is_valid():
-                    lot.userlotgallery_set.filter(main=True).delete()
-
-                    gallery_form.instance.lot_id = lot.id
-                    gallery_form.instance.main = True
-                    image = gallery_form.save()
-            elif clear_image:
-                lot.userlotgallery_set.filter(main=True).delete()
-            return redirect("tg_home")
-        else:
-            errors = form.errors.as_data()
-
-    return render(request, "tg-mini-app/lots/edit.html", locals() | kwargs)
-
-@tg_pages("Category")
-def cat_page(request, bot_user: BotUser, *args, **kwargs):
-    """ Telegram Mini app user detail page view """
-    category: UserLotCategory = get_object_or_404(UserLotCategory, slug=kwargs["slug"])
-    cat_name = category.get_name(bot_user.get_lang())
-    kwargs["page_title"] += f": {cat_name}"
-    return render(request, "tg-mini-app/cats/detail.html", locals() | kwargs)
 
 @tg_pages("Welcome to Wishr!")
 def welcome(request, bot_user: BotUser, *args, **kwargs):

@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+from birgo.classes.models import BaseModelInterface
 from telegram.constants import BOT_USER_DEFAULT_LANG
 from birgo.constants import SUPPORTED_TEXT_LANGUAGES
 
@@ -46,3 +47,13 @@ class BotUser(models.Model):
         if self.language_code in SUPPORTED_TEXT_LANGUAGES:
             lang = self.language_code
         return lang
+
+
+class UserLocation(models.Model, BaseModelInterface):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    address = models.TextField(blank=True, null=True)
+    coordinates = models.JSONField(default=dict, blank=True, null=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
