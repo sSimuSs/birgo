@@ -125,7 +125,7 @@ LANGUAGES = [
 ]
 
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'wishr/locale'),
+    os.path.join(BASE_DIR, 'birgo/locale'),
 )
 
 TIME_ZONE = 'Asia/Tashkent'
@@ -140,11 +140,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    "wishr/static/app",
+    "birgo/static/app",
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'wishr/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'birgo/static')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'wishr/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'birgo/media')
 MEDIA_URL = '/media/'
 
 # Default primary key field type

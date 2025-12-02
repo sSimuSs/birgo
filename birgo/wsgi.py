@@ -1,5 +1,5 @@
 """
-WSGI config for wishr project.
+WSGI config for birgo project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

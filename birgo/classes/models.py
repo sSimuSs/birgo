@@ -19,7 +19,8 @@ class BaseModelInterface:
             if lang == "en":
                 result = naturalday(created_at, "N j")
             else:
-                if lang == "uz" and created_at.date() == today: # naturalday bug with "today" in uzbek
+                if lang == "uz" and created_at.date() == today:
+                    # naturalday bug with "today" in uzbek
                     result = "bugun"
                 else:
                     result = naturalday(created_at, "j N").lower()
