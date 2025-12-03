@@ -1016,6 +1016,10 @@ input[type="radio"]:disabled+label {
     justify-content: center !important;
 }
 
+.justify_content_left {
+    justify-content: left !important;
+}
+
 .text_left {
     text-align: left!important;
 }
@@ -1105,6 +1109,11 @@ input[type="radio"]:disabled+label {
     border-radius: 12px;
 }
 
+.main_green_color {
+    color: #26C485 !important;
+    fill: #26C485 !important;
+}
+
 .fs_12px {
     font-size: 12px!important;
 }
@@ -1147,6 +1156,10 @@ input[type="radio"]:disabled+label {
 
 .align_items_center {
     align-items: center!important;
+}
+
+.align_items_start {
+    align-items: start;
 }
 
 .w-100 {

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-03 01:27+0500\n"
-"PO-Revision-Date: 2025-12-03 01:32+0500\n"
+"POT-Creation-Date: 2025-12-03 12:24+0500\n"
+"PO-Revision-Date: 2025-12-03 12:25+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -63,37 +63,21 @@ msgstr "Kirish sahifasi"
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
-#: templates/tg-mini-app/home.html:12
+#: templates/tg-mini-app/home.html:11
 msgid "Hello"
 msgstr "Salom"
 
-#: templates/tg-mini-app/home.html:13
+#: templates/tg-mini-app/home.html:12
 msgid "Where do you want to go?"
 msgstr "Qayerga bormoqchisiz?"
 
-#: templates/tg-mini-app/home.html:30 templates/tg-mini-app/user/trips.html:18
-#, python-format
-msgid "%(counter)s offer"
-msgid_plural "%(counter)s offers"
-msgstr[0] "%(counter)sta taklif"
-msgstr[1] "%(counter)sta taklif"
+#: templates/tg-mini-app/home.html:21
+msgid "From?"
+msgstr "Qayerdan?"
 
-#: templates/tg-mini-app/home.html:34
-msgid "no offers"
-msgstr "takliflar yo'q"
-
-#: templates/tg-mini-app/home.html:40
-#, python-format
-msgid "up to <span class=\"fw_600\">%(max_price)s UZS</span>"
-msgstr "<span class=\"fw_600\">%(max_price)s so'm</span> gacha"
-
-#: templates/tg-mini-app/home.html:42
-msgid "open to offers"
-msgstr "takliflarga ochiq"
-
-#: templates/tg-mini-app/home.html:56
-msgid "Create a Wish"
-msgstr "Istak yaratish"
+#: templates/tg-mini-app/home.html:25
+msgid "To?"
+msgstr "Qayerga?"
 
 #: templates/tg-mini-app/trips/create.html:47
 msgid "What do you want to buy?"
@@ -144,6 +128,13 @@ msgstr "Yaratish"
 msgid "Required fields are not filled in"
 msgstr "Majburiy maydonlar to`ldirilmagan"
 
+#: templates/tg-mini-app/user/trips.html:18
+#, python-format
+msgid "%(counter)s offer"
+msgid_plural "%(counter)s offers"
+msgstr[0] "%(counter)sta taklif"
+msgstr[1] "%(counter)sta taklif"
+
 #: templates/tg-mini-app/user/trips.html:30
 msgid "Nothing was found"
 msgstr "Hechnima topilmadi"
@@ -181,6 +172,19 @@ msgstr ""
 #: templates/tg-mini-app/welcome.html:86
 msgid "Continue"
 msgstr "Davom ettirish"
+
+#~ msgid "no offers"
+#~ msgstr "takliflar yo'q"
+
+#, python-format
+#~ msgid "up to <span class=\"fw_600\">%(max_price)s UZS</span>"
+#~ msgstr "<span class=\"fw_600\">%(max_price)s so'm</span> gacha"
+
+#~ msgid "open to offers"
+#~ msgstr "takliflarga ochiq"
+
+#~ msgid "Create a Wish"
+#~ msgstr "Istak yaratish"
 
 #~ msgid "search"
 #~ msgstr "qidirish"
