@@ -110,11 +110,18 @@
             </ul>
             <div class="buttons_container mt_0" style="width: -webkit-fill-available;">
 {#                <a href="#" class="button button-bazeled py_12px" style="min-height: auto">{% trans "Call" %}</a>#}
-                <a href="#" class="button button-danger py_12px" style="min-height: auto">{% trans "Cancel trip" %}</a>
+                <a href="#" class="button button-danger py_12px" style="min-height: auto" onclick="TelegramData.showConfirm('{% trans "Do you really want to cancel your trip?" %}', cancelTripRequest)">{% trans "Cancel trip" %}</a>
             </div>
             {% endfor %}
         </div>
         {% endif %}
     </div>
 </div>
+<script>
+function cancelTripRequest(status) {
+    if (status) {
+        alert("Trip request canceled");
+    }
+}
+</script>
 {% endblock %}
