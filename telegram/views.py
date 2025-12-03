@@ -26,7 +26,12 @@ def home(request, bot_user: BotUser, *args, **kwargs):
     if not bot_user.user.is_welcomed:
         return redirect("tg_welcome")
 
-    trip_requests = bot_user.user.triprequest_set.all()
+    trip_requests = bot_user.user.triprequest_set.filter(cancelled_at__isnull=True)
+    if request.GET.get("cancel_trip_request"):
+        trip_request = trip_requests.last()
+        if trip_request:
+            trip_request.cancel_trip_request()
+            return redirect("tg_home")
     return render(request, "tg-mini-app/home.html", locals() | kwargs)
 
 @tg_pages("User")

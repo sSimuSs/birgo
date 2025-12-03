@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import QuerySet
+from django.utils import timezone
 
 from birgo.classes.models import BaseModelInterface
 from system.models import Region
@@ -28,8 +29,13 @@ class TripRequest(models.Model, BaseModelInterface):
                                    null=True, blank=True,
                                    related_name="location_b")
 
+    canceled_at = models.DateTimeField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def cancel_trip_request(self):
+        self.cancelled_at = timezone.now()
+        self.save()
 
 
 class Trip(models.Model, BaseModelInterface):
