@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-03 16:49+0500\n"
-"PO-Revision-Date: 2025-12-03 16:51+0500\n"
+"POT-Creation-Date: 2025-12-03 17:34+0500\n"
+"PO-Revision-Date: 2025-12-03 17:34+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -59,58 +59,66 @@ msgstr "Bekor qilindi"
 msgid "Init page"
 msgstr "Kirish sahifasi"
 
-#: telegram/views.py:118
+#: telegram/views.py:124
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
-#: templates/tg-mini-app/home.html:10
+#: templates/tg-mini-app/home.html:11
 msgid "Hello"
 msgstr "Salom"
 
-#: templates/tg-mini-app/home.html:11
+#: templates/tg-mini-app/home.html:12
 msgid "Where do you want to go?"
 msgstr "Qayerga bormoqchisiz?"
 
-#: templates/tg-mini-app/home.html:30
+#: templates/tg-mini-app/home.html:31
 msgid "From?"
 msgstr "Qayerdan?"
 
-#: templates/tg-mini-app/home.html:51
+#: templates/tg-mini-app/home.html:52
 msgid "To?"
 msgstr "Qayerga?"
 
-#: templates/tg-mini-app/home.html:74 templates/tg-mini-app/home.html:122
+#: templates/tg-mini-app/home.html:75 templates/tg-mini-app/home.html:130
 #, python-format
 msgid "%(counter)s person"
 msgid_plural "%(counter)s people"
 msgstr[0] "%(counter)sta odam"
 msgstr[1] "%(counter)sta odam"
 
-#: templates/tg-mini-app/home.html:76
+#: templates/tg-mini-app/home.html:77
 msgid "How many people?"
 msgstr "Necha kishi?"
 
-#: templates/tg-mini-app/home.html:89
+#: templates/tg-mini-app/home.html:92
 msgid "Your price"
 msgstr "Siz berayotgan narx"
 
-#: templates/tg-mini-app/home.html:93
+#: templates/tg-mini-app/home.html:96
 msgid "Your total price of the trip, including the number of passengers"
 msgstr "Safarning umumiy narxi, yo'lovchilar sonini inbotga olgan holda"
 
-#: templates/tg-mini-app/home.html:94
+#: templates/tg-mini-app/home.html:97
+msgid "Comments"
+msgstr "Izohlar"
+
+#: templates/tg-mini-app/home.html:101
 msgid "Find car"
 msgstr "Avtomobil topish"
 
-#: templates/tg-mini-app/home.html:97
+#: templates/tg-mini-app/home.html:105
 msgid "Searching for a car"
 msgstr "Avtomobil qidirilmoqda"
 
-#: templates/tg-mini-app/home.html:129
+#: templates/tg-mini-app/home.html:139 templates/tg-mini-app/user/trips.html:22
+msgid "UZS"
+msgstr "so'm"
+
+#: templates/tg-mini-app/home.html:153
 msgid "Do you really want to cancel your trip?"
 msgstr "Siz haqiqatan ham safarni bekor qilmoqchimisiz?"
 
-#: templates/tg-mini-app/home.html:129
+#: templates/tg-mini-app/home.html:153
 msgid "Cancel trip"
 msgstr "Safarni bekor qilish"
 
@@ -133,10 +141,6 @@ msgid "%(counter)s offer"
 msgid_plural "%(counter)s offers"
 msgstr[0] "%(counter)sta taklif"
 msgstr[1] "%(counter)sta taklif"
-
-#: templates/tg-mini-app/user/trips.html:22
-msgid "UZS"
-msgstr "so'm"
 
 #: templates/tg-mini-app/user/user-detail-base.html:20
 msgid "Details"
