@@ -12,6 +12,7 @@ class TripRequest(models.Model, BaseModelInterface):
     user = models.ForeignKey("users.User", on_delete=models.SET_NULL, null=True)
     people_count = models.IntegerField(default=1)
     comments = models.TextField(blank=True, null=True)
+    cost = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True, help_text="Total cost of the trip")
 
     region_a = models.ForeignKey(Region, on_delete=models.SET_NULL,
                                  null=True, blank=True,

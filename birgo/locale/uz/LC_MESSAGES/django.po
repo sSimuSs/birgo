@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-03 16:26+0500\n"
-"PO-Revision-Date: 2025-12-03 16:27+0500\n"
+"POT-Creation-Date: 2025-12-03 16:49+0500\n"
+"PO-Revision-Date: 2025-12-03 16:51+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -79,7 +79,7 @@ msgstr "Qayerdan?"
 msgid "To?"
 msgstr "Qayerga?"
 
-#: templates/tg-mini-app/home.html:74 templates/tg-mini-app/home.html:117
+#: templates/tg-mini-app/home.html:74 templates/tg-mini-app/home.html:122
 #, python-format
 msgid "%(counter)s person"
 msgid_plural "%(counter)s people"
@@ -91,18 +91,26 @@ msgid "How many people?"
 msgstr "Necha kishi?"
 
 #: templates/tg-mini-app/home.html:89
+msgid "Your price"
+msgstr "Siz berayotgan narx"
+
+#: templates/tg-mini-app/home.html:93
+msgid "Your total price of the trip, including the number of passengers"
+msgstr "Safarning umumiy narxi, yo'lovchilar sonini inbotga olgan holda"
+
+#: templates/tg-mini-app/home.html:94
 msgid "Find car"
 msgstr "Avtomobil topish"
 
-#: templates/tg-mini-app/home.html:92
+#: templates/tg-mini-app/home.html:97
 msgid "Searching for a car"
 msgstr "Avtomobil qidirilmoqda"
 
-#: templates/tg-mini-app/home.html:124
+#: templates/tg-mini-app/home.html:129
 msgid "Do you really want to cancel your trip?"
 msgstr "Siz haqiqatan ham safarni bekor qilmoqchimisiz?"
 
-#: templates/tg-mini-app/home.html:124
+#: templates/tg-mini-app/home.html:129
 msgid "Cancel trip"
 msgstr "Safarni bekor qilish"
 
@@ -184,9 +192,6 @@ msgstr "Davom ettirish"
 
 #~ msgid "Upload image"
 #~ msgstr "Rasmni yuklash"
-
-#~ msgid "Max offer price"
-#~ msgstr "Maksimal taklif narxi"
 
 #~ msgid "You will not receive offers above this amount"
 #~ msgstr "Siz ushbu miqdordan yuqori taklifni olmaysiz"

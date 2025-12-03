@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-03 16:26+0500\n"
-"PO-Revision-Date: 2025-12-03 16:26+0500\n"
+"POT-Creation-Date: 2025-12-03 16:49+0500\n"
+"PO-Revision-Date: 2025-12-03 16:52+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -80,7 +80,7 @@ msgstr "Откуда?"
 msgid "To?"
 msgstr "Куда?"
 
-#: templates/tg-mini-app/home.html:74 templates/tg-mini-app/home.html:117
+#: templates/tg-mini-app/home.html:74 templates/tg-mini-app/home.html:122
 #, python-format
 msgid "%(counter)s person"
 msgid_plural "%(counter)s people"
@@ -93,18 +93,26 @@ msgid "How many people?"
 msgstr "Сколько человек?"
 
 #: templates/tg-mini-app/home.html:89
+msgid "Your price"
+msgstr "Ваша цена"
+
+#: templates/tg-mini-app/home.html:93
+msgid "Your total price of the trip, including the number of passengers"
+msgstr "Общая стоимость поездки, учитывая кол-во пассажиров"
+
+#: templates/tg-mini-app/home.html:94
 msgid "Find car"
 msgstr "Искать машину"
 
-#: templates/tg-mini-app/home.html:92
+#: templates/tg-mini-app/home.html:97
 msgid "Searching for a car"
 msgstr "Поиск машины"
 
-#: templates/tg-mini-app/home.html:124
+#: templates/tg-mini-app/home.html:129
 msgid "Do you really want to cancel your trip?"
 msgstr "Вы действительно хотите отменить поездку?"
 
-#: templates/tg-mini-app/home.html:124
+#: templates/tg-mini-app/home.html:129
 msgid "Cancel trip"
 msgstr "Отменить поездку"
 
@@ -187,9 +195,6 @@ msgstr "Продолжить"
 
 #~ msgid "Upload image"
 #~ msgstr "Загрузить изображение"
-
-#~ msgid "Max offer price"
-#~ msgstr "Макс. цена предложения"
 
 #~ msgid "You will not receive offers above this amount"
 #~ msgstr "Вы не получите предложение на сумму, превышающую эту сумму"
