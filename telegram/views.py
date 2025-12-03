@@ -35,7 +35,9 @@ def home(request, bot_user: BotUser, *args, **kwargs):
 
     if request.method == "POST":
         cost = request.POST.get("cost")
+        comments = request.POST.get("comments")
         draft_trip_request.cost = cost
+        draft_trip_request.comments = comments
         draft_trip_request.save()
         if not draft_trip_request.submit_trip_request():
             pass
