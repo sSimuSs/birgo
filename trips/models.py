@@ -34,7 +34,7 @@ class TripRequest(models.Model, BaseModelInterface):
     updated_at = models.DateTimeField(auto_now=True)
 
     def cancel_trip_request(self):
-        self.cancelled_at = timezone.now()
+        self.canceled_at = timezone.now()
         self.save()
 
 
