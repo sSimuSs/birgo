@@ -56,30 +56,6 @@ def user_detail(request, bot_user: BotUser, *args, **kwargs):
     return render(request, f"tg-mini-app/user/{section}.html", locals() | kwargs)
 
 
-@tg_pages("Create a new trip request")
-def lot_create(request, bot_user: BotUser, *args, **kwargs):
-    """ Telegram Mini app creation a new trip request from the passenger user """
-    print(bot_user)
-    # if request.method == "POST":
-    #     data = request.POST.copy()
-    #     form = UserLotForm(data=data)
-    #     if form.is_valid():
-    #         form.instance.user_id = bot_user.user_id
-    #         form.instance.slug = f"{slugify(form.instance.title)}{get_random_integer(4)}"
-    #         lot = form.save()
-    #         if request.FILES:
-    #             gallery_form = LotGalleryForm(request.POST, request.FILES)
-    #             if gallery_form.is_valid():
-    #                 gallery_form.instance.lot_id = lot.id
-    #                 gallery_form.instance.main = True
-    #                 image = gallery_form.save()
-    #         return redirect("tg_home")
-    #     else:
-    #         errors = form.errors.as_data()
-
-    return render(request, "tg-mini-app/trips/create.html", locals() | kwargs)
-
-
 @tg_pages("Welcome to BirGo!")
 def welcome(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app Welcome page view """
