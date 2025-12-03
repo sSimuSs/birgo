@@ -73,6 +73,17 @@ def welcome(request, bot_user: BotUser, *args, **kwargs):
     bot_user.user.save()
     return render(request, "tg-mini-app/welcome.html", locals() | kwargs)
 
+@tg_pages("How many people?")
+def select_people_count(request, bot_user: BotUser, *args, **kwargs):
+    """ Telegram Mini app selecting people count page view """
+    if request.GET.get("select") and request.GET["select"].isdigit():
+        draft_trip_request, __ = bot_user.user.triprequest_set.get_or_create(sent_at__isnull=True,
+                                                                             canceled_at__isnull=True)
+        draft_trip_request.people_count = int(request.GET.get("select"))
+        draft_trip_request.save()
+        return redirect("tg_home")
+    return render(request, "tg-mini-app/trips/select_people_count.html", locals() | kwargs)
+
 @tg_pages("Selecting a region for the trip")
 def select_region(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app Selecting region for a draft trip page view """
