@@ -1,6 +1,7 @@
 {% extends "tg-mini-app/base.html" %}
 {% block content %}
     <script>
+    TelegramData.expand();
 {#        {% if start_param %}#}
 {#            window.location.href = '{% url "validate_user" %}?'+TelegramData.initData+"&custom_start_param={{ start_param }}";#}
 {#        {% else %}#}
