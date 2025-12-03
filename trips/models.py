@@ -14,7 +14,7 @@ class TripRequest(models.Model, BaseModelInterface):
     comments = models.TextField(blank=True, null=True)
 
     region_a = models.ForeignKey(Region, on_delete=models.SET_NULL,
-                                 null=True,
+                                 null=True, blank=True,
                                  related_name="region_a")
     location_a = models.ForeignKey(UserLocation,
                                    on_delete=models.PROTECT,
@@ -22,7 +22,7 @@ class TripRequest(models.Model, BaseModelInterface):
                                    related_name="location_a")
 
     region_b = models.ForeignKey(Region, on_delete=models.SET_NULL,
-                                 null=True,
+                                 null=True, blank=True,
                                  related_name="region_b")
     location_b = models.ForeignKey(UserLocation,
                                    on_delete=models.PROTECT,
@@ -30,12 +30,37 @@ class TripRequest(models.Model, BaseModelInterface):
                                    related_name="location_b")
 
     canceled_at = models.DateTimeField(blank=True, null=True)
+    sent_at = models.DateTimeField(blank=True, null=True) # user have submitted trip request and sent to drivers
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def cancel_trip_request(self):
+        """ Method to cancel a trip request """
         self.canceled_at = timezone.now()
         self.save()
+
+    def submit_trip_request(self) -> bool:
+        """ Method to submit a trip request, it will be sent to drivers """
+        result = False
+        if (self.region_a or self.location_a) and (self.region_b or self.location_b) and self.people_count > 0:
+            self.sent_at = timezone.now()
+            self.save()
+            result = True
+        return result
+
+    def get_from_text(self) -> str | None:
+        """ Method to get a trip request's "from" location/region name """
+        text = None
+        if self.region_a:
+            text = self.region_a
+        return text
+
+    def get_to_text(self) -> str | None:
+        """ Method to get a trip request's "to" location/region name """
+        text = None
+        if self.region_b:
+            text = self.region_b
+        return text
 
 
 class Trip(models.Model, BaseModelInterface):

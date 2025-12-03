@@ -54,6 +54,7 @@ class UserLocation(models.Model, BaseModelInterface):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     address = models.TextField(blank=True, null=True)
+    region = models.ForeignKey("system.Region", on_delete=models.SET_NULL, null=True, blank=True)
     coordinates = models.JSONField(default=dict, blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
