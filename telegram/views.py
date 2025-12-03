@@ -1,10 +1,13 @@
 from django.conf import settings
+from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
 from init_data_py import InitData
 import init_data_py.errors
 
+from system.models import Region
 from telegram.decorators import tg_pages
 from users.models import BotUser, User
 
@@ -63,6 +66,52 @@ def welcome(request, bot_user: BotUser, *args, **kwargs):
     bot_user.user.is_welcomed = True
     bot_user.user.save()
     return render(request, "tg-mini-app/welcome.html", locals() | kwargs)
+
+@tg_pages("Selecting a region for the trip")
+def select_region(request, bot_user: BotUser, *args, **kwargs):
+    """ Telegram Mini app Selecting region for a draft trip page view """
+    location_type = request.GET.get("location_type", "start") # start|finish
+    draft_trip_request, __ = bot_user.user.triprequest_set.get_or_create(sent_at__isnull=True,
+                                                                         canceled_at__isnull=True)
+
+    regions = Region.objects.filter(status=True)
+    if location_type == "start" and draft_trip_request.region_b:
+        if draft_trip_request.region_b.parent:
+            regions = regions.filter(
+                ~Q(id=draft_trip_request.region_b.parent_id), ~Q(parent_id=draft_trip_request.region_b.parent_id)
+            )
+        else:
+            regions = regions.filter(
+                ~Q(id=draft_trip_request.region_b_id)
+            )
+    elif location_type == "finish" and draft_trip_request.region_a:
+        if draft_trip_request.region_a.parent:
+            regions = regions.filter(
+                ~Q(id=draft_trip_request.region_a.parent_id), ~Q(parent_id=draft_trip_request.region_a.parent_id)
+            )
+        else:
+            regions = regions.filter(
+                ~Q(id=draft_trip_request.region_a_id)
+            )
+
+
+    if request.GET.get("select"):
+        region_id = request.GET["select"]
+        region = Region.objects.filter(id=region_id).last()
+        if region and region.sub_regions_count() == 0:
+            if location_type == "finish":
+                draft_trip_request.region_b = region
+            else:
+                draft_trip_request.region_a = region
+            draft_trip_request.save()
+            return redirect("tg_home")
+
+    if request.GET.get("parent"):
+        kwargs['back_button_url'] = reverse("tg_select_region")
+        regions = regions.filter(parent_id=request.GET["parent"])
+    else:
+        regions = regions.filter(parent__isnull=True)
+    return render(request, "tg-mini-app/trips/select_region.html", locals() | kwargs)
 
 def aut_error(request, *args, **kwargs):
     """ Error page view for 'Authentication Error' """

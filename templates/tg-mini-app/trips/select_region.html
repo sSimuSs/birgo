@@ -1,0 +1,63 @@
+{% extends "tg-mini-app/base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="app_page pb_0px">
+{#    <form method="get">#}
+{#    <div class="d_flex w-100">#}
+{#            <div class="input_block mb_0 px_16px pt_16px" style="position: relative;">#}
+{#                <svg width="20" height="20" class="svg_gray_color" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute; top:25px; left:25px;">#}
+{#                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.11414 3.89998C5.68183 3.89998 2.90001 6.6812 2.90001 10.1112C2.90001 13.5413 5.68183 16.3225 9.11414 16.3225C10.8312 16.3225 12.3842 15.6276 13.5098 14.5017C14.6344 13.3768 15.3283 11.8258 15.3283 10.1112C15.3283 6.6812 12.5465 3.89998 9.11414 3.89998ZM1.10001 10.1112C1.10001 5.6864 4.6884 2.09998 9.11414 2.09998C13.5399 2.09998 17.1283 5.6864 17.1283 10.1112C17.1283 11.9983 16.4747 13.734 15.3829 15.1027L20.6368 20.364C20.9881 20.7157 20.9877 21.2856 20.636 21.6368C20.2842 21.988 19.7144 21.9876 19.3632 21.6359L14.1102 16.3756C12.7405 17.4684 11.0031 18.1225 9.11414 18.1225C4.6884 18.1225 1.10001 14.5361 1.10001 10.1112Z"/>#}
+{#                </svg>#}
+{#                <input type="text" name="search" class="br_12px" style="padding-left: 33px" value="{{ request.GET.search }}" placeholder="{% translate 'search' %}">#}
+{#            </div>#}
+{#    </div>#}
+{#    </form>#}
+    <div class="rounded_section rounded_section_with_label section_with_list br_0" style="min-height: calc(100vh)">
+        <div class="list_section_label">{% translate 'Select a region' %}</div>
+        <ul>
+            {% if request.GET.parent %}
+                <li>
+                    <a href="{% url 'tg_select_region' %}?location_type={{ request.GET.location_type }}">
+                        <div class="list_item_text ps_16px muted_color">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" class="svg_gray_color" viewBox="0 0 640 640"><path d="M201.4 297.4C188.9 309.9 188.9 330.2 201.4 342.7L361.4 502.7C373.9 515.2 394.2 515.2 406.7 502.7C419.2 490.2 419.2 469.9 406.7 457.4L269.3 320L406.6 182.6C419.1 170.1 419.1 149.8 406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3L201.3 297.3z"/></svg>
+                            {% trans "Back" %}
+                        </div>
+                    </a>
+                </li>
+            {% endif %}
+            {% for region in regions %}
+                <li>
+                    <a href="?location_type={{ request.GET.location_type }}&{% if region.sub_regions_count > 0  %}parent={{ region.id }}{% else %}select={{ region.id }}{% endif %}">
+                        <div class="list_item_text ps_16px">
+                            <div>
+                                {{ region.name }}
+                            </div>
+                            {% if region.sub_regions_count > 0 %}
+                            <div class="section_counter">
+                                <div>
+
+                                </div>
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.29289 3.79289C7.68342 3.40237 8.31658 3.40237 8.70711 3.79289L16.2071 11.2929C16.5976 11.6834 16.5976 12.3166 16.2071 12.7071L8.70711 20.2071C8.31658 20.5976 7.68342 20.5976 7.29289 20.2071C6.90237 19.8166 6.90237 19.1834 7.29289 18.7929L14.0858 12L7.29289 5.20711C6.90237 4.81658 6.90237 4.18342 7.29289 3.79289Z"/>
+                                </svg>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </a>
+                </li>
+            {% empty %}
+                <li>
+                    <div class="text_center muted_color" style="width: 100%; padding: 64px 0">
+                        {% translate "Nothing was found" %}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<script>
+if (TelegramData.MainButton) {
+  TelegramData.MainButton.hide();
+}
+</script>
+{% endblock %}
