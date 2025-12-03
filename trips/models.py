@@ -2,19 +2,30 @@ from django.db import models
 from django.db.models import QuerySet
 
 from birgo.classes.models import BaseModelInterface
+from system.models import Region
 from users.models import UserLocation
 
 
 class TripRequest(models.Model, BaseModelInterface):
     """ Trip request model from the passengers, for drivers """
     user = models.ForeignKey("users.User", on_delete=models.SET_NULL, null=True)
+    people_count = models.IntegerField(default=1)
     comments = models.TextField(blank=True, null=True)
 
+    region_a = models.ForeignKey(Region, on_delete=models.SET_NULL,
+                                 null=True,
+                                 related_name="region_a")
     location_a = models.ForeignKey(UserLocation,
                                    on_delete=models.PROTECT,
+                                   null=True, blank=True,
                                    related_name="location_a")
+
+    region_b = models.ForeignKey(Region, on_delete=models.SET_NULL,
+                                 null=True,
+                                 related_name="region_b")
     location_b = models.ForeignKey(UserLocation,
                                    on_delete=models.PROTECT,
+                                   null=True, blank=True,
                                    related_name="location_b")
 
     created_at = models.DateTimeField(auto_now_add=True)

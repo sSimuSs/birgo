@@ -25,6 +25,8 @@ def home(request, bot_user: BotUser, *args, **kwargs):
     kwargs['back_button_url'] = None
     if not bot_user.user.is_welcomed:
         return redirect("tg_welcome")
+
+    trip_requests = bot_user.user.triprequest_set.all()
     return render(request, "tg-mini-app/home.html", locals() | kwargs)
 
 @tg_pages("User")
