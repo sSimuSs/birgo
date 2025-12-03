@@ -6,7 +6,6 @@
 {% block content %}
 <div class="app_page">
     <div class="rounded_sections_container">
-        <form method="get">
         <div class="d_flex">
             <div class="mb_0 me_16px" style="position: relative;width: calc(100% - 40px)">
             <h3 class="m_0">{% trans "Hello" %}, {{ bot_user.first_name }}</h3>
@@ -16,38 +15,40 @@
                 <img src="{{ bot_user.photo_url }}" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
             </a>
         </div>
-        </form>
-        {% for lot in lots %}
-        <a href="{% url 'tg_lot_detail' lot.id %}" class="rounded_section p_4px justify_items_left mt_16px">
-            <div style="background-image: url('{{ lot.get_main_image_url }}'); height: 100px; width: 25%; background-size: cover; border-radius: 16px; background-repeat: no-repeat; background-position: center">
-            </div>
-            <div class="ms_8px text_left position_relative" style="width: 75%">
-                <div class="mt_4px two_line_ellipse">{{ lot.title }}</div>
-                <div class="fs_14px mt_4px">
-                    <span class="muted_color">{{ lot.natural_created_at }} •</span>
-                    {% if lot.offers_count > 0 %}
-                    <span class="purple_color fw_600">
-                        {% blocktrans count lot.offers_count as counter %}{{ counter }} offer{% plural %}{{ counter }} offers{% endblocktrans %}
-                    </span>
-                    {% else %}
-                    <span class="muted_color fw_600">
-                        {% trans "no offers" %}
-                    </span>
-                    {% endif %}
-                </div>
-                <div class="fs_18px position_absolute" style="bottom: 4px">
-                    {% if lot.max_price %}
-                    {% blocktranslate with max_price=lot.max_price|floatformat|intcomma %}up to <span class="fw_600">{{ max_price }} UZS</span>{% endblocktranslate %}
-                    {% else %}
-                    <span class="badge bg_gray black_color">{% trans 'open to offers' %}</span>
-                    {% endif %}
-                </div>
-            </div>
-        </a>
-        {% endfor %}
+{#        {% for lot in lots %}#}
+{#        <a href="{% url 'tg_lot_detail' lot.id %}" class="rounded_section p_4px justify_items_left mt_16px">#}
+{#            <div style="background-image: url('{{ lot.get_main_image_url }}'); height: 100px; width: 25%; background-size: cover; border-radius: 16px; background-repeat: no-repeat; background-position: center">#}
+{#            </div>#}
+{#            <div class="ms_8px text_left position_relative" style="width: 75%">#}
+{#                <div class="mt_4px two_line_ellipse">{{ lot.title }}</div>#}
+{#                <div class="fs_14px mt_4px">#}
+{#                    <span class="muted_color">{{ lot.natural_created_at }} •</span>#}
+{#                    {% if lot.offers_count > 0 %}#}
+{#                    <span class="purple_color fw_600">#}
+{#                        {% blocktrans count lot.offers_count as counter %}{{ counter }} offer{% plural %}{{ counter }} offers{% endblocktrans %}#}
+{#                    </span>#}
+{#                    {% else %}#}
+{#                    <span class="muted_color fw_600">#}
+{#                        {% trans "no offers" %}#}
+{#                    </span>#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#                <div class="fs_18px position_absolute" style="bottom: 4px">#}
+{#                    {% if lot.max_price %}#}
+{#                    {% blocktranslate with max_price=lot.max_price|floatformat|intcomma %}up to <span class="fw_600">{{ max_price }} UZS</span>{% endblocktranslate %}#}
+{#                    {% else %}#}
+{#                    <span class="badge bg_gray black_color">{% trans 'open to offers' %}</span>#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#            </div>#}
+{#        </a>#}
+{#        {% endfor %}#}
     </div>
 </div>
-{#<script>#}
+<script>
+if (!TelegramData.isExpanded) {
+    TelegramData.expand()
+}
 {# if (TelegramData.MainButton) {#}
 {#     TelegramData.MainButton.enable();#}
 {#     TelegramData.MainButton.setParams({#}
@@ -60,5 +61,5 @@
 {#     });#}
 {#     TelegramData.MainButton.show();#}
 {# }#}
-{#</script>#}
+</script>
 {% endblock %}
