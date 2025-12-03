@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-03 14:47+0500\n"
-"PO-Revision-Date: 2025-12-03 15:31+0500\n"
+"POT-Creation-Date: 2025-12-03 16:26+0500\n"
+"PO-Revision-Date: 2025-12-03 16:26+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -56,11 +56,11 @@ msgstr "Поездка завершена"
 msgid "Cancelled"
 msgstr "Отмена поездки"
 
-#: telegram/views.py:17
+#: telegram/views.py:20
 msgid "Init page"
 msgstr "Входная страница"
 
-#: telegram/views.py:87
+#: telegram/views.py:118
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
@@ -72,27 +72,15 @@ msgstr "Привет"
 msgid "Where do you want to go?"
 msgstr "Куда вы хотите поехать?"
 
-#: templates/tg-mini-app/home.html:27
+#: templates/tg-mini-app/home.html:30
 msgid "From?"
 msgstr "Откуда?"
 
-#: templates/tg-mini-app/home.html:44
+#: templates/tg-mini-app/home.html:51
 msgid "To?"
 msgstr "Куда?"
 
-#: templates/tg-mini-app/home.html:65
-msgid "How many people?"
-msgstr "Сколько человек?"
-
-#: templates/tg-mini-app/home.html:78
-msgid "Find car"
-msgstr "Искать машину"
-
-#: templates/tg-mini-app/home.html:81
-msgid "Searching for a car"
-msgstr "Поиск машины"
-
-#: templates/tg-mini-app/home.html:106
+#: templates/tg-mini-app/home.html:74 templates/tg-mini-app/home.html:117
 #, python-format
 msgid "%(counter)s person"
 msgid_plural "%(counter)s people"
@@ -100,62 +88,38 @@ msgstr[0] "%(counter)s человек"
 msgstr[1] "%(counter)s человека"
 msgstr[2] "%(counter)s человек"
 
-#: templates/tg-mini-app/home.html:113
+#: templates/tg-mini-app/home.html:76
+msgid "How many people?"
+msgstr "Сколько человек?"
+
+#: templates/tg-mini-app/home.html:89
+msgid "Find car"
+msgstr "Искать машину"
+
+#: templates/tg-mini-app/home.html:92
+msgid "Searching for a car"
+msgstr "Поиск машины"
+
+#: templates/tg-mini-app/home.html:124
 msgid "Do you really want to cancel your trip?"
 msgstr "Вы действительно хотите отменить поездку?"
 
-#: templates/tg-mini-app/home.html:113
+#: templates/tg-mini-app/home.html:124
 msgid "Cancel trip"
 msgstr "Отменить поездку"
 
-#: templates/tg-mini-app/trips/create.html:47
-msgid "What do you want to buy?"
-msgstr "Что вы хотите купить?"
+#: templates/tg-mini-app/trips/select_region.html:16
+msgid "Select a region"
+msgstr "Выберите регион"
 
-#: templates/tg-mini-app/trips/create.html:53
-msgid "Title"
-msgstr "Название"
+#: templates/tg-mini-app/trips/select_region.html:23
+msgid "Back"
+msgstr "Назад"
 
-#: templates/tg-mini-app/trips/create.html:56
-msgid "Description"
-msgstr "Описание"
-
-#: templates/tg-mini-app/trips/create.html:56
-msgid "optional"
-msgstr "необязательно"
-
-#: templates/tg-mini-app/trips/create.html:58
-msgid "Image"
-msgstr "Изображение"
-
-#: templates/tg-mini-app/trips/create.html:62
-msgid "Delete"
-msgstr "Удалить"
-
-#: templates/tg-mini-app/trips/create.html:67
-msgid "Upload image"
-msgstr "Загрузить изображение"
-
-#: templates/tg-mini-app/trips/create.html:71
-msgid "Max offer price"
-msgstr "Макс. цена предложения"
-
-#: templates/tg-mini-app/trips/create.html:71
-#: templates/tg-mini-app/user/trips.html:22
-msgid "UZS"
-msgstr "сум"
-
-#: templates/tg-mini-app/trips/create.html:75
-msgid "You will not receive offers above this amount"
-msgstr "Вы не получите предложение на сумму, превышающую эту сумму"
-
-#: templates/tg-mini-app/trips/create.html:85
-msgid "Create"
-msgstr "Создать"
-
-#: templates/tg-mini-app/trips/create.html:93
-msgid "Required fields are not filled in"
-msgstr "Обязательные для заполнения поля не заполнены"
+#: templates/tg-mini-app/trips/select_region.html:51
+#: templates/tg-mini-app/user/trips.html:30
+msgid "Nothing was found"
+msgstr "Ничего не найдено"
 
 #: templates/tg-mini-app/user/trips.html:18
 #, python-format
@@ -165,9 +129,9 @@ msgstr[0] "%(counter)s предложение"
 msgstr[1] "%(counter)s предложения"
 msgstr[2] "%(counter)s предложений"
 
-#: templates/tg-mini-app/user/trips.html:30
-msgid "Nothing was found"
-msgstr "Ничего не найдено"
+#: templates/tg-mini-app/user/trips.html:22
+msgid "UZS"
+msgstr "сум"
 
 #: templates/tg-mini-app/user/user-detail-base.html:20
 msgid "Details"
@@ -202,6 +166,39 @@ msgstr ""
 #: templates/tg-mini-app/welcome.html:86
 msgid "Continue"
 msgstr "Продолжить"
+
+#~ msgid "What do you want to buy?"
+#~ msgstr "Что вы хотите купить?"
+
+#~ msgid "Title"
+#~ msgstr "Название"
+
+#~ msgid "Description"
+#~ msgstr "Описание"
+
+#~ msgid "optional"
+#~ msgstr "необязательно"
+
+#~ msgid "Image"
+#~ msgstr "Изображение"
+
+#~ msgid "Delete"
+#~ msgstr "Удалить"
+
+#~ msgid "Upload image"
+#~ msgstr "Загрузить изображение"
+
+#~ msgid "Max offer price"
+#~ msgstr "Макс. цена предложения"
+
+#~ msgid "You will not receive offers above this amount"
+#~ msgstr "Вы не получите предложение на сумму, превышающую эту сумму"
+
+#~ msgid "Create"
+#~ msgstr "Создать"
+
+#~ msgid "Required fields are not filled in"
+#~ msgstr "Обязательные для заполнения поля не заполнены"
 
 #~ msgid "Call"
 #~ msgstr "Позвонить"

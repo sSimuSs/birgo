@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-03 14:47+0500\n"
-"PO-Revision-Date: 2025-12-03 14:48+0500\n"
+"POT-Creation-Date: 2025-12-03 16:26+0500\n"
+"PO-Revision-Date: 2025-12-03 16:27+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -55,11 +55,11 @@ msgstr "Safar yakunlandi"
 msgid "Cancelled"
 msgstr "Bekor qilindi"
 
-#: telegram/views.py:17
+#: telegram/views.py:20
 msgid "Init page"
 msgstr "Kirish sahifasi"
 
-#: telegram/views.py:87
+#: telegram/views.py:118
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
@@ -71,89 +71,53 @@ msgstr "Salom"
 msgid "Where do you want to go?"
 msgstr "Qayerga bormoqchisiz?"
 
-#: templates/tg-mini-app/home.html:27
+#: templates/tg-mini-app/home.html:30
 msgid "From?"
 msgstr "Qayerdan?"
 
-#: templates/tg-mini-app/home.html:44
+#: templates/tg-mini-app/home.html:51
 msgid "To?"
 msgstr "Qayerga?"
 
-#: templates/tg-mini-app/home.html:65
-msgid "How many people?"
-msgstr "Necha kishi?"
-
-#: templates/tg-mini-app/home.html:78
-msgid "Find car"
-msgstr "Avtomobil topish"
-
-#: templates/tg-mini-app/home.html:81
-msgid "Searching for a car"
-msgstr "Avtomobil qidirilmoqda"
-
-#: templates/tg-mini-app/home.html:106
+#: templates/tg-mini-app/home.html:74 templates/tg-mini-app/home.html:117
 #, python-format
 msgid "%(counter)s person"
 msgid_plural "%(counter)s people"
 msgstr[0] "%(counter)sta odam"
 msgstr[1] "%(counter)sta odam"
 
-#: templates/tg-mini-app/home.html:113
+#: templates/tg-mini-app/home.html:76
+msgid "How many people?"
+msgstr "Necha kishi?"
+
+#: templates/tg-mini-app/home.html:89
+msgid "Find car"
+msgstr "Avtomobil topish"
+
+#: templates/tg-mini-app/home.html:92
+msgid "Searching for a car"
+msgstr "Avtomobil qidirilmoqda"
+
+#: templates/tg-mini-app/home.html:124
 msgid "Do you really want to cancel your trip?"
 msgstr "Siz haqiqatan ham safarni bekor qilmoqchimisiz?"
 
-#: templates/tg-mini-app/home.html:113
+#: templates/tg-mini-app/home.html:124
 msgid "Cancel trip"
 msgstr "Safarni bekor qilish"
 
-#: templates/tg-mini-app/trips/create.html:47
-msgid "What do you want to buy?"
-msgstr "Siz nima sotib olmoqchisiz?"
+#: templates/tg-mini-app/trips/select_region.html:16
+msgid "Select a region"
+msgstr "Huduni tanlang"
 
-#: templates/tg-mini-app/trips/create.html:53
-msgid "Title"
-msgstr "Nomlanishi"
+#: templates/tg-mini-app/trips/select_region.html:23
+msgid "Back"
+msgstr "Orqaga"
 
-#: templates/tg-mini-app/trips/create.html:56
-msgid "Description"
-msgstr "Tavsif"
-
-#: templates/tg-mini-app/trips/create.html:56
-msgid "optional"
-msgstr "majburiy emas"
-
-#: templates/tg-mini-app/trips/create.html:58
-msgid "Image"
-msgstr "Rasm"
-
-#: templates/tg-mini-app/trips/create.html:62
-msgid "Delete"
-msgstr "O`chirish"
-
-#: templates/tg-mini-app/trips/create.html:67
-msgid "Upload image"
-msgstr "Rasmni yuklash"
-
-#: templates/tg-mini-app/trips/create.html:71
-msgid "Max offer price"
-msgstr "Maksimal taklif narxi"
-
-#: templates/tg-mini-app/trips/create.html:71
-#: templates/tg-mini-app/user/trips.html:22
-msgid "UZS"
-msgstr "so'm"
-
-#: templates/tg-mini-app/trips/create.html:75
-msgid "You will not receive offers above this amount"
-msgstr "Siz ushbu miqdordan yuqori taklifni olmaysiz"
-
-#: templates/tg-mini-app/trips/create.html:85
-msgid "Create"
-msgstr "Yaratish"
-
-#: templates/tg-mini-app/trips/create.html:93
-msgid "Required fields are not filled in"
-msgstr "Majburiy maydonlar to`ldirilmagan"
+#: templates/tg-mini-app/trips/select_region.html:51
+#: templates/tg-mini-app/user/trips.html:30
+msgid "Nothing was found"
+msgstr "Hechnima topilmadi"
 
 #: templates/tg-mini-app/user/trips.html:18
 #, python-format
@@ -162,9 +126,9 @@ msgid_plural "%(counter)s offers"
 msgstr[0] "%(counter)sta taklif"
 msgstr[1] "%(counter)sta taklif"
 
-#: templates/tg-mini-app/user/trips.html:30
-msgid "Nothing was found"
-msgstr "Hechnima topilmadi"
+#: templates/tg-mini-app/user/trips.html:22
+msgid "UZS"
+msgstr "so'm"
 
 #: templates/tg-mini-app/user/user-detail-base.html:20
 msgid "Details"
@@ -199,6 +163,39 @@ msgstr ""
 #: templates/tg-mini-app/welcome.html:86
 msgid "Continue"
 msgstr "Davom ettirish"
+
+#~ msgid "What do you want to buy?"
+#~ msgstr "Siz nima sotib olmoqchisiz?"
+
+#~ msgid "Title"
+#~ msgstr "Nomlanishi"
+
+#~ msgid "Description"
+#~ msgstr "Tavsif"
+
+#~ msgid "optional"
+#~ msgstr "majburiy emas"
+
+#~ msgid "Image"
+#~ msgstr "Rasm"
+
+#~ msgid "Delete"
+#~ msgstr "O`chirish"
+
+#~ msgid "Upload image"
+#~ msgstr "Rasmni yuklash"
+
+#~ msgid "Max offer price"
+#~ msgstr "Maksimal taklif narxi"
+
+#~ msgid "You will not receive offers above this amount"
+#~ msgstr "Siz ushbu miqdordan yuqori taklifni olmaysiz"
+
+#~ msgid "Create"
+#~ msgstr "Yaratish"
+
+#~ msgid "Required fields are not filled in"
+#~ msgstr "Majburiy maydonlar to`ldirilmagan"
 
 #~ msgid "Call"
 #~ msgstr "Bog'lanish"
