@@ -111,7 +111,7 @@ def select_region(request, bot_user: BotUser, *args, **kwargs):
             return redirect("tg_home")
 
     if request.GET.get("parent"):
-        kwargs['back_button_url'] = reverse("tg_select_region")
+        kwargs['back_button_url'] = reverse("tg_select_region") + f"?location_type={location_type}"
         regions = regions.filter(parent_id=request.GET["parent"])
     else:
         regions = regions.filter(parent__isnull=True)
