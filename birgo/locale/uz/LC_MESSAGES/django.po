@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-03 12:45+0500\n"
-"PO-Revision-Date: 2025-12-03 12:45+0500\n"
+"POT-Creation-Date: 2025-12-03 13:00+0500\n"
+"PO-Revision-Date: 2025-12-03 13:02+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -63,25 +63,29 @@ msgstr "Kirish sahifasi"
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
-#: templates/tg-mini-app/home.html:11
+#: templates/tg-mini-app/home.html:10
 msgid "Hello"
 msgstr "Salom"
 
-#: templates/tg-mini-app/home.html:12
+#: templates/tg-mini-app/home.html:11
 msgid "Where do you want to go?"
 msgstr "Qayerga bormoqchisiz?"
 
-#: templates/tg-mini-app/home.html:27
+#: templates/tg-mini-app/home.html:26
 msgid "From?"
 msgstr "Qayerdan?"
 
-#: templates/tg-mini-app/home.html:44
+#: templates/tg-mini-app/home.html:43
 msgid "To?"
 msgstr "Qayerga?"
 
-#: templates/tg-mini-app/home.html:65
+#: templates/tg-mini-app/home.html:64
 msgid "How many people?"
 msgstr "Necha kishi?"
+
+#: templates/tg-mini-app/home.html:77
+msgid "Find car"
+msgstr "Mashina topish"
 
 #: templates/tg-mini-app/trips/create.html:47
 msgid "What do you want to buy?"

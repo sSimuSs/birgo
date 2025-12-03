@@ -1,6 +1,5 @@
 {% extends "tg-mini-app/base.html" %}
 {% load tz %}
-{% load humanize %}
 {% load i18n %}
 {% load static %}
 {% block content %}
@@ -75,48 +74,7 @@
                 </li>
             </ul>
         </div>
-{#        {% for lot in lots %}#}
-{#        <a href="{% url 'tg_lot_detail' lot.id %}" class="rounded_section p_4px justify_items_left mt_16px">#}
-{#            <div style="background-image: url('{{ lot.get_main_image_url }}'); height: 100px; width: 25%; background-size: cover; border-radius: 16px; background-repeat: no-repeat; background-position: center">#}
-{#            </div>#}
-{#            <div class="ms_8px text_left position_relative" style="width: 75%">#}
-{#                <div class="mt_4px two_line_ellipse">{{ lot.title }}</div>#}
-{#                <div class="fs_14px mt_4px">#}
-{#                    <span class="muted_color">{{ lot.natural_created_at }} •</span>#}
-{#                    {% if lot.offers_count > 0 %}#}
-{#                    <span class="purple_color fw_600">#}
-{#                        {% blocktrans count lot.offers_count as counter %}{{ counter }} offer{% plural %}{{ counter }} offers{% endblocktrans %}#}
-{#                    </span>#}
-{#                    {% else %}#}
-{#                    <span class="muted_color fw_600">#}
-{#                        {% trans "no offers" %}#}
-{#                    </span>#}
-{#                    {% endif %}#}
-{#                </div>#}
-{#                <div class="fs_18px position_absolute" style="bottom: 4px">#}
-{#                    {% if lot.max_price %}#}
-{#                    {% blocktranslate with max_price=lot.max_price|floatformat|intcomma %}up to <span class="fw_600">{{ max_price }} UZS</span>{% endblocktranslate %}#}
-{#                    {% else %}#}
-{#                    <span class="badge bg_gray black_color">{% trans 'open to offers' %}</span>#}
-{#                    {% endif %}#}
-{#                </div>#}
-{#            </div>#}
-{#        </a>#}
-{#        {% endfor %}#}
+        <a href="#" class="rounded_section mt_16px justify_content_center bg_main_green white_color">{% trans "Find car" %}</a>
     </div>
 </div>
-<script>
-{# if (TelegramData.MainButton) {#}
-{#     TelegramData.MainButton.enable();#}
-{#     TelegramData.MainButton.setParams({#}
-{#         "has_shine_effect": true,#}
-{#         "color": "#7C3AED",#}
-{#         "text": "{% translate "Create a Wish" %}"#}
-{#     });#}
-{#     TelegramData.MainButton.onClick(function () {#}
-{#         window.location.href = '{% url "tg_lot_create" %}';#}
-{#     });#}
-{#     TelegramData.MainButton.show();#}
-{# }#}
-</script>
 {% endblock %}
