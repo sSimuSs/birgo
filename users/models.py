@@ -11,6 +11,7 @@ class User(AbstractUser):
     User model
     """
     is_welcomed = models.BooleanField(default=False)
+    phone = models.CharField(max_length=12, blank=True, null=True)
 
 
 class BotUser(models.Model):
