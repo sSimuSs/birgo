@@ -58,14 +58,14 @@ class TripRequest(models.Model, BaseModelInterface):
         """ Method to get a trip request's "from" location/region name """
         text = None
         if self.region_a:
-            text = self.region_a.get_name()
+            text = self.region_a.get_tree_names()
         return text
 
     def get_to_text(self) -> str | None:
         """ Method to get a trip request's "to" location/region name """
         text = None
         if self.region_b:
-            text = self.region_b.get_name()
+            text = self.region_b.get_tree_names()
         return text
 
     def __str__(self):

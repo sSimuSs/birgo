@@ -71,6 +71,16 @@ class Region(models.Model):
             name = translation.name
         return name
 
+    def get_tree_names(self, lang: str | None = None) -> str:
+        name = self.name
+        if not lang:
+            lang = get_language()
+
+        if self.parent:
+            name = "{}, {}".format(self.parent.get_name(lang), name)
+
+        return name
+
     def __str__(self):
         region_name = self.name
         if self.parent:
