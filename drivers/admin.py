@@ -11,6 +11,7 @@ class DriverCarInline(admin.TabularInline):
 @admin.register(Driver)
 class DriverAdmin(admin.ModelAdmin):
     """ Driver model admin class """
-    list_display = ("id", "user")
+    list_display = ("id", "user", "status", "approved_at")
+    list_filter = ("created_at", "approved_at", "status")
     search_fields = ("id",)
     inlines = (DriverCarInline,)
