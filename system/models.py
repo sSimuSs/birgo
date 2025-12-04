@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.db.models import QuerySet
 
@@ -18,6 +19,30 @@ class CarModel(models.Model):
 
     def __str__(self):
         return f"{self.manufacturer}/{self.name}"
+
+
+class CarColor(models.Model):
+    """ CarColor model """
+    name = models.CharField(max_length=255)
+    hex_code = models.CharField(max_length=6, blank=True, null=True)
+
+    def get_name(self, lang: str | None = None) -> str:
+        name = self.name
+        if lang:
+            translation = self.carcolortranslation_set.filter(lang=lang).last()
+            if translation:
+                name = translation.name
+        return name
+
+    def __str__(self):
+        return self.name
+
+
+class CarColorTranslation(models.Model):
+    """ CarColor's Translation model """
+    car_color = models.ForeignKey(CarColor, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    lang = models.CharField(max_length=3, choices=settings.LANGUAGES)
 
 
 class Region(models.Model):

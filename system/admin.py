@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from system.models import CarModel, CarManufacturer, Region
+from system.models import CarModel, CarManufacturer, Region, CarColor, CarColorTranslation
 
 
 @admin.register(CarModel)
@@ -23,3 +23,16 @@ class RegionAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "parent")
     search_fields = ("id", "name", "parent__name")
     list_filter = ("parent",)
+
+
+class CarColorTranslationInline(admin.TabularInline):
+    """ CarColorTranslation inline for CarColorAdmin """
+    model = CarColorTranslation
+    extra = 0
+
+@admin.register(CarColor)
+class CarColorAdmin(admin.ModelAdmin):
+    """ CarColor model admin """
+    list_display = ("id", "name", "hex_code")
+    search_fields = ("id", "name", "hex_code")
+    inlines = (CarColorTranslationInline,)

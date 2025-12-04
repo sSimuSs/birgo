@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from birgo.classes.models import BaseModelInterface
-from system.models import CarModel
+from system.models import CarModel, CarColor
 from users.models import User
 
 
@@ -31,6 +31,7 @@ class Car(models.Model, BaseModelInterface):
     driver = models.ForeignKey(Driver, on_delete=models.CASCADE)
     car_number = models.CharField(max_length=8)
     model = models.ForeignKey(CarModel, on_delete=models.PROTECT)
+    color = models.ForeignKey(CarColor, on_delete=models.PROTECT)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
