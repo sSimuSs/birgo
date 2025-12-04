@@ -18,9 +18,9 @@
         </div>
         <div class="rounded_section mt_16px d_block justify_items_left">
             <div class="w-100 text_center py_8px">
-                <div id="trip_request_timer" class="fs_25px"></div>
+                <div id="trip_request_timer" class="fs_25px fw_600"></div>
                 <div class="fs_15px muted_color mt_4px">
-                    {% blocktranslate count counter=23 %}<b>{{ counter }}</b> driver saw your request{% plural %}<b>{{ counter }}</b> drivers saw your request{% endblocktranslate %}
+                    {% blocktranslate count counter=t_request.views_count %}<b>{{ counter }}</b> driver saw your request{% plural %}<b>{{ counter }}</b> drivers saw your request{% endblocktranslate %}
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
                 {% endif %}
             </ul>
             <div class="buttons_container mt_0" style="width: -webkit-fill-available;">
-                <a href="#" class="button button-bazeled py_12px" style="min-height: auto">{% trans "Call" %}</a>
+{#                <a href="#" class="button button-bazeled py_12px" style="min-height: auto">{% trans "Call" %}</a>#}
                 <a href="#" class="button button-danger py_12px fs_15px" style="min-height: auto" onclick="TelegramData.showConfirm('{% trans "Do you really want to cancel your trip?" %}', cancelTripRequest)">{% trans "Cancel trip" %}</a>
             </div>
         </div>

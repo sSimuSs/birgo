@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.db.models import Q
-from django.http import Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
@@ -74,7 +73,7 @@ def trip_request(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app Welcome page view """
     t_request = bot_user.user.triprequest_set.filter(sent_at__isnull=False, id=kwargs['pk']).last()
     if not t_request:
-        raise Http404
+        return redirect("tg_home")
 
     if request.GET.get("cancel_trip_request"):
         t_request.cancel_trip_request()

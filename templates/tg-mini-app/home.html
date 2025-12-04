@@ -113,7 +113,7 @@
         {% for tr in sent_trip_requests %}
         <a class="rounded_section" href="{% url 'tg_trip_request' tr.id %}">
             <div class="section_text">
-                <div>
+                <div style="width: 80%">
                     {% blocktrans with to_location=tr.get_to_text %}Trip to {{ to_location }}{% endblocktrans %}
                     <div class="mt_8px">
                         <span class="badge badge-s bg_gray muted_color align_items_center" style="display: inline-flex;font-weight: 600 ">
