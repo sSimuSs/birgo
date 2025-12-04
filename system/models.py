@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.db.models import QuerySet
+from django.utils.translation import get_language
 
 
 class CarManufacturer(models.Model):
@@ -61,10 +62,13 @@ class Region(models.Model):
 
     def get_name(self, lang: str | None = None) -> str:
         name = self.name
-        if lang:
-            translation = self.regiontranslation_set.filter(lang=lang).last()
-            if translation:
-                name = translation.name
+
+        if not lang:
+            lang = get_language()
+
+        translation = self.regiontranslation_set.filter(lang=lang).last()
+        if translation:
+            name = translation.name
         return name
 
     def __str__(self):

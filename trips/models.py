@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models import QuerySet
 from django.utils import timezone
+from django.utils.translation import get_language
 
 from birgo.classes.models import BaseModelInterface
 from system.models import Region
@@ -57,14 +58,14 @@ class TripRequest(models.Model, BaseModelInterface):
         """ Method to get a trip request's "from" location/region name """
         text = None
         if self.region_a:
-            text = self.region_a
+            text = self.region_a.get_name()
         return text
 
     def get_to_text(self) -> str | None:
         """ Method to get a trip request's "to" location/region name """
         text = None
         if self.region_b:
-            text = self.region_b
+            text = self.region_b.get_name()
         return text
 
     def __str__(self):

@@ -30,7 +30,7 @@
                     <a href="?location_type={{ request.GET.location_type }}&{% if region.sub_regions_count > 0  %}parent={{ region.id }}{% else %}select={{ region.id }}{% endif %}">
                         <div class="list_item_text ps_16px">
                             <div>
-                                {{ region.name }}
+                                {{ region.get_name }}
                             </div>
                             {% if region.sub_regions_count > 0 %}
                             <div class="section_counter">
