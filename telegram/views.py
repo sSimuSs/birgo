@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db.models import Q
+from django.http import Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
@@ -41,12 +42,7 @@ def home(request, bot_user: BotUser, *args, **kwargs):
         draft_trip_request.save()
         if not draft_trip_request.submit_trip_request():
             pass
-        return redirect("tg_home")
-    elif request.GET.get("cancel_trip_request"):
-        trip_request = sent_trip_requests.last()
-        if trip_request:
-            trip_request.cancel_trip_request()
-            return redirect("tg_home")
+        return redirect("tg_trip_request", pk=draft_trip_request.pk)
     return render(request, "tg-mini-app/home.html", locals() | kwargs)
 
 @tg_pages("User")
@@ -72,6 +68,18 @@ def welcome(request, bot_user: BotUser, *args, **kwargs):
     bot_user.user.is_welcomed = True
     bot_user.user.save()
     return render(request, "tg-mini-app/welcome.html", locals() | kwargs)
+
+@tg_pages("Searching for a car")
+def trip_request(request, bot_user: BotUser, *args, **kwargs):
+    """ Telegram Mini app Welcome page view """
+    t_request = bot_user.user.triprequest_set.filter(sent_at__isnull=False, id=kwargs['pk']).last()
+    if not t_request:
+        raise Http404
+
+    if request.GET.get("cancel_trip_request"):
+        t_request.cancel_trip_request()
+        return redirect("tg_home")
+    return render(request, "tg-mini-app/trips/trip_request.html", locals() | kwargs)
 
 @tg_pages("How many people?")
 def select_people_count(request, bot_user: BotUser, *args, **kwargs):
