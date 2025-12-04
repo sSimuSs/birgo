@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from birgo.classes.models import BaseModelInterface
 from birgo.constants import SUPPORTED_TEXT_LANGUAGES
@@ -12,6 +13,7 @@ class User(AbstractUser):
     """
     is_welcomed = models.BooleanField(default=False)
     phone = models.CharField(max_length=12, blank=True, null=True)
+    gender = models.CharField(max_length=1, choices=(("m", _("Male")), ("f", _("Female"))), blank=True, null=True)
 
 
 class BotUser(models.Model):

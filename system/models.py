@@ -59,8 +59,23 @@ class Region(models.Model):
     def sub_regions_count(self) -> int:
         return self.sub_regions().count()
 
+    def get_name(self, lang: str | None = None) -> str:
+        name = self.name
+        if lang:
+            translation = self.regiontranslation_set.filter(lang=lang).last()
+            if translation:
+                name = translation.name
+        return name
+
     def __str__(self):
         region_name = self.name
         if self.parent:
             region_name = f"{self.parent.name}, {self.name}"
         return region_name
+
+
+class RegionTranslation(models.Model):
+    """ Region's Translation model """
+    region = models.ForeignKey(Region, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    lang = models.CharField(max_length=3, choices=settings.LANGUAGES)
