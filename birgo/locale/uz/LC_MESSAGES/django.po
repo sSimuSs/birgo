@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-04 17:32+0500\n"
+"POT-Creation-Date: 2025-12-04 18:27+0500\n"
 "PO-Revision-Date: 2025-12-04 17:33+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -84,7 +84,7 @@ msgstr "Qayerga?"
 #: templates/tg-mini-app/trips/select_people_count.html:24
 #: templates/tg-mini-app/trips/select_people_count.html:34
 #: templates/tg-mini-app/trips/select_people_count.html:44
-#: templates/tg-mini-app/trips/trip_request.html:49
+#: templates/tg-mini-app/trips/trip_request.html:56
 #, python-format
 msgid "%(counter)s person"
 msgid_plural "%(counter)s people"
@@ -93,7 +93,7 @@ msgstr[1] "%(counter)sta odam"
 
 #: templates/tg-mini-app/home.html:79
 #: templates/tg-mini-app/trips/select_people_count.html:54
-#: templates/tg-mini-app/trips/trip_request.html:51
+#: templates/tg-mini-app/trips/trip_request.html:58
 msgid "Empty car"
 msgstr "Bo'sh moshina"
 
@@ -129,7 +129,7 @@ msgid "Trip to %(to_location)s"
 msgstr "%(to_location)sga safar"
 
 #: templates/tg-mini-app/home.html:126
-#: templates/tg-mini-app/trips/trip_request.html:61
+#: templates/tg-mini-app/trips/trip_request.html:68
 #: templates/tg-mini-app/user/trips.html:22
 msgid "UZS"
 msgstr "so'm"
@@ -151,20 +151,27 @@ msgstr "Hechnima topilmadi"
 msgid "Searching for a car"
 msgstr "Avtomobil qidirilmoqda"
 
-#: templates/tg-mini-app/trips/trip_request.html:22
+#: templates/tg-mini-app/trips/trip_request.html:23
+#, python-format
+msgid "<b>%(counter)s</b> driver saw your request"
+msgid_plural "<b>%(counter)s</b> drivers saw your request"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/tg-mini-app/trips/trip_request.html:29
 #: templates/tg-mini-app/user/user-detail-base.html:20
 msgid "Details"
 msgstr "Tafsilotlar"
 
-#: templates/tg-mini-app/trips/trip_request.html:76
+#: templates/tg-mini-app/trips/trip_request.html:83
 msgid "Call"
 msgstr "Bog'lanish"
 
-#: templates/tg-mini-app/trips/trip_request.html:77
+#: templates/tg-mini-app/trips/trip_request.html:84
 msgid "Do you really want to cancel your trip?"
 msgstr "Siz haqiqatan ham safarni bekor qilmoqchimisiz?"
 
-#: templates/tg-mini-app/trips/trip_request.html:77
+#: templates/tg-mini-app/trips/trip_request.html:84
 msgid "Cancel trip"
 msgstr "Safarni bekor qilish"
 

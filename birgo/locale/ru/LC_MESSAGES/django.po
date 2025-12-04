@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-04 17:32+0500\n"
-"PO-Revision-Date: 2025-12-04 17:34+0500\n"
+"POT-Creation-Date: 2025-12-04 18:27+0500\n"
+"PO-Revision-Date: 2025-12-04 18:29+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -85,7 +85,7 @@ msgstr "Куда?"
 #: templates/tg-mini-app/trips/select_people_count.html:24
 #: templates/tg-mini-app/trips/select_people_count.html:34
 #: templates/tg-mini-app/trips/select_people_count.html:44
-#: templates/tg-mini-app/trips/trip_request.html:49
+#: templates/tg-mini-app/trips/trip_request.html:56
 #, python-format
 msgid "%(counter)s person"
 msgid_plural "%(counter)s people"
@@ -95,7 +95,7 @@ msgstr[2] "%(counter)s человек"
 
 #: templates/tg-mini-app/home.html:79
 #: templates/tg-mini-app/trips/select_people_count.html:54
-#: templates/tg-mini-app/trips/trip_request.html:51
+#: templates/tg-mini-app/trips/trip_request.html:58
 msgid "Empty car"
 msgstr "Пустая машина"
 
@@ -131,7 +131,7 @@ msgid "Trip to %(to_location)s"
 msgstr "Поездка в %(to_location)s"
 
 #: templates/tg-mini-app/home.html:126
-#: templates/tg-mini-app/trips/trip_request.html:61
+#: templates/tg-mini-app/trips/trip_request.html:68
 #: templates/tg-mini-app/user/trips.html:22
 msgid "UZS"
 msgstr "сум"
@@ -153,20 +153,28 @@ msgstr "Ничего не найдено"
 msgid "Searching for a car"
 msgstr "Поиск машины"
 
-#: templates/tg-mini-app/trips/trip_request.html:22
+#: templates/tg-mini-app/trips/trip_request.html:23
+#, python-format
+msgid "<b>%(counter)s</b> driver saw your request"
+msgid_plural "<b>%(counter)s</b> drivers saw your request"
+msgstr[0] "<b>%(counter)s</b> водитель увидел ваш запрос"
+msgstr[1] "<b>%(counter)s</b> водителя увидели ваш запрос"
+msgstr[2] "<b>%(counter)s</b> водителей увидели ваш запрос"
+
+#: templates/tg-mini-app/trips/trip_request.html:29
 #: templates/tg-mini-app/user/user-detail-base.html:20
 msgid "Details"
 msgstr "Детали"
 
-#: templates/tg-mini-app/trips/trip_request.html:76
+#: templates/tg-mini-app/trips/trip_request.html:83
 msgid "Call"
 msgstr "Позвонить"
 
-#: templates/tg-mini-app/trips/trip_request.html:77
+#: templates/tg-mini-app/trips/trip_request.html:84
 msgid "Do you really want to cancel your trip?"
 msgstr "Вы действительно хотите отменить поездку?"
 
-#: templates/tg-mini-app/trips/trip_request.html:77
+#: templates/tg-mini-app/trips/trip_request.html:84
 msgid "Cancel trip"
 msgstr "Отменить поездку"
 

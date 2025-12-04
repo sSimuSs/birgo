@@ -16,11 +16,18 @@
                 <img src="{{ bot_user.photo_url }}" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
             </a>
         </div>
-
+        <div class="rounded_section mt_16px d_block justify_items_left">
+            <div class="w-100 text_center py_8px">
+                <div id="trip_request_timer" class="fs_25px"></div>
+                <div class="fs_15px muted_color mt_4px">
+                    {% blocktranslate count counter=23 %}<b>{{ counter }}</b> driver saw your request{% plural %}<b>{{ counter }}</b> drivers saw your request{% endblocktranslate %}
+                </div>
+            </div>
+        </div>
         <div class="rounded_section rounded_section_with_label section_with_list mt_16px">
             <div class="list_section_label" style="width: -webkit-fill-available">
                 {% trans "Details" %}
-                <div class="muted_color fs_15px" style="float: right" id="trip_request_timer"></div>
+{#                <div class="muted_color fs_15px" style="float: right" ></div>#}
             </div>
             <ul>
                 <li>

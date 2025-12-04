@@ -49,6 +49,10 @@ class TripRequest(models.Model, BaseModelInterface):
             result = True
         return result
 
+    def views_count(self) -> int:
+        """ Method to return the number of views by drivers """
+        return self.triprequestview_set.count()
+
     def get_from_text(self) -> str | None:
         """ Method to get a trip request's "from" location/region name """
         text = None
@@ -62,6 +66,18 @@ class TripRequest(models.Model, BaseModelInterface):
         if self.region_b:
             text = self.region_b
         return text
+
+    def __str__(self):
+        return f"TripRequest #{self.id} ({self.user})"
+
+
+class TripRequestView(models.Model, BaseModelInterface):
+    """ Trip request view model """
+    trip_request = models.ForeignKey(TripRequest, on_delete=models.CASCADE)
+    driver = models.ForeignKey("drivers.Driver", on_delete=models.PROTECT)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 
 class Trip(models.Model, BaseModelInterface):
@@ -86,7 +102,7 @@ class TripPassenger(models.Model, BaseModelInterface):
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE)
     passenger_user = models.ForeignKey("users.User", on_delete=models.SET_NULL, null=True)
     cost = models.DecimalField(decimal_places=2, max_digits=10)
-    seat_number = models.IntegerField()
+    seat_number = models.IntegerField(blank=True, null=True)
 
     trip_request = models.ForeignKey(TripRequest, on_delete=models.SET_NULL, null=True)
 

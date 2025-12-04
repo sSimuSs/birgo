@@ -37,5 +37,5 @@ class Region(models.Model):
     def __str__(self):
         region_name = self.name
         if self.parent:
-            region_name = f"{self.parent.name} / {self.name}"
+            region_name = f"{self.parent.name}, {self.name}"
         return region_name

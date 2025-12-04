@@ -20,8 +20,8 @@ class Driver(models.Model, BaseModelInterface):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __dir__(self):
-        return self.user
+    def __str__(self):
+        return f"Driver {self.user}"
 
 
 class Car(models.Model, BaseModelInterface):
@@ -32,3 +32,6 @@ class Car(models.Model, BaseModelInterface):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.model} {self.car_number}"

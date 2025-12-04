@@ -1137,6 +1137,10 @@ input[type="radio"]:disabled+label {
     font-size: 18px!important;
 }
 
+.fs_25px {
+    font-size: 25px!important;
+}
+
 .fw_600 {
     font-weight: 600!important;
 }
