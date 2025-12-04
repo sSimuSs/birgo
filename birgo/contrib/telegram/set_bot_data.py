@@ -8,40 +8,40 @@ load_dotenv()
 bot = telebot.TeleBot(os.getenv("TELEGRAM_BOT_TOKEN"))
 bot.set_my_description(
 """
-Wishr — bu e'lonlar taxtasining yangi turi. 
-Bu yerda hammasi mahsulotdan emas, sizga kerakli narsalardan boshlanadi. 
-O‘zingiz xohlagan narsani yozing — va sotuvchilar taklif yuborishadi.
+BirGo — shaharlararo sayohatlarni topishning eng oson yo‘li.
+Biz yo‘lovchilar va haydovchilarni darhol bog‘laymiz, Telegram guruhlari, cheksiz xabarlar yoki qo‘ng‘iroqlarsiz. Mavjud haydovchilarni, bo‘sh o‘rinlarni, narxlarni va jo‘nash vaqtini bir joyda ko‘ring.
+BirGo Angren–Toshkent yo‘nalishini hamma uchun tezroq, sodda va ishonchli qiladi.
 """,
     "uz"
 )
 
 bot.set_my_description(
 """
-Wishr — это доска объявлений наоборот. 
-Здесь всё начинается не с товара, а с вашего желания. 
-Опишите, что вам нужно — и продавцы сами предложат цену и условия.
+BirGo — это самый простой способ найти поездки между городами.
+Мы мгновенно соединяем пассажиров и водителей, без Telegram-групп, бесконечных сообщений или звонков. Смотрите доступных водителей, свободные места, цены и время отправления — всё в одном месте.
+BirGo делает маршрут Ангрен–Ташкент быстрее, проще и надёжнее для всех.
 """,
     "ru"
 )
 
 bot.set_my_description(
 """
-Wishr is a reverse marketplace. 
-Here, everything starts not with a product — but with your wish. 
-Describe what you need, and sellers will offer their prices and terms.
+BirGo is the easiest way to find intercity rides.
+We connect passengers and drivers instantly, without Telegram groups, endless messages, or phone calls. See available drivers, free seats, prices, and departure time — all in one place.
+BirGo makes the Angren–Tashkent route faster, simpler, and more reliable for everyone.
 """
 )
 
 bot.set_my_short_description(
-    "Istagingizni yozing. Haqiqiy takliflarni oling",
+    "BirGo yo‘lovchi va haydovchilarni bir zumda bog‘laydi — kutishsiz, tartibsizliksiz, stresssiz",
     "uz"
 )
 
 bot.set_my_short_description(
-    "Разместите хотелку. Получайте реальные предложения",
+    "BirGo мгновенно соединяет пассажиров и водителей — без ожиданий, хаоса и стресса",
     "ru"
 )
 
 bot.set_my_short_description(
-    "Post your wish. Get real offers"
+    "BirGo connects passengers and drivers instantly — no waiting, no chaos, no stress"
 )
