@@ -88,7 +88,7 @@ def driver_page(request, bot_user: BotUser, *args, **kwargs):
 @tg_pages("Searching for a car")
 def trip_request(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app Welcome page view """
-    t_request = bot_user.user.triprequest_set.filter(sent_at__isnull=False, id=kwargs['pk']).last()
+    t_request = TripRequest.objects.filter(sent_at__isnull=False, id=kwargs['pk']).last()
     if not t_request:
         return redirect("tg_home")
 
