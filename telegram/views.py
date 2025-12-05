@@ -12,6 +12,7 @@ from birgo.constants import ENV_PRODUCTION
 from drivers.models import Driver
 from system.models import Region
 from telegram.decorators import tg_pages
+from trips.models import TripRequest
 from users.models import BotUser, User
 
 
@@ -75,6 +76,15 @@ def welcome(request, bot_user: BotUser, *args, **kwargs):
     bot_user.user.save()
     return render(request, "tg-mini-app/welcome.html", locals() | kwargs)
 
+@tg_pages("Driver page")
+def driver_page(request, bot_user: BotUser, *args, **kwargs):
+    """ Telegram Mini app Driver page view """
+    kwargs['back_button_url'] = None
+    trip_requests = TripRequest.objects.filter(
+        canceled_at__isnull=True, sent_at__isnull=False
+    )
+    return render(request, "tg-mini-app/drivers/main.html", locals() | kwargs)
+
 @tg_pages("Searching for a car")
 def trip_request(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app Welcome page view """
@@ -82,7 +92,16 @@ def trip_request(request, bot_user: BotUser, *args, **kwargs):
     if not t_request:
         return redirect("tg_home")
 
-    if request.GET.get("cancel_trip_request"):
+    is_owner = True
+    if t_request.user != bot_user.user:
+        is_owner = False
+        driver = bot_user.user.get_driver()
+        if driver and driver.status == 1:
+            driver.triprequestview_set.get_or_create(
+                trip_request=t_request,
+            )
+
+    if is_owner and request.GET.get("cancel_trip_request"):
         t_request.cancel_trip_request()
         return redirect("tg_home")
     return render(request, "tg-mini-app/trips/trip_request.html", locals() | kwargs)

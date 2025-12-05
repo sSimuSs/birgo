@@ -20,6 +20,15 @@ class User(AbstractUser):
     gender = models.CharField(max_length=1, choices=USER_GENDER_CHOICES,
                               blank=True, null=True)
 
+    def get_shortened_name(self) -> str:
+        name = self.first_name
+        if len(self.first_name) > 12:
+            name = name[:12]
+        return name
+
+    def get_driver(self):
+        return self.driver_set.filter(approved_at__isnull=False).last()
+
 
 class BotUser(models.Model):
     """

@@ -20,8 +20,21 @@
         <div class="rounded_section mt_16px d_block justify_items_left">
             <div class="w-100 text_center py_8px">
                 <div id="trip_request_timer" class="fs_25px fw_600"></div>
+                {% if is_owner %}
                 <div class="fs_15px muted_color mt_4px">
                     {% blocktranslate count counter=t_request.views_count %}<b>{{ counter }}</b> driver saw your request{% plural %}<b>{{ counter }}</b> drivers saw your request{% endblocktranslate %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="rounded_section mt_16px">
+            <div class="section_icon">
+            <img src="{{ t_request.user.botuser.photo_url }}" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+            </div>
+            <div class="section_text">
+                <div>
+                {{ t_request.user.get_full_name }}<br>
+                <span class="muted_color fs_12px">{% trans "Passenger" %}</span>
                 </div>
             </div>
         </div>
@@ -82,7 +95,9 @@
             </ul>
             <div class="buttons_container mt_0" style="width: -webkit-fill-available;">
 {#                <a href="#" class="button button-bazeled py_12px" style="min-height: auto">{% trans "Call" %}</a>#}
+                {% if is_owner %}
                 <a href="#" class="button button-danger py_12px fs_15px" style="min-height: auto" onclick="TelegramData.showConfirm('{% trans "Do you really want to cancel your trip?" %}', cancelTripRequest)">{% trans "Cancel trip" %}</a>
+                {% endif %}
             </div>
         </div>
     </div>

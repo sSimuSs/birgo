@@ -1,0 +1,62 @@
+{% extends "tg-mini-app/base.html" %}
+{% load svg_tags %}
+{% load humanize %}
+{% load tz %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+<script src="{% static "js/jquery.tinytimer.min.js" %}" type="text/javascript"></script>
+<div class="app_page">
+    <div class="rounded_sections_container">
+        <div class="d_flex">
+            <div class="mb_0 me_16px" style="position: relative;width: calc(100% - 40px)">
+            <h3 class="m_0 two_line_ellipse">{% trans "Hello" %}, {{ bot_user.first_name }}</h3>
+            <span class="fs_14px">{% trans "Where do you want to go?" %}</span>
+            </div>
+            <a href="{% url 'tg_user_detail' bot_user.id %}" class="d_flex">
+                <img src="{{ bot_user.photo_url }}" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+            </a>
+        </div>
+        <div class="list_section_label mt_16px">{% trans "Active trip requests" %}</div>
+        {% for tr in trip_requests %}
+        <a class="rounded_section mb_8px" href="{% url 'tg_trip_request' tr.id %}">
+            <div class="section_text">
+                <div style="width: 80%">
+                    <div class="d_flex align_items_center">
+                        {{ tr.get_from_text }} {% render_svg "arrow_right_long" size="15" svg_class="svg_gray_color ms_4px me_4px" %} {{ tr.get_to_text }}
+                    </div>
+                    <div class="mt_8px">
+                        <div class="badge badge-s bg_gray muted_color align_items_center" style="display: inline-flex;font-weight: 600; padding-left: 2px">
+                            <img src="{{ tr.user.botuser.photo_url }}" class="me_4px" alt="" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover;">
+                            {{ tr.user.get_shortened_name }}
+                        </div>
+                        <span class="badge badge-s bg_gray muted_color align_items_center" style="display: inline-flex;font-weight: 600 ">
+                            {% render_svg "people_group" size="20" svg_class="svg_gray_color me_4px" %}
+                            {{ tr.people_count }}
+                        </span>
+                        {% if tr.cost %}
+                        <span class="badge badge-s bg_gray muted_color align_items_center" style="display: inline-flex;font-weight: 600 ">
+                            {% render_svg "money_bill" size="20" svg_class="svg_gray_color me_4px" %}
+                            {{ tr.cost|floatformat|intcomma }} {% trans "UZS" %}
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="section_counter">
+                    <span id="trip_request_timer_{{ tr.id }}"></span>
+                    {% render_svg "angle_right" %}
+                </div>
+            </div>
+        </a>
+        <script>
+            $( document ).ready(function() {
+                var d = new Date('{{ tr.sent_at|date:"Y-m-d H:i:s" }}');
+                $('#trip_request_timer_{{ tr.id }}').tinyTimer({
+                    from: d
+                });
+            });
+        </script>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

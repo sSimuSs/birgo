@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.contrib import admin
-from django.utils.translation import gettext as _
 from telebot import TeleBot, types
 
 from drivers.models import Driver, Car
