@@ -99,7 +99,11 @@
             <div class="input_block mt_8px mb_4px">
                 <input type="number" min="1000" value="{{ draft_trip_request.cost|floatformat }}" name="cost" placeholder="" required>
             </div>
-            <div class="input_help_text mb_16px">{% translate 'Your total price of the trip, including the number of passengers' %}</div>
+            <div class="input_help_text mb_16px">
+                {% if draft_trip_request.people_count and draft_trip_request.people_count < 100 %}
+                {% translate 'Your total price of the trip, including the number of passengers' %}
+                {% endif %}
+            </div>
             <label class="list_section_label" for="comments">{% translate 'Comments' %}</label>
             <div class="input_block mt_8px mb_4px" id="comments">
                 <textarea name="comments" placeholder="">{% if draft_trip_request.comments %}{{ draft_trip_request.comments }}{% endif %}</textarea>
