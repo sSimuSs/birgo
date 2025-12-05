@@ -26,8 +26,8 @@ class User(AbstractUser):
             name = name[:12]
         return name
 
-    def get_driver(self):
-        return self.driver_set.filter(approved_at__isnull=False).last()
+    def get_driver(self, **filters):
+        return self.driver_set.filter(approved_at__isnull=False, **filters).last()
 
 
 class BotUser(models.Model):

@@ -116,7 +116,7 @@
             <div class="muted_color fs_15px" style="float: right" id="trip_request_timer_{{ tr.id }}"></div>
         </div>
         {% for tr in sent_trip_requests %}
-        <a class="rounded_section" href="{% url 'tg_trip_request' tr.id %}">
+        <a class="rounded_section mb_8px" href="{% url 'tg_trip_request' tr.id %}">
             <div class="section_text">
                 <div style="width: 80%">
                     {% blocktrans with to_location=tr.get_to_text %}Trip to {{ to_location }}{% endblocktrans %}

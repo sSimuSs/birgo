@@ -40,7 +40,6 @@ def home(request, bot_user: BotUser, *args, **kwargs):
     sent_trip_requests = bot_user.user.triprequest_set.filter(
         canceled_at__isnull=True, sent_at__isnull=False
     )
-
     if request.method == "POST":
         cost = request.POST.get("cost")
         comments = request.POST.get("comments")
@@ -275,7 +274,7 @@ def validate_user(request):
             if init_data.start_param:
                 if init_data.start_param == "new_driver":
                     return redirect("tg_driver_register")
-            if bot_user.user.get_driver():
+            if bot_user.user.get_driver(status=1):
                 return redirect("tg_driver_page") # driver's cabinet
             return redirect("tg_home") # passenger's cabinet
     return redirect("tg_auth_error")
