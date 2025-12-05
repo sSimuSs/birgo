@@ -4,6 +4,7 @@ from django.utils.translation import gettext_lazy as _
 from telebot import TeleBot
 
 from birgo.classes.models import BaseModelInterface
+from drivers.signals import driver_post_save
 from system.models import CarModel, CarColor
 from users.models import User
 
@@ -40,6 +41,8 @@ class Driver(models.Model, BaseModelInterface):
 
     def __str__(self):
         return f"Driver {self.user}"
+
+models.signals.post_save.connect(receiver=driver_post_save, sender=Driver)
 
 
 class Car(models.Model, BaseModelInterface):
