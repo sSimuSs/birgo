@@ -14,7 +14,7 @@
                     {% render_svg "power_off" size="28" svg_class="svg_success_color" %}
                 </div>
             {% else %}
-                <a href="{% querystring toggle_status=1 %}">
+                <a class="d_flex justify_content_center align_items_center me_16px" href="{% querystring toggle_status=1 %}">
                 {% render_svg "power_off" size="28" svg_class="svg_gray_color" %}
                 </a>
             {% endif %}

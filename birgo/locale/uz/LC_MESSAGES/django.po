@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-05 17:46+0500\n"
-"PO-Revision-Date: 2025-12-05 17:46+0500\n"
+"POT-Creation-Date: 2025-12-05 23:14+0500\n"
+"PO-Revision-Date: 2025-12-05 23:17+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -63,29 +63,37 @@ msgstr "Haydovchilik guvohnomasining raqami"
 msgid "Init page"
 msgstr "Kirish sahifasi"
 
-#: telegram/views.py:189
+#: telegram/views.py:197
 msgid "Phone number is required"
 msgstr "Telefon raqami kiritilmagan"
 
-#: telegram/views.py:194 telegram/views.py:196
+#: telegram/views.py:202 telegram/views.py:204
 msgid "Incorrect phone number"
 msgstr "Telefon raqami noto‘g‘ri"
 
-#: telegram/views.py:224
+#: telegram/views.py:232
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
-#: templates/tg-mini-app/drivers/main.html:14
+#: templates/tg-mini-app/drivers/main.html:13
+msgid "Are you sure you want to get off the line?"
+msgstr "Haqiqatan ham liniyadan chiqmoqchimisiz?"
+
+#: templates/tg-mini-app/drivers/main.html:23
 msgid "Driver"
 msgstr "Haydovchi"
 
-#: templates/tg-mini-app/drivers/main.html:22
+#: templates/tg-mini-app/drivers/main.html:25
+msgid "Select a trip request below"
+msgstr "Quyidagi safarlardan birini tanlang"
+
+#: templates/tg-mini-app/drivers/main.html:32
 msgid "Active trip requests"
 msgstr "Faol safar so'rovlari"
 
-#: templates/tg-mini-app/drivers/main.html:42
+#: templates/tg-mini-app/drivers/main.html:52
 #: templates/tg-mini-app/home.html:131
-#: templates/tg-mini-app/trips/trip_request.html:82
+#: templates/tg-mini-app/trips/trip_request.html:84
 #: templates/tg-mini-app/user/trips.html:22
 msgid "UZS"
 msgstr "so'm"
@@ -147,7 +155,7 @@ msgstr "Qayerga?"
 #: templates/tg-mini-app/trips/select_people_count.html:25
 #: templates/tg-mini-app/trips/select_people_count.html:35
 #: templates/tg-mini-app/trips/select_people_count.html:45
-#: templates/tg-mini-app/trips/trip_request.html:70
+#: templates/tg-mini-app/trips/trip_request.html:72
 #, python-format
 msgid "%(counter)s person"
 msgid_plural "%(counter)s people"
@@ -156,7 +164,7 @@ msgstr[1] "%(counter)sta odam"
 
 #: templates/tg-mini-app/home.html:82
 #: templates/tg-mini-app/trips/select_people_count.html:55
-#: templates/tg-mini-app/trips/trip_request.html:72
+#: templates/tg-mini-app/trips/trip_request.html:74
 msgid "Empty car"
 msgstr "Bo'sh moshina"
 
@@ -215,20 +223,20 @@ msgid_plural "<b>%(counter)s</b> drivers saw your request"
 msgstr[0] "<b>%(counter)s</b>ta haydovchi so'rovingizni ko'rdi"
 msgstr[1] "<b>%(counter)s</b>ta haydovchi so'rovingizni ko'rdi"
 
-#: templates/tg-mini-app/trips/trip_request.html:37
-msgid "Passenger"
-msgstr "Yo‘lovchi"
+#: templates/tg-mini-app/trips/trip_request.html:38
+msgid "Client"
+msgstr "Buyurtmachi"
 
-#: templates/tg-mini-app/trips/trip_request.html:43
+#: templates/tg-mini-app/trips/trip_request.html:45
 #: templates/tg-mini-app/user/user-detail-base.html:20
 msgid "Details"
 msgstr "Tafsilotlar"
 
-#: templates/tg-mini-app/trips/trip_request.html:99
+#: templates/tg-mini-app/trips/trip_request.html:101
 msgid "Do you really want to cancel your trip?"
 msgstr "Siz haqiqatan ham safarni bekor qilmoqchimisiz?"
 
-#: templates/tg-mini-app/trips/trip_request.html:99
+#: templates/tg-mini-app/trips/trip_request.html:101
 msgid "Cancel trip"
 msgstr "Safarni bekor qilish"
 
@@ -288,6 +296,9 @@ msgstr "Erkak"
 #: users/models.py:16
 msgid "Female"
 msgstr "Ayol"
+
+#~ msgid "Passenger"
+#~ msgstr "Yo‘lovchi"
 
 #~ msgid "Call"
 #~ msgstr "Bog'lanish"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-05 17:46+0500\n"
-"PO-Revision-Date: 2025-12-05 17:46+0500\n"
+"POT-Creation-Date: 2025-12-05 23:14+0500\n"
+"PO-Revision-Date: 2025-12-05 23:15+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -64,29 +64,37 @@ msgstr "Номер водительского удостоверения"
 msgid "Init page"
 msgstr "Входная страница"
 
-#: telegram/views.py:189
+#: telegram/views.py:197
 msgid "Phone number is required"
 msgstr "Требуется номер телефона"
 
-#: telegram/views.py:194 telegram/views.py:196
+#: telegram/views.py:202 telegram/views.py:204
 msgid "Incorrect phone number"
 msgstr "Неверный номер телефона"
 
-#: telegram/views.py:224
+#: telegram/views.py:232
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
-#: templates/tg-mini-app/drivers/main.html:14
+#: templates/tg-mini-app/drivers/main.html:13
+msgid "Are you sure you want to get off the line?"
+msgstr "Вы уверены, что хотите выйти из линии?"
+
+#: templates/tg-mini-app/drivers/main.html:23
 msgid "Driver"
 msgstr "Водитель"
 
-#: templates/tg-mini-app/drivers/main.html:22
+#: templates/tg-mini-app/drivers/main.html:25
+msgid "Select a trip request below"
+msgstr "Выберите запрос на поездку ниже"
+
+#: templates/tg-mini-app/drivers/main.html:32
 msgid "Active trip requests"
 msgstr "Активные запросы на поездку"
 
-#: templates/tg-mini-app/drivers/main.html:42
+#: templates/tg-mini-app/drivers/main.html:52
 #: templates/tg-mini-app/home.html:131
-#: templates/tg-mini-app/trips/trip_request.html:82
+#: templates/tg-mini-app/trips/trip_request.html:84
 #: templates/tg-mini-app/user/trips.html:22
 msgid "UZS"
 msgstr "сум"
@@ -148,7 +156,7 @@ msgstr "Куда?"
 #: templates/tg-mini-app/trips/select_people_count.html:25
 #: templates/tg-mini-app/trips/select_people_count.html:35
 #: templates/tg-mini-app/trips/select_people_count.html:45
-#: templates/tg-mini-app/trips/trip_request.html:70
+#: templates/tg-mini-app/trips/trip_request.html:72
 #, python-format
 msgid "%(counter)s person"
 msgid_plural "%(counter)s people"
@@ -158,7 +166,7 @@ msgstr[2] "%(counter)s человек"
 
 #: templates/tg-mini-app/home.html:82
 #: templates/tg-mini-app/trips/select_people_count.html:55
-#: templates/tg-mini-app/trips/trip_request.html:72
+#: templates/tg-mini-app/trips/trip_request.html:74
 msgid "Empty car"
 msgstr "Пустая машина"
 
@@ -218,20 +226,20 @@ msgstr[0] "<b>%(counter)s</b> водитель увидел ваш запрос"
 msgstr[1] "<b>%(counter)s</b> водителя увидели ваш запрос"
 msgstr[2] "<b>%(counter)s</b> водителей увидели ваш запрос"
 
-#: templates/tg-mini-app/trips/trip_request.html:37
-msgid "Passenger"
-msgstr "Пассажир"
+#: templates/tg-mini-app/trips/trip_request.html:38
+msgid "Client"
+msgstr "Заказчик"
 
-#: templates/tg-mini-app/trips/trip_request.html:43
+#: templates/tg-mini-app/trips/trip_request.html:45
 #: templates/tg-mini-app/user/user-detail-base.html:20
 msgid "Details"
 msgstr "Детали"
 
-#: templates/tg-mini-app/trips/trip_request.html:99
+#: templates/tg-mini-app/trips/trip_request.html:101
 msgid "Do you really want to cancel your trip?"
 msgstr "Вы действительно хотите отменить поездку?"
 
-#: templates/tg-mini-app/trips/trip_request.html:99
+#: templates/tg-mini-app/trips/trip_request.html:101
 msgid "Cancel trip"
 msgstr "Отменить поездку"
 
@@ -292,6 +300,9 @@ msgstr "Мужской"
 #: users/models.py:16
 msgid "Female"
 msgstr "Женский"
+
+#~ msgid "Passenger"
+#~ msgstr "Пассажир"
 
 #~ msgid "Call"
 #~ msgstr "Позвонить"
