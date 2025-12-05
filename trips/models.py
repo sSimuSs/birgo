@@ -79,7 +79,7 @@ class TripRequest(models.Model, BaseModelInterface):
 class TripRequestView(models.Model, BaseModelInterface):
     """ Trip request view model """
     trip_request = models.ForeignKey(TripRequest, on_delete=models.CASCADE)
-    driver = models.ForeignKey("drivers.Driver", on_delete=models.PROTECT)
+    driver = models.ForeignKey("drivers.Driver", on_delete=models.CASCADE)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

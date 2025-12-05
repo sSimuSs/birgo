@@ -1,3 +1,4 @@
+import phonenumbers
 from django.conf import settings
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
@@ -7,6 +8,8 @@ from django.utils.translation import gettext_lazy as _
 from init_data_py import InitData
 import init_data_py.errors
 
+from birgo.constants import ENV_PRODUCTION
+from drivers.models import Driver
 from system.models import Region
 from telegram.decorators import tg_pages
 from users.models import BotUser, User
@@ -144,6 +147,58 @@ def select_region(request, bot_user: BotUser, *args, **kwargs):
     else:
         regions = regions.filter(parent__isnull=True)
     return render(request, "tg-mini-app/trips/select_region.html", locals() | kwargs)
+
+@tg_pages("Registering a new driver")
+def driver_register(request, bot_user: BotUser, *args, **kwargs):
+    """ Telegram Mini app New driver page view """
+
+    driver = bot_user.user.driver_set.last()
+
+    if driver:
+        first_name = driver.user.first_name
+        last_name = driver.user.last_name
+        phone = driver.user.phone
+
+    if request.method == "POST":
+        errors = {}
+        first_name = request.POST.get("first_name")
+        last_name = request.POST.get("last_name")
+        phone = request.POST.get("phone")
+        if phone:
+            phone = phone.replace("-", "").replace(" ", "")
+        else:
+            errors["phone"] = _("Phone number is required")
+
+        try:
+            number = phonenumbers.parse(phone)
+            if not phonenumbers.is_possible_number(number) or not phonenumbers.is_valid_number(number):
+                errors["phone_number"] = _("Incorrect phone number")
+        except phonenumbers.NumberParseException as e:
+            errors["phone_number"] = _("Incorrect phone number")
+
+        if not errors and phone and first_name and last_name:
+            username = f"user{bot_user.telegram_id}"
+            if bot_user.username:
+                username = bot_user.username
+
+            if bot_user.user.first_name != first_name:
+                bot_user.user.first_name = first_name
+            if bot_user.user.last_name != last_name:
+                bot_user.user.last_name = last_name
+            if bot_user.user.phone != phone:
+                bot_user.user.phone = phone.replace("+", "")
+            if bot_user.user.username != username:
+                bot_user.user.username = username
+            bot_user.user.save()
+
+            if not driver:
+                driver = Driver.objects.create(
+                    user=bot_user.user,
+                )
+                # if settings.ENV == ENV_PRODUCTION:
+                driver.send_to_staff_channel()
+            return redirect("tg_driver_register")
+    return render(request, "tg-mini-app/drivers/register.html", locals() | kwargs)
 
 def aut_error(request, *args, **kwargs):
     """ Error page view for 'Authentication Error' """

@@ -1,5 +1,7 @@
+from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from telebot import TeleBot
 
 from birgo.classes.models import BaseModelInterface
 from system.models import CarModel, CarColor
@@ -21,6 +23,20 @@ class Driver(models.Model, BaseModelInterface):
     approved_at = models.DateTimeField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def send_to_staff_channel(self):
+        bot = TeleBot(token=settings.TELEGRAM_BOT_TOKEN)
+        username_text = f"(@{self.user.username})" if not self.user.username.startswith("user") else ""
+        noty_text = f"<b>🧑‍✈️ Новый водитель</b>\n" \
+                    f"<b>Имя:</b> {self.user.first_name} {username_text}\n" \
+                    f"<b>Фамилия:</b> {self.user.last_name}\n" \
+                    f"<b>Номер:</b> {self.user.phone}\n\n" \
+                    f"#new_driver"
+        bot.send_message(
+            settings.TELEGRAM_STAFF_CHANNEL_ID,
+            noty_text,
+            parse_mode="HTML",
+        )
 
     def __str__(self):
         return f"Driver {self.user}"

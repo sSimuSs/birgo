@@ -156,4 +156,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
+TELEGRAM_STAFF_CHANNEL_ID = os.getenv("TELEGRAM_STAFF_CHANNEL_ID")
+
 ENV = os.getenv("ENV", default="develop")
