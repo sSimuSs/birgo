@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-06 01:18+0500\n"
-"PO-Revision-Date: 2025-12-06 01:19+0500\n"
+"POT-Creation-Date: 2025-12-06 01:51+0500\n"
+"PO-Revision-Date: 2025-12-06 01:51+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -64,15 +64,15 @@ msgstr "Номер водительского удостоверения"
 msgid "Init page"
 msgstr "Входная страница"
 
-#: telegram/views.py:200
+#: telegram/views.py:216
 msgid "Phone number is required"
 msgstr "Требуется номер телефона"
 
-#: telegram/views.py:205 telegram/views.py:207
+#: telegram/views.py:221 telegram/views.py:223
 msgid "Incorrect phone number"
 msgstr "Неверный номер телефона"
 
-#: telegram/views.py:235
+#: telegram/views.py:251
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
@@ -96,22 +96,23 @@ msgstr "Вы не на линии"
 msgid "Direction"
 msgstr "Направление"
 
-#: templates/tg-mini-app/drivers/main.html:41
+#: templates/tg-mini-app/drivers/main.html:45
+#: templates/tg-mini-app/trips/select_region.html:43
 msgid "All directions"
 msgstr "Все направления"
 
-#: templates/tg-mini-app/drivers/main.html:48
+#: templates/tg-mini-app/drivers/main.html:54
 msgid "Active trip requests"
 msgstr "Активные запросы на поездку"
 
-#: templates/tg-mini-app/drivers/main.html:68
+#: templates/tg-mini-app/drivers/main.html:74
 #: templates/tg-mini-app/home.html:131
 #: templates/tg-mini-app/trips/trip_request.html:81
 #: templates/tg-mini-app/user/trips.html:22
 msgid "UZS"
 msgstr "сум"
 
-#: templates/tg-mini-app/drivers/main.html:101
+#: templates/tg-mini-app/drivers/main.html:107
 msgid ""
 "No trips have been found yet,<br> as soon as we find them, we'll show them "
 "here."
@@ -119,7 +120,7 @@ msgstr ""
 "Пока не найдено ни одной поездки,<br> как только мы их найдем, покажем их "
 "здесь."
 
-#: templates/tg-mini-app/drivers/main.html:108
+#: templates/tg-mini-app/drivers/main.html:114
 msgid "Get on the line"
 msgstr "Выйти на линию"
 
@@ -233,7 +234,12 @@ msgstr "Выберите регион"
 msgid "Back"
 msgstr "Назад"
 
-#: templates/tg-mini-app/trips/select_region.html:48
+#: templates/tg-mini-app/trips/select_region.html:33
+#, python-format
+msgid "All %(region_name)s"
+msgstr "Весь %(region_name)s"
+
+#: templates/tg-mini-app/trips/select_region.html:67
 #: templates/tg-mini-app/user/trips.html:30
 msgid "Nothing was found"
 msgstr "Ничего не найдено"

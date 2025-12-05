@@ -36,9 +36,15 @@
         </div>
         {% if driver.status == 1 %}
             <div class="list_section_label mt_16px">{% trans "Direction" %}</div>
-            <a href="#" class="rounded_section">
+            <a href="{% url 'tg_select_region' %}?driver_direction=1" class="rounded_section">
                 <div class="section_text">
-                    <span class="">{% trans "All directions" %}</span>
+                    <span class="">
+                        {% if direction_region %}
+                            {{ direction_region.get_tree_names }}
+                        {% else %}
+                            {% trans "All directions" %}
+                        {% endif %}
+                    </span>
                     <div class="section_counter">
                         {% render_svg "angle_right" %}
                     </div>

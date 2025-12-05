@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-06 01:18+0500\n"
-"PO-Revision-Date: 2025-12-06 01:18+0500\n"
+"POT-Creation-Date: 2025-12-06 01:51+0500\n"
+"PO-Revision-Date: 2025-12-06 01:52+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -63,15 +63,15 @@ msgstr "Haydovchilik guvohnomasining raqami"
 msgid "Init page"
 msgstr "Kirish sahifasi"
 
-#: telegram/views.py:200
+#: telegram/views.py:216
 msgid "Phone number is required"
 msgstr "Telefon raqami kiritilmagan"
 
-#: telegram/views.py:205 telegram/views.py:207
+#: telegram/views.py:221 telegram/views.py:223
 msgid "Incorrect phone number"
 msgstr "Telefon raqami noto‘g‘ri"
 
-#: telegram/views.py:235
+#: telegram/views.py:251
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
@@ -95,22 +95,23 @@ msgstr "Siz liniyada emassiz"
 msgid "Direction"
 msgstr "Yo'nalish"
 
-#: templates/tg-mini-app/drivers/main.html:41
+#: templates/tg-mini-app/drivers/main.html:45
+#: templates/tg-mini-app/trips/select_region.html:43
 msgid "All directions"
 msgstr "Barcha yo'nalishlar"
 
-#: templates/tg-mini-app/drivers/main.html:48
+#: templates/tg-mini-app/drivers/main.html:54
 msgid "Active trip requests"
 msgstr "Faol safar so'rovlari"
 
-#: templates/tg-mini-app/drivers/main.html:68
+#: templates/tg-mini-app/drivers/main.html:74
 #: templates/tg-mini-app/home.html:131
 #: templates/tg-mini-app/trips/trip_request.html:81
 #: templates/tg-mini-app/user/trips.html:22
 msgid "UZS"
 msgstr "so'm"
 
-#: templates/tg-mini-app/drivers/main.html:101
+#: templates/tg-mini-app/drivers/main.html:107
 msgid ""
 "No trips have been found yet,<br> as soon as we find them, we'll show them "
 "here."
@@ -118,7 +119,7 @@ msgstr ""
 "Hali hech qanday sayohat topilmadi,<br> ularni topishimiz bilanoq, shu yerda "
 "ko'rsatamiz."
 
-#: templates/tg-mini-app/drivers/main.html:108
+#: templates/tg-mini-app/drivers/main.html:114
 msgid "Get on the line"
 msgstr "Liniyaga chiqish"
 
@@ -231,7 +232,12 @@ msgstr "Huduni tanlang"
 msgid "Back"
 msgstr "Orqaga"
 
-#: templates/tg-mini-app/trips/select_region.html:48
+#: templates/tg-mini-app/trips/select_region.html:33
+#, python-format
+msgid "All %(region_name)s"
+msgstr "Butun %(region_name)s"
+
+#: templates/tg-mini-app/trips/select_region.html:67
 #: templates/tg-mini-app/user/trips.html:30
 msgid "Nothing was found"
 msgstr "Hechnima topilmadi"

@@ -89,6 +89,12 @@ def driver_page(request, bot_user: BotUser, *args, **kwargs):
         trip_requests = TripRequest.objects.filter(
             ~Q(user=bot_user.user), canceled_at__isnull=True, sent_at__isnull=False
         )
+        if request.GET.get("to_region_id"):
+            direction_region = Region.objects.filter(id=request.GET.get("to_region_id"), status=True).last()
+            if direction_region:
+                trip_requests = trip_requests.filter(
+                    Q(region_b_id=request.GET["to_region_id"]) | Q(region_b__parent_id=request.GET["to_region_id"])
+                )
     return render(request, "tg-mini-app/drivers/main.html", locals() | kwargs)
 
 @tg_pages("Searching for a car")
@@ -130,48 +136,58 @@ def select_people_count(request, bot_user: BotUser, *args, **kwargs):
 @tg_pages("Selecting a region for the trip")
 def select_region(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app Selecting region for a draft trip page view """
-    location_type = request.GET.get("location_type", "start") # start|finish
-    draft_trip_request, __ = bot_user.user.triprequest_set.get_or_create(
-        sent_at__isnull=True, canceled_at__isnull=True
-    )
-
     regions = Region.objects.filter(status=True)
-    if location_type == "start" and draft_trip_request.region_b:
-        if draft_trip_request.region_b.parent:
-            regions = regions.filter(
-                ~Q(id=draft_trip_request.region_b.parent_id),
-                ~Q(parent_id=draft_trip_request.region_b.parent_id)
-            )
-        else:
-            regions = regions.filter(
-                ~Q(id=draft_trip_request.region_b_id)
-            )
-    elif location_type == "finish" and draft_trip_request.region_a:
-        if draft_trip_request.region_a.parent:
-            regions = regions.filter(
-                ~Q(id=draft_trip_request.region_a.parent_id),
-                ~Q(parent_id=draft_trip_request.region_a.parent_id)
-            )
-        else:
-            regions = regions.filter(
-                ~Q(id=draft_trip_request.region_a_id)
-            )
+
+    driver_direction = request.GET.get("driver_direction") # for driver page, to filter trip requests
+    location_type = request.GET.get("location_type", "start") # for draft trip request page, values: start|finish
+    draft_trip_request = None
+    if not driver_direction:
+        draft_trip_request, __ = bot_user.user.triprequest_set.get_or_create(
+            sent_at__isnull=True, canceled_at__isnull=True
+        )
+        if location_type == "start" and draft_trip_request.region_b:
+            if draft_trip_request.region_b.parent:
+                regions = regions.filter(
+                    ~Q(id=draft_trip_request.region_b.parent_id),
+                    ~Q(parent_id=draft_trip_request.region_b.parent_id)
+                )
+            else:
+                regions = regions.filter(
+                    ~Q(id=draft_trip_request.region_b_id)
+                )
+        elif location_type == "finish" and draft_trip_request.region_a:
+            if draft_trip_request.region_a.parent:
+                regions = regions.filter(
+                    ~Q(id=draft_trip_request.region_a.parent_id),
+                    ~Q(parent_id=draft_trip_request.region_a.parent_id)
+                )
+            else:
+                regions = regions.filter(
+                    ~Q(id=draft_trip_request.region_a_id)
+                )
 
 
     if request.GET.get("select"):
         region_id = request.GET["select"]
         region = Region.objects.filter(id=region_id).last()
-        if region and region.sub_regions_count() == 0:
-            if location_type == "finish":
-                draft_trip_request.region_b = region
-            else:
-                draft_trip_request.region_a = region
-            draft_trip_request.save()
-            return redirect("tg_home")
+        if region:
+            if not driver_direction and draft_trip_request and region.sub_regions_count() == 0:
+                if location_type == "finish":
+                    draft_trip_request.region_b = region
+                else:
+                    draft_trip_request.region_a = region
+                draft_trip_request.save()
+                return redirect("tg_home")
+            elif driver_direction:
+                return redirect(reverse("tg_driver_page")+f"?to_region_id={region_id}")
+        elif region_id == "0": # selected All directions, for driver page (driver direction)
+            return redirect(reverse("tg_driver_page"))
 
     if request.GET.get("parent"):
         kwargs['back_button_url'] = reverse("tg_select_region") + f"?location_type={location_type}"
         regions = regions.filter(parent_id=request.GET["parent"])
+        if regions.exists():
+            parent_region = regions.first().parent
     else:
         regions = regions.filter(parent__isnull=True)
     return render(request, "tg-mini-app/trips/select_region.html", locals() | kwargs)
