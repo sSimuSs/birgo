@@ -249,7 +249,7 @@ select, option {
 }
 .app_page .page_header .chat_info .chat_photo{
     border-radius: 50%;
-    background-color: green;
+    background-color: #26C485;
     margin-right: 5px;
     display: flex;
 }
@@ -330,7 +330,7 @@ select, option {
 
 .rounded_section .section_icon.chat_photo {
     border-radius: 50%;
-    background-color: green;
+    background-color: #26C485;
 }
 
 .rounded_section .section_icon.chat_photo svg {
@@ -773,7 +773,7 @@ input[type="radio"]:disabled+label {
 }
 
 .bg_green {
-    background-color: green!important;
+    background-color: #26C485!important;
 }
 
 .bg_lime {
@@ -1082,7 +1082,7 @@ input[type="radio"]:disabled+label {
 }
 
 .svg_success_color {
-    fill: #32E55E!important;
+    fill: #26C485!important;
 }
 
 .svg_gray_color {
@@ -1106,7 +1106,7 @@ input[type="radio"]:disabled+label {
 }
 
 .success_color {
-    color: #32E55E!important;
+    color: #26C485!important;
 }
 
 .muted_color {
