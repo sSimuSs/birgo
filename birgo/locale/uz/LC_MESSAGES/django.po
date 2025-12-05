@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-06 00:30+0500\n"
-"PO-Revision-Date: 2025-12-06 00:33+0500\n"
+"POT-Creation-Date: 2025-12-06 01:18+0500\n"
+"PO-Revision-Date: 2025-12-06 01:18+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -63,15 +63,15 @@ msgstr "Haydovchilik guvohnomasining raqami"
 msgid "Init page"
 msgstr "Kirish sahifasi"
 
-#: telegram/views.py:198
+#: telegram/views.py:200
 msgid "Phone number is required"
 msgstr "Telefon raqami kiritilmagan"
 
-#: telegram/views.py:203 telegram/views.py:205
+#: telegram/views.py:205 telegram/views.py:207
 msgid "Incorrect phone number"
 msgstr "Telefon raqami noto‘g‘ri"
 
-#: telegram/views.py:233
+#: telegram/views.py:235
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
@@ -83,22 +83,34 @@ msgstr "Haqiqatan ham liniyadan chiqmoqchimisiz?"
 msgid "Driver"
 msgstr "Haydovchi"
 
-#: templates/tg-mini-app/drivers/main.html:25
+#: templates/tg-mini-app/drivers/main.html:27
 msgid "Select a trip request below"
 msgstr "Quyidagi safarlardan birini tanlang"
 
-#: templates/tg-mini-app/drivers/main.html:33
+#: templates/tg-mini-app/drivers/main.html:29
+msgid "You're not on the line"
+msgstr "Siz liniyada emassiz"
+
+#: templates/tg-mini-app/drivers/main.html:38
+msgid "Direction"
+msgstr "Yo'nalish"
+
+#: templates/tg-mini-app/drivers/main.html:41
+msgid "All directions"
+msgstr "Barcha yo'nalishlar"
+
+#: templates/tg-mini-app/drivers/main.html:48
 msgid "Active trip requests"
 msgstr "Faol safar so'rovlari"
 
-#: templates/tg-mini-app/drivers/main.html:53
+#: templates/tg-mini-app/drivers/main.html:68
 #: templates/tg-mini-app/home.html:131
 #: templates/tg-mini-app/trips/trip_request.html:81
 #: templates/tg-mini-app/user/trips.html:22
 msgid "UZS"
 msgstr "so'm"
 
-#: templates/tg-mini-app/drivers/main.html:86
+#: templates/tg-mini-app/drivers/main.html:101
 msgid ""
 "No trips have been found yet,<br> as soon as we find them, we'll show them "
 "here."
@@ -106,11 +118,7 @@ msgstr ""
 "Hali hech qanday sayohat topilmadi,<br> ularni topishimiz bilanoq, shu yerda "
 "ko'rsatamiz."
 
-#: templates/tg-mini-app/drivers/main.html:93
-msgid "You're not on the line"
-msgstr "Siz liniyada emassiz"
-
-#: templates/tg-mini-app/drivers/main.html:94
+#: templates/tg-mini-app/drivers/main.html:108
 msgid "Get on the line"
 msgstr "Liniyaga chiqish"
 
@@ -328,9 +336,6 @@ msgstr "Ayol"
 
 #~ msgid "Title"
 #~ msgstr "Nomlanishi"
-
-#~ msgid "Description"
-#~ msgstr "Tavsif"
 
 #~ msgid "optional"
 #~ msgstr "majburiy emas"

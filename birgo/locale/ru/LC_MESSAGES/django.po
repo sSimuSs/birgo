@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-06 00:30+0500\n"
-"PO-Revision-Date: 2025-12-06 00:31+0500\n"
+"POT-Creation-Date: 2025-12-06 01:18+0500\n"
+"PO-Revision-Date: 2025-12-06 01:19+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -64,15 +64,15 @@ msgstr "Номер водительского удостоверения"
 msgid "Init page"
 msgstr "Входная страница"
 
-#: telegram/views.py:198
+#: telegram/views.py:200
 msgid "Phone number is required"
 msgstr "Требуется номер телефона"
 
-#: telegram/views.py:203 telegram/views.py:205
+#: telegram/views.py:205 telegram/views.py:207
 msgid "Incorrect phone number"
 msgstr "Неверный номер телефона"
 
-#: telegram/views.py:233
+#: telegram/views.py:235
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
@@ -84,22 +84,34 @@ msgstr "Вы уверены, что хотите выйти из линии?"
 msgid "Driver"
 msgstr "Водитель"
 
-#: templates/tg-mini-app/drivers/main.html:25
+#: templates/tg-mini-app/drivers/main.html:27
 msgid "Select a trip request below"
 msgstr "Выберите запрос на поездку ниже"
 
-#: templates/tg-mini-app/drivers/main.html:33
+#: templates/tg-mini-app/drivers/main.html:29
+msgid "You're not on the line"
+msgstr "Вы не на линии"
+
+#: templates/tg-mini-app/drivers/main.html:38
+msgid "Direction"
+msgstr "Направление"
+
+#: templates/tg-mini-app/drivers/main.html:41
+msgid "All directions"
+msgstr "Все направления"
+
+#: templates/tg-mini-app/drivers/main.html:48
 msgid "Active trip requests"
 msgstr "Активные запросы на поездку"
 
-#: templates/tg-mini-app/drivers/main.html:53
+#: templates/tg-mini-app/drivers/main.html:68
 #: templates/tg-mini-app/home.html:131
 #: templates/tg-mini-app/trips/trip_request.html:81
 #: templates/tg-mini-app/user/trips.html:22
 msgid "UZS"
 msgstr "сум"
 
-#: templates/tg-mini-app/drivers/main.html:86
+#: templates/tg-mini-app/drivers/main.html:101
 msgid ""
 "No trips have been found yet,<br> as soon as we find them, we'll show them "
 "here."
@@ -107,11 +119,7 @@ msgstr ""
 "Пока не найдено ни одной поездки,<br> как только мы их найдем, покажем их "
 "здесь."
 
-#: templates/tg-mini-app/drivers/main.html:93
-msgid "You're not on the line"
-msgstr "Вы не на линии"
-
-#: templates/tg-mini-app/drivers/main.html:94
+#: templates/tg-mini-app/drivers/main.html:108
 msgid "Get on the line"
 msgstr "Выйти на линию"
 
@@ -332,9 +340,6 @@ msgstr "Женский"
 
 #~ msgid "Title"
 #~ msgstr "Название"
-
-#~ msgid "Description"
-#~ msgstr "Описание"
 
 #~ msgid "optional"
 #~ msgstr "необязательно"

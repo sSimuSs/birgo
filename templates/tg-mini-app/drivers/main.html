@@ -35,6 +35,15 @@
             </a>
         </div>
         {% if driver.status == 1 %}
+            <div class="list_section_label mt_16px">{% trans "Direction" %}</div>
+            <a href="#" class="rounded_section">
+                <div class="section_text">
+                    <span class="">{% trans "All directions" %}</span>
+                    <div class="section_counter">
+                        {% render_svg "angle_right" %}
+                    </div>
+                </div>
+            </a>
             {% if trip_requests.count > 0 %}
                 <div class="list_section_label mt_16px">{% trans "Active trip requests" %}</div>
                 {% for tr in trip_requests %}
@@ -77,7 +86,7 @@
                 </script>
                 {% endfor %}
             {% else %}
-                <div class="d_flex justify_content_center align_items_center text_center" style="height: calc(100vh - 45px)">
+                <div class="d_flex justify_content_center align_items_center text_center" style="height: calc(100vh - 170px)">
                     <div class="justify_content_center">
                         <div class="d_flex justify_content_center">
                             <dotlottie-player
@@ -94,7 +103,7 @@
                 </div>
             {% endif %}
         {% else %}
-            <div class="d_flex justify_content_center align_items_center text_center" style="height: calc(100vh - 45px)">
+            <div class="d_flex justify_content_center align_items_center text_center" style="height: calc(100vh - 170px)">
                 <div>
                     <a href="{% querystring toggle_status=1 %}" class="button button-lg button-green me_0 mt_16px">{% trans "Get on the line" %}</a>
                 </div>
