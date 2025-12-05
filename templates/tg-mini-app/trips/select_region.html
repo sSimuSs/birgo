@@ -31,7 +31,7 @@
                     <a href="?location_type={{ request.GET.location_type }}&{% if region.sub_regions_count > 0  %}parent={{ region.id }}{% else %}select={{ region.id }}{% endif %}">
                         <div class="list_item_text ps_12px">
                             <div class="d_flex align_items_center">
-                                {% render_svg "location_dot" size="15" svg_class="svg_gray_color me_4px" %}
+                                {% render_svg "location_dot" size="18" svg_class="svg_gray_color me_4px" %}
                                 {{ region.get_name }}
                             </div>
                             {% if region.sub_regions_count > 0 %}
