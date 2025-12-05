@@ -536,6 +536,11 @@ select, option {
     text-decoration: none;
 }
 
+.button.button-lg {
+    padding: 12px 20px;
+    font-size: 15px!important;
+}
+
 .button svg {
     fill: var(--tg-theme-link-color, #007AFF)!important;
     width: 24px;

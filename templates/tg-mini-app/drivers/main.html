@@ -22,7 +22,13 @@
             <h3 class="m_0 two_line_ellipse">
                 {% trans "Driver" %}
             </h3>
-            <span class="fs_14px">{% trans "Select a trip request below" %}</span>
+            <span class="fs_14px">
+                {% if driver.status == 1 %}
+                    {% trans "Select a trip request below" %}
+                {% else %}
+                    {% trans "You're not on the line" %}
+                {% endif %}
+            </span>
             </div>
             <a href="{% url 'tg_user_detail' bot_user.id %}" class="d_flex">
                 <img src="{{ bot_user.photo_url }}" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
@@ -90,8 +96,7 @@
         {% else %}
             <div class="d_flex justify_content_center align_items_center text_center" style="height: calc(100vh - 45px)">
                 <div>
-                    {% trans "You're not on the line" %}
-                    <a href="{% querystring toggle_status=1 %}" class="button button-green me_0 mt_16px">{% trans "Get on the line" %}</a>
+                    <a href="{% querystring toggle_status=1 %}" class="button button-lg button-green me_0 mt_16px">{% trans "Get on the line" %}</a>
                 </div>
             </div>
         {% endif %}
