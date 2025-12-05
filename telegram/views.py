@@ -97,6 +97,7 @@ def trip_request(request, bot_user: BotUser, *args, **kwargs):
         is_owner = False
         driver = bot_user.user.get_driver()
         if driver and driver.status == 1:
+            kwargs['back_button_url'] = reverse("tg_driver_page")
             driver.triprequestview_set.get_or_create(
                 trip_request=t_request,
             )
