@@ -250,5 +250,8 @@ def validate_user(request):
             data = init_data.to_dict()
             data["bot_user_id"] = bot_user.id
             request.session["init_data"] = data
-            return redirect("tg_home") # author's cabinet
+            if init_data.start_param:
+                if init_data.start_param == "new_driver":
+                    return redirect("tg_driver_register")
+            return redirect("tg_home") # passenger's cabinet
     return redirect("tg_auth_error")
