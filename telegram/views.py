@@ -165,6 +165,8 @@ def select_region(request, bot_user: BotUser, *args, **kwargs):
                 regions = regions.filter(
                     ~Q(id=draft_trip_request.region_a_id)
                 )
+    else:
+        kwargs['back_button_url'] = reverse("tg_driver_page")
 
 
     if request.GET.get("select"):
@@ -184,7 +186,11 @@ def select_region(request, bot_user: BotUser, *args, **kwargs):
             return redirect(reverse("tg_driver_page"))
 
     if request.GET.get("parent"):
-        kwargs['back_button_url'] = reverse("tg_select_region") + f"?location_type={location_type}"
+        kwargs['back_button_url'] = reverse("tg_select_region")
+        if driver_direction:
+            kwargs['back_button_url'] += "?driver_direction=1"
+        else:
+            kwargs['back_button_url'] += f"?location_type={location_type}"
         regions = regions.filter(parent_id=request.GET["parent"])
         if regions.exists():
             parent_region = regions.first().parent
