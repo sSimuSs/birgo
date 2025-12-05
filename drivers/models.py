@@ -16,7 +16,7 @@ class Driver(models.Model, BaseModelInterface):
         (6, _("En route")), (7, _("Completed")), (8, _("Cancelled")),
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    driver_licence_number = models.CharField(max_length=9, blank=True, null=True)
+    driver_licence_number = models.CharField(_("Driver licence number"), max_length=9, blank=True, null=True)
 
     status = models.IntegerField(default=0, choices=DRIVER_STATUS_CHOICES)
 
