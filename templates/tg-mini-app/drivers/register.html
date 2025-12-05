@@ -70,7 +70,7 @@
 </div>
 <script src="{% static 'js/vanilla-masker.min.js' %}"></script>
 <script>
- {% if not driver %}
+{% if not driver %}
 let agreement_submit_form = document.getElementById("new_driver_form");
  if (TelegramData.MainButton) {
      TelegramData.MainButton.setText("{% translate "Send" %}");

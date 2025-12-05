@@ -186,6 +186,8 @@ def driver_register(request, bot_user: BotUser, *args, **kwargs):
         first_name = driver.user.first_name
         last_name = driver.user.last_name
         phone = driver.user.phone
+        if driver.approved_at:
+            kwargs['back_button_url'] = reverse("tg_driver_page")
 
     if request.method == "POST":
         errors = {}
