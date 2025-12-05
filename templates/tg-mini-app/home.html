@@ -65,7 +65,13 @@
                 <li>
                     <a href="{% url 'tg_select_people_count' %}">
                         <div class="list_item_icon">
-                            {% render_svg "people_group" size="20" svg_class="svg_gray_color" %}
+                            {% if draft_trip_request.people_count and draft_trip_request.people_count == 1 %}
+                                {% render_svg "person" size="20" svg_class="svg_gray_color" %}
+                            {% elif draft_trip_request.people_count and draft_trip_request.people_count == 100 %}
+                                {% render_svg "car_rear" size="20" svg_class="svg_gray_color" %}
+                            {% else %}
+                                {% render_svg "people_group" size="20" svg_class="svg_gray_color" %}
+                            {% endif %}
                         </div>
                         <div class="list_item_text">
                             <div>
