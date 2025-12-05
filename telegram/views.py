@@ -85,9 +85,10 @@ def driver_page(request, bot_user: BotUser, *args, **kwargs):
         driver.save()
         return redirect("tg_driver_page")
 
-    trip_requests = TripRequest.objects.filter(
-        ~Q(user=bot_user.user), canceled_at__isnull=True, sent_at__isnull=False
-    )
+    if driver.status == 1:
+        trip_requests = TripRequest.objects.filter(
+            ~Q(user=bot_user.user), canceled_at__isnull=True, sent_at__isnull=False
+        )
     return render(request, "tg-mini-app/drivers/main.html", locals() | kwargs)
 
 @tg_pages("Searching for a car")
