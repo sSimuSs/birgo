@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-05 23:31+0500\n"
-"PO-Revision-Date: 2025-12-05 23:31+0500\n"
+"POT-Creation-Date: 2025-12-06 00:30+0500\n"
+"PO-Revision-Date: 2025-12-06 00:33+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -87,16 +87,32 @@ msgstr "Haydovchi"
 msgid "Select a trip request below"
 msgstr "Quyidagi safarlardan birini tanlang"
 
-#: templates/tg-mini-app/drivers/main.html:32
+#: templates/tg-mini-app/drivers/main.html:33
 msgid "Active trip requests"
 msgstr "Faol safar so'rovlari"
 
-#: templates/tg-mini-app/drivers/main.html:52
+#: templates/tg-mini-app/drivers/main.html:53
 #: templates/tg-mini-app/home.html:131
 #: templates/tg-mini-app/trips/trip_request.html:81
 #: templates/tg-mini-app/user/trips.html:22
 msgid "UZS"
 msgstr "so'm"
+
+#: templates/tg-mini-app/drivers/main.html:86
+msgid ""
+"No trips have been found yet,<br> as soon as we find them, we'll show them "
+"here."
+msgstr ""
+"Hali hech qanday sayohat topilmadi,<br> ularni topishimiz bilanoq, shu yerda "
+"ko'rsatamiz."
+
+#: templates/tg-mini-app/drivers/main.html:93
+msgid "You're not on the line"
+msgstr "Siz liniyada emassiz"
+
+#: templates/tg-mini-app/drivers/main.html:94
+msgid "Get on the line"
+msgstr "Liniyaga chiqish"
 
 #: templates/tg-mini-app/drivers/register.html:14
 msgid "Become a driver on BirGo"

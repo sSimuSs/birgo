@@ -28,47 +28,72 @@
                 <img src="{{ bot_user.photo_url }}" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
             </a>
         </div>
-        {% if trip_requests.count > 0 %}
-            <div class="list_section_label mt_16px">{% trans "Active trip requests" %}</div>
-            {% for tr in trip_requests %}
-            <a class="rounded_section mb_8px" href="{% url 'tg_trip_request' tr.id %}">
-                <div class="section_text">
-                    <div style="width: 80%">
-                        <div class="d_flex align_items_center">
-                            {{ tr.get_from_text }} {% render_svg "arrow_right_long" size="15" svg_class="svg_gray_color ms_4px me_4px" %} {{ tr.get_to_text }}
-                        </div>
-                        <div class="mt_8px">
-                            <div class="badge badge-s bg_gray muted_color align_items_center" style="display: inline-flex;font-weight: 600; padding-left: 2px">
-                                <img src="{{ tr.user.botuser.photo_url }}" class="me_4px" alt="" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover;">
-                                {{ tr.user.get_shortened_name }}
+        {% if driver.status == 1 %}
+            {% if trip_requests.count > 0 %}
+                <div class="list_section_label mt_16px">{% trans "Active trip requests" %}</div>
+                {% for tr in trip_requests %}
+                <a class="rounded_section mb_8px" href="{% url 'tg_trip_request' tr.id %}">
+                    <div class="section_text">
+                        <div style="width: 80%">
+                            <div class="d_flex align_items_center">
+                                {{ tr.get_from_text }} {% render_svg "arrow_right_long" size="15" svg_class="svg_gray_color ms_4px me_4px" %} {{ tr.get_to_text }}
                             </div>
-                            <span class="badge badge-s bg_gray muted_color align_items_center" style="display: inline-flex;font-weight: 600 ">
-                                {% render_svg "people_group" size="20" svg_class="svg_gray_color me_4px" %}
-                                {{ tr.people_count }}
-                            </span>
-                            {% if tr.cost %}
-                            <span class="badge badge-s bg_gray muted_color align_items_center" style="display: inline-flex;font-weight: 600 ">
-                                {% render_svg "money_bill" size="20" svg_class="svg_gray_color me_4px" %}
-                                {{ tr.cost|floatformat|intcomma }} {% trans "UZS" %}
-                            </span>
-                            {% endif %}
+                            <div class="mt_8px">
+                                <div class="badge badge-s bg_gray muted_color align_items_center" style="display: inline-flex;font-weight: 600; padding-left: 2px">
+                                    <img src="{{ tr.user.botuser.photo_url }}" class="me_4px" alt="" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover;">
+                                    {{ tr.user.get_shortened_name }}
+                                </div>
+                                <span class="badge badge-s bg_gray muted_color align_items_center" style="display: inline-flex;font-weight: 600 ">
+                                    {% render_svg "people_group" size="20" svg_class="svg_gray_color me_4px" %}
+                                    {{ tr.people_count }}
+                                </span>
+                                {% if tr.cost %}
+                                <span class="badge badge-s bg_gray muted_color align_items_center" style="display: inline-flex;font-weight: 600 ">
+                                    {% render_svg "money_bill" size="20" svg_class="svg_gray_color me_4px" %}
+                                    {{ tr.cost|floatformat|intcomma }} {% trans "UZS" %}
+                                </span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="section_counter">
+                            <span id="trip_request_timer_{{ tr.id }}"></span>
+                            {% render_svg "angle_right" %}
                         </div>
                     </div>
-                    <div class="section_counter">
-                        <span id="trip_request_timer_{{ tr.id }}"></span>
-                        {% render_svg "angle_right" %}
+                </a>
+                <script>
+                    $( document ).ready(function() {
+                        var d = new Date('{{ tr.sent_at|date:"Y-m-d H:i:s" }}');
+                        $('#trip_request_timer_{{ tr.id }}').tinyTimer({
+                            from: d
+                        });
+                    });
+                </script>
+                {% endfor %}
+            {% else %}
+                <div class="d_flex justify_content_center align_items_center text_center" style="height: calc(100vh - 45px)">
+                    <div class="justify_content_center">
+                        <div class="d_flex justify_content_center">
+                            <dotlottie-player
+                                src="{% static 'images/lottie/searching_animation.lottie' %}"
+                                background="transparent"
+                                speed="1"
+                                style="width: 150px; height: 150px;"
+                                loop
+                                autoplay
+                            ></dotlottie-player>
+                        </div>
+                        {% trans "No trips have been found yet,<br> as soon as we find them, we'll show them here." %}
                     </div>
                 </div>
-            </a>
-            <script>
-                $( document ).ready(function() {
-                    var d = new Date('{{ tr.sent_at|date:"Y-m-d H:i:s" }}');
-                    $('#trip_request_timer_{{ tr.id }}').tinyTimer({
-                        from: d
-                    });
-                });
-            </script>
-            {% endfor %}
+            {% endif %}
+        {% else %}
+            <div class="d_flex justify_content_center align_items_center text_center" style="height: calc(100vh - 45px)">
+                <div>
+                    {% trans "You're not on the line" %}
+                    <a href="{% querystring toggle_status=1 %}" class="button button-primary me_0 mt_16px">{% trans "Get on the line" %}</a>
+                </div>
+            </div>
         {% endif %}
     </div>
 </div>
