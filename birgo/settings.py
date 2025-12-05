@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'users',
     'trips',
     'drivers',
-    'system'
+    'system',
+    'telegram'
 ]
 
 AUTH_USER_MODEL = 'users.User'

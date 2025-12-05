@@ -1,7 +1,6 @@
 from django.db import models
 from django.db.models import QuerySet
 from django.utils import timezone
-from django.utils.translation import get_language
 
 from birgo.classes.models import BaseModelInterface
 from system.models import Region
