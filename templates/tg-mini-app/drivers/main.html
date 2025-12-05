@@ -10,8 +10,10 @@
     <div class="rounded_sections_container">
         <div class="d_flex">
             <div class="mb_0 me_16px" style="position: relative;width: calc(100% - 40px)">
-            <h3 class="m_0 two_line_ellipse">{% trans "Hello" %}, {{ bot_user.first_name }}</h3>
-            <span class="fs_14px">{% trans "Where do you want to go?" %}</span>
+            <h3 class="m_0 two_line_ellipse">
+                {% trans "Driver" %}
+            </h3>
+{#            <span class="fs_14px">{% trans "Where do you want to go?" %}</span>#}
             </div>
             <a href="{% url 'tg_user_detail' bot_user.id %}" class="d_flex">
                 <img src="{{ bot_user.photo_url }}" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">

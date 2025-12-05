@@ -272,5 +272,7 @@ def validate_user(request):
             if init_data.start_param:
                 if init_data.start_param == "new_driver":
                     return redirect("tg_driver_register")
+            if bot_user.user.get_driver():
+                return redirect("tg_driver_page") # driver's cabinet
             return redirect("tg_home") # passenger's cabinet
     return redirect("tg_auth_error")

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-05 17:43+0500\n"
-"PO-Revision-Date: 2025-12-05 17:44+0500\n"
+"POT-Creation-Date: 2025-12-05 17:46+0500\n"
+"PO-Revision-Date: 2025-12-05 17:46+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -75,21 +75,15 @@ msgstr "Telefon raqami noto‘g‘ri"
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
-#: templates/tg-mini-app/drivers/main.html:13
-#: templates/tg-mini-app/home.html:13
-msgid "Hello"
-msgstr "Salom"
-
 #: templates/tg-mini-app/drivers/main.html:14
-#: templates/tg-mini-app/home.html:14
-msgid "Where do you want to go?"
-msgstr "Qayerga bormoqchisiz?"
+msgid "Driver"
+msgstr "Haydovchi"
 
-#: templates/tg-mini-app/drivers/main.html:20
+#: templates/tg-mini-app/drivers/main.html:22
 msgid "Active trip requests"
 msgstr "Faol safar so'rovlari"
 
-#: templates/tg-mini-app/drivers/main.html:40
+#: templates/tg-mini-app/drivers/main.html:42
 #: templates/tg-mini-app/home.html:131
 #: templates/tg-mini-app/trips/trip_request.html:82
 #: templates/tg-mini-app/user/trips.html:22
@@ -131,6 +125,14 @@ msgstr "Jo'natish"
 #: templates/tg-mini-app/drivers/register.html:84
 msgid "Required fields are not filled in or invalid"
 msgstr "Majburiy maydonlar to`ldirilmagan yoki noto`g`ri"
+
+#: templates/tg-mini-app/home.html:13
+msgid "Hello"
+msgstr "Salom"
+
+#: templates/tg-mini-app/home.html:14
+msgid "Where do you want to go?"
+msgstr "Qayerga bormoqchisiz?"
 
 #: templates/tg-mini-app/home.html:33
 msgid "From?"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-05 17:43+0500\n"
-"PO-Revision-Date: 2025-12-05 17:44+0500\n"
+"POT-Creation-Date: 2025-12-05 17:46+0500\n"
+"PO-Revision-Date: 2025-12-05 17:46+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -76,21 +76,15 @@ msgstr "Неверный номер телефона"
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
-#: templates/tg-mini-app/drivers/main.html:13
-#: templates/tg-mini-app/home.html:13
-msgid "Hello"
-msgstr "Привет"
-
 #: templates/tg-mini-app/drivers/main.html:14
-#: templates/tg-mini-app/home.html:14
-msgid "Where do you want to go?"
-msgstr "Куда вы хотите поехать?"
+msgid "Driver"
+msgstr "Водитель"
 
-#: templates/tg-mini-app/drivers/main.html:20
+#: templates/tg-mini-app/drivers/main.html:22
 msgid "Active trip requests"
 msgstr "Активные запросы на поездку"
 
-#: templates/tg-mini-app/drivers/main.html:40
+#: templates/tg-mini-app/drivers/main.html:42
 #: templates/tg-mini-app/home.html:131
 #: templates/tg-mini-app/trips/trip_request.html:82
 #: templates/tg-mini-app/user/trips.html:22
@@ -132,6 +126,14 @@ msgstr "Отправить"
 #: templates/tg-mini-app/drivers/register.html:84
 msgid "Required fields are not filled in or invalid"
 msgstr "Обязательные для заполнения поля не заполнены или не правильны"
+
+#: templates/tg-mini-app/home.html:13
+msgid "Hello"
+msgstr "Привет"
+
+#: templates/tg-mini-app/home.html:14
+msgid "Where do you want to go?"
+msgstr "Куда вы хотите поехать?"
 
 #: templates/tg-mini-app/home.html:33
 msgid "From?"
