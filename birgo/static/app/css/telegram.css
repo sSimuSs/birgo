@@ -891,6 +891,10 @@ input[type="radio"]:disabled+label {
     padding-left: 16px!important;
 }
 
+.ps_12px {
+    padding-left: 12px!important;
+}
+
 .ps_8px {
     padding-left: 8px!important;
 }

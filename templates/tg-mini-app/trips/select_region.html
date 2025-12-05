@@ -19,7 +19,7 @@
             {% if request.GET.parent %}
                 <li>
                     <a href="{% url 'tg_select_region' %}?location_type={{ request.GET.location_type }}">
-                        <div class="list_item_text ps_16px muted_color">
+                        <div class="list_item_text ps_12px muted_color">
                             {% render_svg "angle_left" size="20" svg_class="svg_gray_color" %}
                             {% trans "Back" %}
                         </div>
@@ -29,8 +29,9 @@
             {% for region in regions %}
                 <li>
                     <a href="?location_type={{ request.GET.location_type }}&{% if region.sub_regions_count > 0  %}parent={{ region.id }}{% else %}select={{ region.id }}{% endif %}">
-                        <div class="list_item_text ps_16px">
-                            <div>
+                        <div class="list_item_text ps_12px">
+                            <div class="d_flex align_items_center">
+                                {% render_svg "location_dot" size="15" svg_class="svg_gray_color me_4px" %}
                                 {{ region.get_name }}
                             </div>
                             {% if region.sub_regions_count > 0 %}

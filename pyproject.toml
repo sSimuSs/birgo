@@ -19,7 +19,7 @@ humanize = "^4.13.0"
 
 [tool.pylint]
 ignore-paths = [
-    "manage.py",  # Ignore all files within any 'migrations' directory
+    "manage.py",  # Ignore django's auto-generated config file
     ".*/migrations/.*",  # Ignore all files within any 'migrations' directory
     ".*\\.pyi$",         # Ignore all stub files (.pyi)
 ]
