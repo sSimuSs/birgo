@@ -1,6 +1,9 @@
 from django.contrib import admin
 
-from system.models import CarModel, CarManufacturer, Region, CarColor, CarColorTranslation, RegionTranslation
+from system.models import (
+    CarModel, CarManufacturer, Region, CarColor,
+    CarColorTranslation, RegionTranslation
+)
 
 
 @admin.register(CarModel)

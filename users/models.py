@@ -11,9 +11,14 @@ class User(AbstractUser):
     """
     User model
     """
+    USER_GENDER_CHOICES = (
+        ("m", _("Male")),
+        ("f", _("Female"))
+    )
     is_welcomed = models.BooleanField(default=False)
     phone = models.CharField(max_length=12, blank=True, null=True)
-    gender = models.CharField(max_length=1, choices=(("m", _("Male")), ("f", _("Female"))), blank=True, null=True)
+    gender = models.CharField(max_length=1, choices=USER_GENDER_CHOICES,
+                              blank=True, null=True)
 
 
 class BotUser(models.Model):

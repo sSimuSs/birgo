@@ -12,7 +12,10 @@ class TripRequest(models.Model, BaseModelInterface):
     user = models.ForeignKey("users.User", on_delete=models.SET_NULL, null=True)
     people_count = models.IntegerField(default=1)
     comments = models.TextField(blank=True, null=True)
-    cost = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True, help_text="Total cost of the trip")
+    cost = models.DecimalField(
+        max_digits=10, decimal_places=2,
+        blank=True, null=True, help_text="Total cost of the trip"
+    )
 
     region_a = models.ForeignKey(Region, on_delete=models.SET_NULL,
                                  null=True, blank=True,
@@ -31,7 +34,8 @@ class TripRequest(models.Model, BaseModelInterface):
                                    related_name="location_b")
 
     canceled_at = models.DateTimeField(blank=True, null=True)
-    sent_at = models.DateTimeField(blank=True, null=True) # user have submitted trip request and sent to drivers
+    # user have submitted trip request and sent to drivers
+    sent_at = models.DateTimeField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -43,10 +47,11 @@ class TripRequest(models.Model, BaseModelInterface):
     def submit_trip_request(self) -> bool:
         """ Method to submit a trip request, it will be sent to drivers """
         result = False
-        if (self.region_a or self.location_a) and (self.region_b or self.location_b) and self.people_count > 0:
-            self.sent_at = timezone.now()
-            self.save()
-            result = True
+        if self.people_count > 0:
+            if (self.region_a or self.location_a) and (self.region_b or self.location_b):
+                self.sent_at = timezone.now()
+                self.save()
+                result = True
         return result
 
     def views_count(self) -> int:

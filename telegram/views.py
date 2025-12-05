@@ -29,9 +29,13 @@ def home(request, bot_user: BotUser, *args, **kwargs):
     if not bot_user.user.is_welcomed:
         return redirect("tg_welcome")
 
-    draft_trip_request, __ = bot_user.user.triprequest_set.get_or_create(sent_at__isnull=True, canceled_at__isnull=True)
+    draft_trip_request, __ = bot_user.user.triprequest_set.get_or_create(
+        sent_at__isnull=True, canceled_at__isnull=True
+    )
 
-    sent_trip_requests = bot_user.user.triprequest_set.filter(canceled_at__isnull=True, sent_at__isnull=False)
+    sent_trip_requests = bot_user.user.triprequest_set.filter(
+        canceled_at__isnull=True, sent_at__isnull=False
+    )
 
     if request.method == "POST":
         cost = request.POST.get("cost")
@@ -84,8 +88,9 @@ def trip_request(request, bot_user: BotUser, *args, **kwargs):
 def select_people_count(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app selecting people count page view """
     if request.GET.get("select") and request.GET["select"].isdigit():
-        draft_trip_request, __ = bot_user.user.triprequest_set.get_or_create(sent_at__isnull=True,
-                                                                             canceled_at__isnull=True)
+        draft_trip_request, __ = bot_user.user.triprequest_set.get_or_create(
+            sent_at__isnull=True, canceled_at__isnull=True
+        )
         draft_trip_request.people_count = int(request.GET.get("select"))
         draft_trip_request.save()
         return redirect("tg_home")
@@ -95,14 +100,16 @@ def select_people_count(request, bot_user: BotUser, *args, **kwargs):
 def select_region(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app Selecting region for a draft trip page view """
     location_type = request.GET.get("location_type", "start") # start|finish
-    draft_trip_request, __ = bot_user.user.triprequest_set.get_or_create(sent_at__isnull=True,
-                                                                         canceled_at__isnull=True)
+    draft_trip_request, __ = bot_user.user.triprequest_set.get_or_create(
+        sent_at__isnull=True, canceled_at__isnull=True
+    )
 
     regions = Region.objects.filter(status=True)
     if location_type == "start" and draft_trip_request.region_b:
         if draft_trip_request.region_b.parent:
             regions = regions.filter(
-                ~Q(id=draft_trip_request.region_b.parent_id), ~Q(parent_id=draft_trip_request.region_b.parent_id)
+                ~Q(id=draft_trip_request.region_b.parent_id),
+                ~Q(parent_id=draft_trip_request.region_b.parent_id)
             )
         else:
             regions = regions.filter(
@@ -111,7 +118,8 @@ def select_region(request, bot_user: BotUser, *args, **kwargs):
     elif location_type == "finish" and draft_trip_request.region_a:
         if draft_trip_request.region_a.parent:
             regions = regions.filter(
-                ~Q(id=draft_trip_request.region_a.parent_id), ~Q(parent_id=draft_trip_request.region_a.parent_id)
+                ~Q(id=draft_trip_request.region_a.parent_id),
+                ~Q(parent_id=draft_trip_request.region_a.parent_id)
             )
         else:
             regions = regions.filter(

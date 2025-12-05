@@ -4,6 +4,7 @@ from drivers.models import Driver, Car
 
 
 class DriverCarInline(admin.TabularInline):
+    """ Driver's cars inline for DriverAdmin """
     model = Car
     extra = 0
 

@@ -28,6 +28,7 @@ class CarColor(models.Model):
     hex_code = models.CharField(max_length=6, blank=True, null=True)
 
     def get_name(self, lang: str | None = None) -> str:
+        """ Return car color name, handling translation """
         name = self.name
         if lang:
             translation = self.carcolortranslation_set.filter(lang=lang).last()
@@ -54,13 +55,16 @@ class Region(models.Model):
     status = models.BooleanField(default=True)
 
     def sub_regions(self) -> QuerySet["Region"]:
+        """ Return sub-regions as a queryset"""
         subregions = Region.objects.filter(parent=self, status=True)
         return subregions
 
     def sub_regions_count(self) -> int:
+        """ Return sub-regions count"""
         return self.sub_regions().count()
 
     def get_name(self, lang: str | None = None) -> str:
+        """ Return region name, handling translation """
         name = self.name
 
         if not lang:
@@ -72,13 +76,14 @@ class Region(models.Model):
         return name
 
     def get_tree_names(self, lang: str | None = None) -> str:
+        """ Returns region name, if it has parent, then comma separated names """
         if not lang:
             lang = get_language()
 
         name = self.get_name(lang)
 
         if self.parent:
-            name = "{}, {}".format(self.parent.get_name(lang), name)
+            name = f"{self.parent.get_name(lang)}, {name}"
 
         return name
 

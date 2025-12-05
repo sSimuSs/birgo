@@ -30,5 +30,8 @@ class TripAdmin(admin.ModelAdmin):
 class TripRequestViewAdmin(admin.ModelAdmin):
     """ Trip request views admin """
     list_display = ("id", "trip_request", "driver", "created_at")
-    search_fields = ("id", "trip_request_id", "driver_id", "driver__driver_licence_number", "trip_request__user__username")
+    search_fields = (
+        "id", "trip_request_id", "driver_id",
+        "driver__driver_licence_number", "trip_request__user__username"
+    )
     list_filter = ("created_at", )
