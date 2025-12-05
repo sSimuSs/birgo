@@ -27,6 +27,7 @@
                 {% endif %}
             </div>
         </div>
+        {% if driver %}
         <div class="rounded_section mt_16px">
             <div class="section_icon">
             <img src="{{ t_request.user.botuser.photo_url }}" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
@@ -34,10 +35,11 @@
             <div class="section_text">
                 <div>
                 {{ t_request.user.get_full_name }}<br>
-                <span class="muted_color fs_12px">{% trans "Passenger" %}</span>
+                <span class="muted_color fs_12px">{% trans "Client" %}</span>
                 </div>
             </div>
         </div>
+        {% endif %}
         <div class="rounded_section rounded_section_with_label section_with_list mt_16px">
             <div class="list_section_label" style="width: -webkit-fill-available">
                 {% trans "Details" %}

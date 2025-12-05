@@ -79,8 +79,14 @@ def welcome(request, bot_user: BotUser, *args, **kwargs):
 def driver_page(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app Driver page view """
     kwargs['back_button_url'] = None
+    driver = bot_user.user.get_driver()
+    if request.GET.get("toggle_status"):
+        driver.status = 0 if driver.status else 1
+        driver.save()
+        return redirect("tg_driver_page")
+
     trip_requests = TripRequest.objects.filter(
-        canceled_at__isnull=True, sent_at__isnull=False
+        ~Q(user=bot_user.user), canceled_at__isnull=True, sent_at__isnull=False
     )
     return render(request, "tg-mini-app/drivers/main.html", locals() | kwargs)
 
