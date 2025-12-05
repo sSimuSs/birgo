@@ -9,13 +9,10 @@
 <div class="app_page">
     <div class="rounded_sections_container">
         <div class="d_flex">
-            <div class="mb_0 me_16px" style="position: relative;width: calc(100% - 40px)">
+            <div class="mb_0 me_16px" style="position: relative;">
                 <h3 class="m_0">{% blocktrans with to_location=t_request.get_to_text %}Trip to {{ to_location }}{% endblocktrans %}</h3>
                 <span class="fs_14px">{% trans "Searching for a car" %}...</span>
             </div>
-            <a href="{% url 'tg_user_detail' bot_user.id %}" class="d_flex">
-                <img src="{{ bot_user.photo_url }}" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
-            </a>
         </div>
         <div class="rounded_section mt_16px d_block justify_items_left">
             <div class="w-100 text_center py_8px">
