@@ -554,6 +554,14 @@ select, option {
     font-size: 15px;
 }
 
+.button.button-green {
+    background-color: #26C485!important;
+    color: #fff!important;
+    min-height: auto;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
 .button.button-bazeled {
     background-color: rgb(67, 120, 255, 10%)!important;
     color: #007AFF;
