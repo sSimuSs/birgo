@@ -44,4 +44,5 @@ class DriverAdmin(admin.ModelAdmin):
                     dr.user.botuser.telegram_id,
                     noty_text,
                     parse_mode="HTML",
+                    reply_markup=msg_reply_markup,
                 )
