@@ -172,9 +172,9 @@ def driver_register(request, bot_user: BotUser, *args, **kwargs):
         try:
             number = phonenumbers.parse(phone)
             if not phonenumbers.is_possible_number(number) or not phonenumbers.is_valid_number(number):
-                errors["phone_number"] = _("Incorrect phone number")
+                errors["phone"] = _("Incorrect phone number")
         except phonenumbers.NumberParseException as e:
-            errors["phone_number"] = _("Incorrect phone number")
+            errors["phone"] = _("Incorrect phone number")
 
         if not errors and phone and first_name and last_name:
             username = f"user{bot_user.telegram_id}"
