@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-04 18:27+0500\n"
-"PO-Revision-Date: 2025-12-04 18:29+0500\n"
+"POT-Creation-Date: 2025-12-05 13:57+0500\n"
+"PO-Revision-Date: 2025-12-05 13:59+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -20,72 +20,116 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.8\n"
 
-#: drivers/models.py:12
+#: drivers/models.py:14
 msgid "Offline"
 msgstr "Вне линии"
 
-#: drivers/models.py:12
+#: drivers/models.py:14
 msgid "Available"
 msgstr "На линии"
 
-#: drivers/models.py:12
+#: drivers/models.py:14
 msgid "Pending"
 msgstr "Принимает заказ"
 
-#: drivers/models.py:13
+#: drivers/models.py:15
 msgid "Collecting passengers"
 msgstr "Поездка собирается"
 
-#: drivers/models.py:13
+#: drivers/models.py:15
 msgid "Driving to pickup"
 msgstr "В пути к пассажиру"
 
-#: drivers/models.py:13
+#: drivers/models.py:15
 msgid "Passenger onboard"
 msgstr "Пассажир в машине"
 
-#: drivers/models.py:14
+#: drivers/models.py:16
 msgid "En route"
 msgstr "В пути к точке Б"
 
-#: drivers/models.py:14
+#: drivers/models.py:16
 msgid "Completed"
 msgstr "Поездка завершена"
 
-#: drivers/models.py:14
+#: drivers/models.py:16
 msgid "Cancelled"
 msgstr "Отмена поездки"
 
-#: telegram/views.py:21
+#: telegram/views.py:23
 msgid "Init page"
 msgstr "Входная страница"
 
-#: telegram/views.py:143
+#: telegram/views.py:170
+msgid "Phone number is required"
+msgstr "Требуется номер телефона"
+
+#: telegram/views.py:175 telegram/views.py:177
+msgid "Incorrect phone number"
+msgstr "Неверный номер телефона"
+
+#: telegram/views.py:205
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
-#: templates/tg-mini-app/home.html:12
+#: templates/tg-mini-app/drivers/register.html:14
+msgid "Become a driver on BirGo"
+msgstr "Стать водителем на BirGo"
+
+#: templates/tg-mini-app/drivers/register.html:26
+msgid ""
+"Your activation request is being processed. You can write to us if you have "
+"any questions"
+msgstr ""
+"Ваш запрос на подключение обрабатывается. Вы можете написать нам, если у вас "
+"возникнут какие-либо вопросы"
+
+#: templates/tg-mini-app/drivers/register.html:39
+msgid "Your activation request is accepted."
+msgstr "Ваш запрос на активацию принят."
+
+#: templates/tg-mini-app/drivers/register.html:46
+msgid "First name"
+msgstr "Имя"
+
+#: templates/tg-mini-app/drivers/register.html:50
+msgid "Last name"
+msgstr "Фамилия"
+
+#: templates/tg-mini-app/drivers/register.html:54
+msgid "Phone number"
+msgstr "Номер телефона"
+
+#: templates/tg-mini-app/drivers/register.html:76
+msgid "Send"
+msgstr "Отправить"
+
+#: templates/tg-mini-app/drivers/register.html:84
+msgid "Required fields are not filled in or invalid"
+msgstr "Обязательные для заполнения поля не заполнены или не правильны"
+
+#: templates/tg-mini-app/home.html:13
 msgid "Hello"
 msgstr "Привет"
 
-#: templates/tg-mini-app/home.html:13
+#: templates/tg-mini-app/home.html:14
 msgid "Where do you want to go?"
 msgstr "Куда вы хотите поехать?"
 
-#: templates/tg-mini-app/home.html:32
+#: templates/tg-mini-app/home.html:33
 msgid "From?"
 msgstr "Откуда?"
 
-#: templates/tg-mini-app/home.html:53
+#: templates/tg-mini-app/home.html:52
 msgid "To?"
 msgstr "Куда?"
 
-#: templates/tg-mini-app/home.html:77
-#: templates/tg-mini-app/trips/select_people_count.html:14
-#: templates/tg-mini-app/trips/select_people_count.html:24
-#: templates/tg-mini-app/trips/select_people_count.html:34
-#: templates/tg-mini-app/trips/select_people_count.html:44
-#: templates/tg-mini-app/trips/trip_request.html:56
+#: templates/tg-mini-app/home.html:80
+#: templates/tg-mini-app/trips/select_people_count.html:15
+#: templates/tg-mini-app/trips/select_people_count.html:25
+#: templates/tg-mini-app/trips/select_people_count.html:35
+#: templates/tg-mini-app/trips/select_people_count.html:45
+#: templates/tg-mini-app/trips/trip_request.html:57
 #, python-format
 msgid "%(counter)s person"
 msgid_plural "%(counter)s people"
@@ -93,67 +137,67 @@ msgstr[0] "%(counter)s человек"
 msgstr[1] "%(counter)s человека"
 msgstr[2] "%(counter)s человек"
 
-#: templates/tg-mini-app/home.html:79
-#: templates/tg-mini-app/trips/select_people_count.html:54
-#: templates/tg-mini-app/trips/trip_request.html:58
+#: templates/tg-mini-app/home.html:82
+#: templates/tg-mini-app/trips/select_people_count.html:55
+#: templates/tg-mini-app/trips/trip_request.html:59
 msgid "Empty car"
 msgstr "Пустая машина"
 
-#: templates/tg-mini-app/home.html:82
-#: templates/tg-mini-app/trips/select_people_count.html:6
+#: templates/tg-mini-app/home.html:85
+#: templates/tg-mini-app/trips/select_people_count.html:7
 msgid "How many people?"
 msgstr "Сколько человек?"
 
-#: templates/tg-mini-app/home.html:97
+#: templates/tg-mini-app/home.html:98
 msgid "Your price"
 msgstr "Ваша цена"
 
-#: templates/tg-mini-app/home.html:101
+#: templates/tg-mini-app/home.html:104
 msgid "Your total price of the trip, including the number of passengers"
 msgstr "Общая стоимость поездки, учитывая кол-во пассажиров"
 
-#: templates/tg-mini-app/home.html:102
+#: templates/tg-mini-app/home.html:107
 msgid "Comments"
 msgstr "Комментарии"
 
-#: templates/tg-mini-app/home.html:106
+#: templates/tg-mini-app/home.html:111
 msgid "Find car"
 msgstr "Искать машину"
 
-#: templates/tg-mini-app/home.html:110
+#: templates/tg-mini-app/home.html:115
 msgid "Actual trips"
 msgstr "Актуальные поездки"
 
-#: templates/tg-mini-app/home.html:117
-#: templates/tg-mini-app/trips/trip_request.html:12
+#: templates/tg-mini-app/home.html:122
+#: templates/tg-mini-app/trips/trip_request.html:13
 #, python-format
 msgid "Trip to %(to_location)s"
 msgstr "Поездка в %(to_location)s"
 
-#: templates/tg-mini-app/home.html:126
-#: templates/tg-mini-app/trips/trip_request.html:68
+#: templates/tg-mini-app/home.html:131
+#: templates/tg-mini-app/trips/trip_request.html:69
 #: templates/tg-mini-app/user/trips.html:22
 msgid "UZS"
 msgstr "сум"
 
-#: templates/tg-mini-app/trips/select_region.html:16
+#: templates/tg-mini-app/trips/select_region.html:17
 msgid "Select a region"
 msgstr "Выберите регион"
 
-#: templates/tg-mini-app/trips/select_region.html:23
+#: templates/tg-mini-app/trips/select_region.html:24
 msgid "Back"
 msgstr "Назад"
 
-#: templates/tg-mini-app/trips/select_region.html:51
+#: templates/tg-mini-app/trips/select_region.html:48
 #: templates/tg-mini-app/user/trips.html:30
 msgid "Nothing was found"
 msgstr "Ничего не найдено"
 
-#: templates/tg-mini-app/trips/trip_request.html:13
+#: templates/tg-mini-app/trips/trip_request.html:14
 msgid "Searching for a car"
 msgstr "Поиск машины"
 
-#: templates/tg-mini-app/trips/trip_request.html:23
+#: templates/tg-mini-app/trips/trip_request.html:24
 #, python-format
 msgid "<b>%(counter)s</b> driver saw your request"
 msgid_plural "<b>%(counter)s</b> drivers saw your request"
@@ -161,20 +205,16 @@ msgstr[0] "<b>%(counter)s</b> водитель увидел ваш запрос"
 msgstr[1] "<b>%(counter)s</b> водителя увидели ваш запрос"
 msgstr[2] "<b>%(counter)s</b> водителей увидели ваш запрос"
 
-#: templates/tg-mini-app/trips/trip_request.html:29
+#: templates/tg-mini-app/trips/trip_request.html:30
 #: templates/tg-mini-app/user/user-detail-base.html:20
 msgid "Details"
 msgstr "Детали"
 
-#: templates/tg-mini-app/trips/trip_request.html:83
-msgid "Call"
-msgstr "Позвонить"
-
-#: templates/tg-mini-app/trips/trip_request.html:84
+#: templates/tg-mini-app/trips/trip_request.html:85
 msgid "Do you really want to cancel your trip?"
 msgstr "Вы действительно хотите отменить поездку?"
 
-#: templates/tg-mini-app/trips/trip_request.html:84
+#: templates/tg-mini-app/trips/trip_request.html:85
 msgid "Cancel trip"
 msgstr "Отменить поездку"
 
@@ -216,6 +256,29 @@ msgstr ""
 msgid "Continue"
 msgstr "Продолжить"
 
+#: users/admin.py:15
+msgid "Personal info"
+msgstr "Личная информация"
+
+#: users/admin.py:17
+msgid "Permissions"
+msgstr "Права доступа"
+
+#: users/admin.py:28
+msgid "Important dates"
+msgstr "Важные даты"
+
+#: users/models.py:15
+msgid "Male"
+msgstr "Мужской"
+
+#: users/models.py:16
+msgid "Female"
+msgstr "Женский"
+
+#~ msgid "Call"
+#~ msgstr "Позвонить"
+
 #~ msgid "What do you want to buy?"
 #~ msgstr "Что вы хотите купить?"
 
@@ -242,9 +305,6 @@ msgstr "Продолжить"
 
 #~ msgid "Create"
 #~ msgstr "Создать"
-
-#~ msgid "Required fields are not filled in"
-#~ msgstr "Обязательные для заполнения поля не заполнены"
 
 #~ msgid "no offers"
 #~ msgstr "нет предложений"

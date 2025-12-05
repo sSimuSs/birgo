@@ -30,7 +30,7 @@ class Driver(models.Model, BaseModelInterface):
         noty_text = f"<b>🧑‍✈️ Новый водитель</b>\n" \
                     f"<b>Имя:</b> {self.user.first_name} {username_text}\n" \
                     f"<b>Фамилия:</b> {self.user.last_name}\n" \
-                    f"<b>Номер:</b> {self.user.phone}\n\n" \
+                    f"<b>Номер:</b> +{self.user.phone}\n\n" \
                     f"#new_driver"
         bot.send_message(
             settings.TELEGRAM_STAFF_CHANNEL_ID,

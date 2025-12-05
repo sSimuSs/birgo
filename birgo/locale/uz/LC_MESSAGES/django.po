@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-04 18:27+0500\n"
-"PO-Revision-Date: 2025-12-04 17:33+0500\n"
+"POT-Creation-Date: 2025-12-05 13:57+0500\n"
+"PO-Revision-Date: 2025-12-05 14:01+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -19,159 +19,199 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.8\n"
 
-#: drivers/models.py:12
+#: drivers/models.py:14
 msgid "Offline"
 msgstr "Liniyadan tashqari"
 
-#: drivers/models.py:12
+#: drivers/models.py:14
 msgid "Available"
 msgstr "Liniyada"
 
-#: drivers/models.py:12
+#: drivers/models.py:14
 msgid "Pending"
 msgstr "Buyurtmani qabul qilmoqda"
 
-#: drivers/models.py:13
+#: drivers/models.py:15
 msgid "Collecting passengers"
 msgstr "Yo‘lovchilar yig‘ilmoqda"
 
-#: drivers/models.py:13
+#: drivers/models.py:15
 msgid "Driving to pickup"
 msgstr "Yo‘lovchiga ketmoqda"
 
-#: drivers/models.py:13
+#: drivers/models.py:15
 msgid "Passenger onboard"
 msgstr "Yo‘lovchi moshinada"
 
-#: drivers/models.py:14
+#: drivers/models.py:16
 msgid "En route"
 msgstr "Manzilga ketmoqda"
 
-#: drivers/models.py:14
+#: drivers/models.py:16
 msgid "Completed"
 msgstr "Safar yakunlandi"
 
-#: drivers/models.py:14
+#: drivers/models.py:16
 msgid "Cancelled"
 msgstr "Bekor qilindi"
 
-#: telegram/views.py:21
+#: telegram/views.py:23
 msgid "Init page"
 msgstr "Kirish sahifasi"
 
-#: telegram/views.py:143
+#: telegram/views.py:170
+msgid "Phone number is required"
+msgstr "Telefon raqami kiritilmagan"
+
+#: telegram/views.py:175 telegram/views.py:177
+msgid "Incorrect phone number"
+msgstr "Telefon raqami noto‘g‘ri"
+
+#: telegram/views.py:205
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
-#: templates/tg-mini-app/home.html:12
+#: templates/tg-mini-app/drivers/register.html:14
+msgid "Become a driver on BirGo"
+msgstr "BirGoda haydovchiga aylaning"
+
+#: templates/tg-mini-app/drivers/register.html:26
+msgid ""
+"Your activation request is being processed. You can write to us if you have "
+"any questions"
+msgstr ""
+"Sizning ulanish bo'yicha so'rovingiz ko'rib chiqilmoqda. Agar sizda biron "
+"bir savol bo'lsa, bizga yozishingiz mumkin"
+
+#: templates/tg-mini-app/drivers/register.html:39
+msgid "Your activation request is accepted."
+msgstr "Sizning faollashtirish so'rovingiz qabul qilindi."
+
+#: templates/tg-mini-app/drivers/register.html:46
+msgid "First name"
+msgstr "Ism"
+
+#: templates/tg-mini-app/drivers/register.html:50
+msgid "Last name"
+msgstr "Familiya"
+
+#: templates/tg-mini-app/drivers/register.html:54
+msgid "Phone number"
+msgstr "Telefon raqam"
+
+#: templates/tg-mini-app/drivers/register.html:76
+msgid "Send"
+msgstr "Jo'natish"
+
+#: templates/tg-mini-app/drivers/register.html:84
+msgid "Required fields are not filled in or invalid"
+msgstr "Majburiy maydonlar to`ldirilmagan yoki noto`g`ri"
+
+#: templates/tg-mini-app/home.html:13
 msgid "Hello"
 msgstr "Salom"
 
-#: templates/tg-mini-app/home.html:13
+#: templates/tg-mini-app/home.html:14
 msgid "Where do you want to go?"
 msgstr "Qayerga bormoqchisiz?"
 
-#: templates/tg-mini-app/home.html:32
+#: templates/tg-mini-app/home.html:33
 msgid "From?"
 msgstr "Qayerdan?"
 
-#: templates/tg-mini-app/home.html:53
+#: templates/tg-mini-app/home.html:52
 msgid "To?"
 msgstr "Qayerga?"
 
-#: templates/tg-mini-app/home.html:77
-#: templates/tg-mini-app/trips/select_people_count.html:14
-#: templates/tg-mini-app/trips/select_people_count.html:24
-#: templates/tg-mini-app/trips/select_people_count.html:34
-#: templates/tg-mini-app/trips/select_people_count.html:44
-#: templates/tg-mini-app/trips/trip_request.html:56
+#: templates/tg-mini-app/home.html:80
+#: templates/tg-mini-app/trips/select_people_count.html:15
+#: templates/tg-mini-app/trips/select_people_count.html:25
+#: templates/tg-mini-app/trips/select_people_count.html:35
+#: templates/tg-mini-app/trips/select_people_count.html:45
+#: templates/tg-mini-app/trips/trip_request.html:57
 #, python-format
 msgid "%(counter)s person"
 msgid_plural "%(counter)s people"
 msgstr[0] "%(counter)sta odam"
 msgstr[1] "%(counter)sta odam"
 
-#: templates/tg-mini-app/home.html:79
-#: templates/tg-mini-app/trips/select_people_count.html:54
-#: templates/tg-mini-app/trips/trip_request.html:58
+#: templates/tg-mini-app/home.html:82
+#: templates/tg-mini-app/trips/select_people_count.html:55
+#: templates/tg-mini-app/trips/trip_request.html:59
 msgid "Empty car"
 msgstr "Bo'sh moshina"
 
-#: templates/tg-mini-app/home.html:82
-#: templates/tg-mini-app/trips/select_people_count.html:6
+#: templates/tg-mini-app/home.html:85
+#: templates/tg-mini-app/trips/select_people_count.html:7
 msgid "How many people?"
 msgstr "Necha kishi?"
 
-#: templates/tg-mini-app/home.html:97
+#: templates/tg-mini-app/home.html:98
 msgid "Your price"
 msgstr "Siz berayotgan narx"
 
-#: templates/tg-mini-app/home.html:101
+#: templates/tg-mini-app/home.html:104
 msgid "Your total price of the trip, including the number of passengers"
 msgstr "Safarning umumiy narxi, yo'lovchilar sonini inbotga olgan holda"
 
-#: templates/tg-mini-app/home.html:102
+#: templates/tg-mini-app/home.html:107
 msgid "Comments"
 msgstr "Izohlar"
 
-#: templates/tg-mini-app/home.html:106
+#: templates/tg-mini-app/home.html:111
 msgid "Find car"
 msgstr "Avtomobil topish"
 
-#: templates/tg-mini-app/home.html:110
+#: templates/tg-mini-app/home.html:115
 msgid "Actual trips"
 msgstr "Amaldagi safarlar"
 
-#: templates/tg-mini-app/home.html:117
-#: templates/tg-mini-app/trips/trip_request.html:12
+#: templates/tg-mini-app/home.html:122
+#: templates/tg-mini-app/trips/trip_request.html:13
 #, python-format
 msgid "Trip to %(to_location)s"
 msgstr "%(to_location)sga safar"
 
-#: templates/tg-mini-app/home.html:126
-#: templates/tg-mini-app/trips/trip_request.html:68
+#: templates/tg-mini-app/home.html:131
+#: templates/tg-mini-app/trips/trip_request.html:69
 #: templates/tg-mini-app/user/trips.html:22
 msgid "UZS"
 msgstr "so'm"
 
-#: templates/tg-mini-app/trips/select_region.html:16
+#: templates/tg-mini-app/trips/select_region.html:17
 msgid "Select a region"
 msgstr "Huduni tanlang"
 
-#: templates/tg-mini-app/trips/select_region.html:23
+#: templates/tg-mini-app/trips/select_region.html:24
 msgid "Back"
 msgstr "Orqaga"
 
-#: templates/tg-mini-app/trips/select_region.html:51
+#: templates/tg-mini-app/trips/select_region.html:48
 #: templates/tg-mini-app/user/trips.html:30
 msgid "Nothing was found"
 msgstr "Hechnima topilmadi"
 
-#: templates/tg-mini-app/trips/trip_request.html:13
+#: templates/tg-mini-app/trips/trip_request.html:14
 msgid "Searching for a car"
 msgstr "Avtomobil qidirilmoqda"
 
-#: templates/tg-mini-app/trips/trip_request.html:23
+#: templates/tg-mini-app/trips/trip_request.html:24
 #, python-format
 msgid "<b>%(counter)s</b> driver saw your request"
 msgid_plural "<b>%(counter)s</b> drivers saw your request"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<b>%(counter)s</b>ta haydovchi so'rovingizni ko'rdi"
+msgstr[1] "<b>%(counter)s</b>ta haydovchi so'rovingizni ko'rdi"
 
-#: templates/tg-mini-app/trips/trip_request.html:29
+#: templates/tg-mini-app/trips/trip_request.html:30
 #: templates/tg-mini-app/user/user-detail-base.html:20
 msgid "Details"
 msgstr "Tafsilotlar"
 
-#: templates/tg-mini-app/trips/trip_request.html:83
-msgid "Call"
-msgstr "Bog'lanish"
-
-#: templates/tg-mini-app/trips/trip_request.html:84
+#: templates/tg-mini-app/trips/trip_request.html:85
 msgid "Do you really want to cancel your trip?"
 msgstr "Siz haqiqatan ham safarni bekor qilmoqchimisiz?"
 
-#: templates/tg-mini-app/trips/trip_request.html:84
+#: templates/tg-mini-app/trips/trip_request.html:85
 msgid "Cancel trip"
 msgstr "Safarni bekor qilish"
 
@@ -212,6 +252,29 @@ msgstr ""
 msgid "Continue"
 msgstr "Davom ettirish"
 
+#: users/admin.py:15
+msgid "Personal info"
+msgstr "Shaxsiy ma'lumotlar"
+
+#: users/admin.py:17
+msgid "Permissions"
+msgstr "Ruxsatlar"
+
+#: users/admin.py:28
+msgid "Important dates"
+msgstr "Muhim sanalar"
+
+#: users/models.py:15
+msgid "Male"
+msgstr "Erkak"
+
+#: users/models.py:16
+msgid "Female"
+msgstr "Ayol"
+
+#~ msgid "Call"
+#~ msgstr "Bog'lanish"
+
 #~ msgid "What do you want to buy?"
 #~ msgstr "Siz nima sotib olmoqchisiz?"
 
@@ -238,9 +301,6 @@ msgstr "Davom ettirish"
 
 #~ msgid "Create"
 #~ msgstr "Yaratish"
-
-#~ msgid "Required fields are not filled in"
-#~ msgstr "Majburiy maydonlar to`ldirilmagan"
 
 #~ msgid "no offers"
 #~ msgstr "takliflar yo'q"
