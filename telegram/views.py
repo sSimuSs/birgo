@@ -101,6 +101,8 @@ def trip_request(request, bot_user: BotUser, *args, **kwargs):
             driver.triprequestview_set.get_or_create(
                 trip_request=t_request,
             )
+        else:
+            return redirect("tg_home")
 
     if is_owner and request.GET.get("cancel_trip_request"):
         t_request.cancel_trip_request()
