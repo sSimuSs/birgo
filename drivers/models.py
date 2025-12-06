@@ -31,13 +31,17 @@ class Driver(models.Model, BaseModelInterface):
         noty_text = f"<b>🧑‍✈️ Новый водитель</b>\n" \
                     f"<b>Имя:</b> {self.user.first_name} {username_text}\n" \
                     f"<b>Фамилия:</b> {self.user.last_name}\n" \
-                    f"<b>Номер:</b> +{self.user.phone}\n\n" \
+                    f"<b>Номер машины:</b> {self.get_car().car_number}\n\n" \
+                    f"<b>Номер телефона:</b> +{self.user.phone}\n\n" \
                     f"#new_driver"
         bot.send_message(
             settings.TELEGRAM_STAFF_CHANNEL_ID,
             noty_text,
             parse_mode="HTML",
         )
+
+    def get_car(self) -> "Car":
+        return self.car_set.last()
 
     def __str__(self):
         return f"Driver {self.user}"
@@ -49,8 +53,8 @@ class Car(models.Model, BaseModelInterface):
     """ Driver's car(s) model """
     driver = models.ForeignKey(Driver, on_delete=models.CASCADE)
     car_number = models.CharField(max_length=8)
-    model = models.ForeignKey(CarModel, on_delete=models.PROTECT)
-    color = models.ForeignKey(CarColor, on_delete=models.PROTECT)
+    model = models.ForeignKey(CarModel, on_delete=models.PROTECT, blank=True, null=True)
+    color = models.ForeignKey(CarColor, on_delete=models.PROTECT, blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

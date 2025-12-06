@@ -210,6 +210,10 @@ def driver_register(request, bot_user: BotUser, *args, **kwargs):
         first_name = driver.user.first_name
         last_name = driver.user.last_name
         phone = driver.user.phone
+
+        driver_car = driver.get_car()
+        if driver_car:
+            car_number = driver_car.car_number
         if driver.approved_at:
             kwargs['back_button_url'] = reverse("tg_driver_page")
 
@@ -218,6 +222,7 @@ def driver_register(request, bot_user: BotUser, *args, **kwargs):
         first_name = request.POST.get("first_name")
         last_name = request.POST.get("last_name")
         phone = request.POST.get("phone")
+        car_number = request.POST.get("car_number").upper()
         if phone:
             phone = phone.replace("-", "").replace(" ", "")
         else:
@@ -229,6 +234,9 @@ def driver_register(request, bot_user: BotUser, *args, **kwargs):
                 errors["phone"] = _("Incorrect phone number")
         except phonenumbers.NumberParseException as e:
             errors["phone"] = _("Incorrect phone number")
+
+        if car_number and not car_number[:2].isdigit():
+            errors["car_number"] = _("Car number is invalid")
 
         if not errors and phone and first_name and last_name:
             username = f"user{bot_user.telegram_id}"
@@ -249,6 +257,7 @@ def driver_register(request, bot_user: BotUser, *args, **kwargs):
                 driver = Driver.objects.create(
                     user=bot_user.user,
                 )
+                driver.car_set.get_or_create(car_number=car_number)
                 # if settings.ENV == ENV_PRODUCTION:
                 driver.send_to_staff_channel()
             return redirect("tg_driver_register")

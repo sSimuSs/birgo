@@ -51,12 +51,19 @@
             <div class="input_block mb_8px">
                 <input type="text" name="last_name" value="{{ last_name }}" id="last_name" placeholder="" required maxlength="100" {% if driver %}disabled class="muted_color" {% endif %}>
             </div>
-            <label class="list_section_label" for="phone">{% translate 'Phone number' %} (Telegram)</label>
+            <label class="list_section_label {% if 'car_number' in errors %}danger_color{% endif %}" for="car_number">{% translate 'Car number' %}</label>
+            <div class="input_block mb_8px {% if 'car_number' in errors %}danger_border{% endif %}">
+                <input type="text" name="car_number" value="{{ car_number }}" id="car_number" placeholder="01A123BC" required maxlength="8" {% if driver %}disabled class="muted_color" {% endif %}>
+            </div>
+            {% if 'car_number' in errors %}
+            <div class="input_help_text danger_color mb_8px">{{ errors.car_number }}</div>
+            {% endif %}
+            <label class="list_section_label {% if 'phone' in errors %}danger_color{% endif %}" for="phone">{% translate 'Phone number' %} (Telegram)</label>
             <div class="input_block mb_8px {% if 'phone' in errors %}danger_border{% endif %}">
                 <input type="text" name="phone" value="{% if phone %}{{ phone }}{% else %}+998{% endif %}" minlength="9" id="phone" required {% if driver %}disabled{% endif %}>
             </div>
             {% if 'phone' in errors %}
-            <div class="input_help_text danger_color">{{ errors.phone }}</div>
+            <div class="input_help_text danger_color mb_8px">{{ errors.phone }}</div>
             {% endif %}
             <input type="submit" hidden />
 {#            <div class="input_help_text mb_16px" style="text-align: center">#}
