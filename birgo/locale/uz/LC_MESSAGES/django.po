@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-06 01:51+0500\n"
-"PO-Revision-Date: 2025-12-06 01:52+0500\n"
+"POT-Creation-Date: 2025-12-06 12:08+0500\n"
+"PO-Revision-Date: 2025-12-06 12:09+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uz\n"
@@ -59,19 +59,23 @@ msgstr "Bekor qilindi"
 msgid "Driver licence number"
 msgstr "Haydovchilik guvohnomasining raqami"
 
-#: telegram/views.py:24
+#: telegram/views.py:23
 msgid "Init page"
 msgstr "Kirish sahifasi"
 
-#: telegram/views.py:216
+#: telegram/views.py:229
 msgid "Phone number is required"
 msgstr "Telefon raqami kiritilmagan"
 
-#: telegram/views.py:221 telegram/views.py:223
+#: telegram/views.py:234 telegram/views.py:236
 msgid "Incorrect phone number"
 msgstr "Telefon raqami noto‘g‘ri"
 
-#: telegram/views.py:251
+#: telegram/views.py:239
+msgid "Car number is invalid"
+msgstr "Avto raqam noto'g'ri kiritilgan"
+
+#: telegram/views.py:268
 msgid "Error on validating auth data"
 msgstr "Autentifikatsiya maʼlumotlarini tekshirishda xatolik yuz berdi"
 
@@ -148,14 +152,18 @@ msgid "Last name"
 msgstr "Familiya"
 
 #: templates/tg-mini-app/drivers/register.html:54
+msgid "Car number"
+msgstr "Avtomobil raqami"
+
+#: templates/tg-mini-app/drivers/register.html:61
 msgid "Phone number"
 msgstr "Telefon raqam"
 
-#: templates/tg-mini-app/drivers/register.html:76
+#: templates/tg-mini-app/drivers/register.html:83
 msgid "Send"
 msgstr "Jo'natish"
 
-#: templates/tg-mini-app/drivers/register.html:84
+#: templates/tg-mini-app/drivers/register.html:91
 msgid "Required fields are not filled in or invalid"
 msgstr "Majburiy maydonlar to`ldirilmagan yoki noto`g`ri"
 

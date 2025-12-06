@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-06 01:51+0500\n"
-"PO-Revision-Date: 2025-12-06 01:51+0500\n"
+"POT-Creation-Date: 2025-12-06 12:08+0500\n"
+"PO-Revision-Date: 2025-12-06 12:10+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -60,19 +60,23 @@ msgstr "Отмена поездки"
 msgid "Driver licence number"
 msgstr "Номер водительского удостоверения"
 
-#: telegram/views.py:24
+#: telegram/views.py:23
 msgid "Init page"
 msgstr "Входная страница"
 
-#: telegram/views.py:216
+#: telegram/views.py:229
 msgid "Phone number is required"
 msgstr "Требуется номер телефона"
 
-#: telegram/views.py:221 telegram/views.py:223
+#: telegram/views.py:234 telegram/views.py:236
 msgid "Incorrect phone number"
 msgstr "Неверный номер телефона"
 
-#: telegram/views.py:251
+#: telegram/views.py:239
+msgid "Car number is invalid"
+msgstr "Неправильный номер автомобиля"
+
+#: telegram/views.py:268
 msgid "Error on validating auth data"
 msgstr "Ошибка при проверке данных авторизации"
 
@@ -149,14 +153,18 @@ msgid "Last name"
 msgstr "Фамилия"
 
 #: templates/tg-mini-app/drivers/register.html:54
+msgid "Car number"
+msgstr "Номер автомобиля"
+
+#: templates/tg-mini-app/drivers/register.html:61
 msgid "Phone number"
 msgstr "Номер телефона"
 
-#: templates/tg-mini-app/drivers/register.html:76
+#: templates/tg-mini-app/drivers/register.html:83
 msgid "Send"
 msgstr "Отправить"
 
-#: templates/tg-mini-app/drivers/register.html:84
+#: templates/tg-mini-app/drivers/register.html:91
 msgid "Required fields are not filled in or invalid"
 msgstr "Обязательные для заполнения поля не заполнены или не правильны"
 
