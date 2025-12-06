@@ -8,7 +8,6 @@ from django.utils.translation import gettext_lazy as _
 from init_data_py import InitData
 import init_data_py.errors
 
-from birgo.constants import ENV_PRODUCTION
 from drivers.models import Driver
 from system.models import Region
 from telegram.decorators import tg_pages
@@ -80,6 +79,9 @@ def driver_page(request, bot_user: BotUser, *args, **kwargs):
     """ Telegram Mini app Driver page view """
     kwargs['back_button_url'] = None
     driver = bot_user.user.get_driver()
+    if not driver:
+        return redirect("tg_driver_register")
+
     if request.GET.get("toggle_status"):
         driver.status = 0 if driver.status else 1
         driver.save()
