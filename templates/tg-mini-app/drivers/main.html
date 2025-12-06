@@ -60,10 +60,10 @@
                                 {{ tr.get_from_text }} {% render_svg "arrow_right_long" size="15" svg_class="svg_gray_color ms_4px me_4px" %} {{ tr.get_to_text }}
                             </div>
                             <div class="mt_8px">
-                                <div class="badge badge-s bg_gray muted_color align_items_center" style="display: inline-flex;font-weight: 600; padding-left: 2px">
-                                    <img src="{{ tr.user.botuser.photo_url }}" class="me_4px" alt="" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover;">
-                                    {{ tr.user.get_shortened_name }}
-                                </div>
+{#                                <div class="badge badge-s bg_gray muted_color align_items_center" style="display: inline-flex;font-weight: 600; padding-left: 2px">#}
+{#                                    <img src="{{ tr.user.botuser.photo_url }}" class="me_4px" alt="" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover;">#}
+{#                                    {{ tr.user.get_shortened_name }}#}
+{#                                </div>#}
                                 <span class="badge badge-s bg_gray muted_color align_items_center" style="display: inline-flex;font-weight: 600 ">
                                     {% render_svg "people_group" size="20" svg_class="svg_gray_color me_4px" %}
                                     {{ tr.people_count }}
